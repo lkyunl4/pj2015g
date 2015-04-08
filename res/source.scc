@@ -1,0 +1,7 @@
+export SRPSDK_BASE=/home/genius/scc-1.0-64b/base
+export SRPSDK_SRC=/home/genius/scc-1.0-64b/src
+export SRPSDK_BUILD=/home/genius/scc-1.0-64b/build
+export SRPSDK_INSTALL=/home/genius/scc-1.0-64b/install
+
+export PATH=$SRPSDK_INSTALL/bin:$PATH
+export LD_LIBRARY_PATH=$SRPSDK_BASE/llvm/install/lib:$LD_LIBRARY_PATH
