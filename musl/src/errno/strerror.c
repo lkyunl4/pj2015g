@@ -31,7 +31,12 @@ char *__strerror_l(int e, locale_t loc)
 
 char *strerror(int e)
 {
+#ifndef SCC_TEST
 	return __strerror_l(e, CURRENT_LOCALE);
+#endif
+#ifdef SCC_TEST
+	return NULL;
+#endif
 }
 
 weak_alias(__strerror_l, strerror_l);

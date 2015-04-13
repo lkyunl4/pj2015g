@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifndef _PTHREAD_IMPL_H
 #define _PTHREAD_IMPL_H
 
@@ -131,5 +133,7 @@ void __restore_sigs(void *);
 #define DEFAULT_GUARD_SIZE PAGE_SIZE
 
 #define __ATTRP_C11_THREAD ((void*)(uintptr_t)-1)
+
+#endif
 
 #endif

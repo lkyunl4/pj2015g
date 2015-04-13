@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <aio.h>
 #include <errno.h>
 #include <time.h>
@@ -77,3 +79,5 @@ int aio_suspend(const struct aiocb *const cbs[], int cnt, const struct timespec 
 }
 
 LFS64(aio_suspend);
+
+#endif
