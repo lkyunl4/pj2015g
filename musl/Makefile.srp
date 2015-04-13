@@ -49,7 +49,7 @@ OPTIONS= \
 #NEWLIB_COMPILE_OPTIONS= -srp-subtarget $(TARGET) $(MACRO_DEFINES)
 #SCC_CFLAGS= $(NEWLIB_COMPILE_OPTIONS) $(OPTIMIZE) $(OPTIONS) -g
 MUSLLIB_COMPILE_OPTIONS= -srp-subtarget $(TARGET) $(MACRO_DEFINES)
-SCC_CFLAGS= $(MUSLLIB_COMPILE_OPTIONS) $(OPTIMIZE) $(OPTIONS) -g
+SCC_CFLAGS= $(MUSLLIB_COMPILE_OPTIONS) $(OPTIMIZE) $(OPTIONS) -D SCC_TEST -g
 
 SCC_ASFLAGS= -c $(OPTIMIZE) -srp-subtarget $(TARGET)
 
@@ -207,13 +207,13 @@ IMPH = src/internal/stdio_impl.h src/internal/pthread_impl.h src/internal/libc.h
 #LDFLAGS = 
 #LIBCC = -lgcc
 #CPPFLAGS =
-#CFLAGS = -Os -pipe
-#CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc 
+CFLAGS = -Os -pipe
+CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc 
 
-#CFLAGS_ALL = $(CFLAGS_C99FSE)
-#CFLAGS_ALL += -D_XOPEN_SOURCE=700 -I./arch/$(ARCH) -I./src/internal -I./include
-#CFLAGS_ALL += $(CPPFLAGS) $(CFLAGS)
-#CFLAGS_ALL_STATIC = $(CFLAGS_ALL)
+CFLAGS_ALL = $(CFLAGS_C99FSE)
+CFLAGS_ALL += -D_XOPEN_SOURCE=700 -I./arch/$(ARCH) -I./src/internal -I./include
+CFLAGS_ALL += $(CPPFLAGS) $(CFLAGS)
+CFLAGS_ALL_STATIC = $(CFLAGS_ALL)
 #CFLAGS_ALL_SHARED = $(CFLAGS_ALL) -fPIC -DSHARED
 
 AR      = $(CROSS_COMPILE)ar
@@ -222,11 +222,11 @@ INSTALL = ./tools/install.sh
 
 #ARCH_INCLUDES = $(wildcard arch/$(ARCH)/bits/*.h)
 #ALL_INCLUDES = $(sort $(wildcard include/*.h include/*/*.h) $(GENH) $(ARCH_INCLUDES:arch/$(ARCH)/%=include/%))
-ALL_INCLUDES = $(sort $(wildcard include/*.h include/*/*.h)) # $(GENH))
+ALL_INCLUDES = $(sort $(wildcard include/*.h include/*/*.h) $(GENH))
 
 EMPTY_LIB_NAMES = m rt pthread crypt util xnet resolv dl
 EMPTY_LIBS = $(EMPTY_LIB_NAMES:%=lib/lib%.a)
-CRT_LIBS = lib/crt1.o lib/Scrt1.o lib/crti.o lib/crtn.o
+#CRT_LIBS = lib/crt1.o lib/Scrt1.o lib/crti.o lib/crtn.o
 STATIC_LIBS = lib/libc.a
 SHARED_LIBS = lib/libc.so
 #TOOL_LIBS = lib/musl-gcc.specs
@@ -237,7 +237,7 @@ ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS)
 LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
 
 #-include config.mak
-ARCH=i386
+ARCH=srp4m
 
 #all: $(ALL_LIBS) $(ALL_TOOLS)
 all: $(ALL_LIBS)
@@ -260,7 +260,8 @@ clean:
 
 include/bits:
 	#@test "$(ARCH)" || { echo "Please set ARCH in config.mak before running make." ; exit 1 ; }
-	ln -sf ../arch/$(ARCH)/bits $@
+	#ln -sf ../arch/$(ARCH)/bits $@
+	ln -sf ../arch/i386/bits $@
 
 include/bits/alltypes.h.in: include/bits
 
@@ -274,7 +275,7 @@ src/internal/version.lo: src/internal/version.h
 
 src/ldso/dynlink.lo: arch/$(ARCH)/reloc.h
 
-crt/crt1.o crt/Scrt1.o: $(wildcard arch/$(ARCH)/crt_arch.h)
+#crt/crt1.o crt/Scrt1.o: $(wildcard arch/$(ARCH)/crt_arch.h)
 
 crt/Scrt1.o: CFLAGS += -fPIC
 
@@ -310,34 +311,35 @@ $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 #	$(SCC) $(SCC_ASFLAGS) -o $@ $<
 
 
+
 %.o: $(ARCH)$(ASMSUBARCH)/%.sub
 	#$(CC) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<)
-	$(SCC) $(SCC_CFLAGS) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
+	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
 
-%.o: $(ARCH)/%.s
+#%.o: $(ARCH)/%.s
 	#$(CC) $(CFLAGS_ALL_STATIC) -c -o $@ $<
-	$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
+	#$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
 
 %.o: %.c $(GENH) $(IMPH)
 	#$(CC) $(CFLAGS_ALL_STATIC) -c -o $@ $<
-	$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
+	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 
 %.lo: $(ARCH)$(ASMSUBARCH)/%.sub
 	#$(CC) $(CFLAGS_ALL_SHARED) -c -o $@ $(dir $<)$(shell cat $<)
-	$(SCC) $(SCC_CFLAGS) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
+	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
 
-%.lo: $(ARCH)/%.s
+#%.lo: $(ARCH)/%.s
 	#$(CC) $(CFLAGS_ALL_SHARED) -c -o $@ $<
-	$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
+	#$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
 
 %.lo: %.c $(GENH) $(IMPH)
 	#$(CC) $(CFLAGS_ALL_SHARED) -c -o $@ $<
-	$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
+	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 lib/libc.so: $(LOBJS)
 	#$(CC) $(CFLAGS_ALL_SHARED) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
-	$(SCC) $(SCC_CFLAGS) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
+	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 
 lib/libc.a: $(OBJS)
 	rm -f $@

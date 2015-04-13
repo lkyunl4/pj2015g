@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <aio.h>
 #include <pthread.h>
 #include <semaphore.h>
@@ -377,3 +379,5 @@ LFS64(aio_fsync);
 LFS64(aio_read);
 LFS64(aio_write);
 LFS64(aio_return);
+
+#endif

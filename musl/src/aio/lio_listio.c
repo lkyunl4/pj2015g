@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <aio.h>
 #include <errno.h>
 #include <unistd.h>
@@ -142,3 +144,5 @@ int lio_listio(int mode, struct aiocb *restrict const *restrict cbs, int cnt, st
 }
 
 LFS64(lio_listio);
+
+#endif
