@@ -11,6 +11,7 @@ union semun {
 
 int semctl(int id, int num, int cmd, ...)
 {
+#ifndef SCC_TEST
 	union semun arg = {0};
 	va_list ap;
 	switch (cmd) {
@@ -25,4 +26,10 @@ int semctl(int id, int num, int cmd, ...)
 #else
 	return syscall(SYS_ipc, IPCOP_semctl, id, num, cmd | IPC_64, &arg.buf);
 #endif
+
+#else
+  return 0;
+
+#endif
+
 }
