@@ -313,20 +313,17 @@ $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 
 
 %.o: $(ARCH)$(ASMSUBARCH)/%.sub
-	#$(CC) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<)
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
 
 #%.o: $(ARCH)/%.s
-	#$(CC) $(CFLAGS_ALL_STATIC) -c -o $@ $<
-	#$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
+#$(CC) $(CFLAGS_ALL_STATIC) -c -o $@ $<
+#$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
 
 %.o: %.c $(GENH) $(IMPH)
-	#$(CC) $(CFLAGS_ALL_STATIC) -c -o $@ $<
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 
 %.lo: $(ARCH)$(ASMSUBARCH)/%.sub
-	#$(CC) $(CFLAGS_ALL_SHARED) -c -o $@ $(dir $<)$(shell cat $<)
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
 
 #%.lo: $(ARCH)/%.s
@@ -334,11 +331,9 @@ $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 	#$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
 
 %.lo: %.c $(GENH) $(IMPH)
-	#$(CC) $(CFLAGS_ALL_SHARED) -c -o $@ $<
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 lib/libc.so: $(LOBJS)
-	#$(CC) $(CFLAGS_ALL_SHARED) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 
 lib/libc.a: $(OBJS)
