@@ -31,7 +31,6 @@ SCC=$(SRPSDK_INSTALL)/bin/scc
 SCC_LD=$(SRPSDK_INSTALL)/bin/scc.ld
 SCC_AR=ar
 MRPSIM=$(MRPSIM_PATH)/bin/mRPsim
-#CC=gcc
 LD=gcc
 STD=gnu89
 EXE=a.out
@@ -46,8 +45,6 @@ OPTIONS= \
 					$(SYSTEM_MACRO_DEFINES) \
 					$(COMPILE_OPTIONS)
 
-#NEWLIB_COMPILE_OPTIONS= -srp-subtarget $(TARGET) $(MACRO_DEFINES)
-#SCC_CFLAGS= $(NEWLIB_COMPILE_OPTIONS) $(OPTIMIZE) $(OPTIONS) -g
 MUSLLIB_COMPILE_OPTIONS= -srp-subtarget $(TARGET) $(MACRO_DEFINES)
 SCC_CFLAGS= $(MUSLLIB_COMPILE_OPTIONS) $(OPTIMIZE) $(OPTIONS) -D SCC_TEST -g
 
@@ -88,7 +85,6 @@ LIBRARY_INC:= \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/etc \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/hal \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/system/$(TARGET_SYS)/src \
-					#-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/newlib/srp-elf/include \
 					-include $(SRPSDK_SRC)/arch/$(TARGET)/etc/srp_vector.h
 
 SYSTEM_INC:= \
@@ -96,7 +92,6 @@ SYSTEM_INC:= \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/compiler-rt \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/etc \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/hal \
-					#-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/newlib/srp-elf/include \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/startup \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/system \
@@ -108,7 +103,6 @@ SYSTEM_LIBS:= \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/compiler-rt \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/etc \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/hal \
-					#-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/newlib \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/system \
 					-start-group -lcommon -lcompiler-rt -letc -lhal -lc -lm -lsrp -lsmk -lsystem -end-group
@@ -118,82 +112,14 @@ STARTUP_OBJS:= \
 					$(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/startup/isr.o
 
 
-#SCC_INC+=$(shell find . -type d | grep -v "\.svn" | grep -v -E "' '|$(SCC_EXCLUDES)" | sed -e "s/^./-I ./")
-#SRCS:=$(shell find . -name "*.c" | grep -v -E "' '|$(SCC_EXCLUDES)")
-#SRC_ASMS:=$(patsubst %c,%s,$(SRCS))
-#ASMS:=$(shell find . -name "*.s" | grep -v -E "' '|$(SCC_EXCLUDES)")
-#OBJS:=$(patsubst %c,%o,$(SRCS))
-#ASM_OBJS:=$(patsubst %s,%o,$(ASMS))
-#SCC_LIBS:=$(USER_LIBS) $(SYSTEM_LIBS)
 
-#MODE:=CROSS_COMPILE
-#TARGET_BIN=$(OUTPUT_DIR)/$(EXE)
-#LDSCRIPT_NAME=ldscript
-#ifeq ($(findstring -g, $(OPTIMIZE)), -g)
-#  LDSCRIPT_NAME:=$(LDSCRIPT_NAME).dbg
-#endif
-
-#%.o: %.c
-#ifeq ($(MODE), HOST_COMPILE)
-#else
-#ifeq ($(LIBGEN), TRUE)
-#	$(SCC) -c $(SCC_CFLAGS) -o $@ $< $(SCC_INC) $(LIBRARY_INC)
-#else
-#	$(SCC) -c $(SCC_CFLAGS) -o $@ $< $(SCC_INC) $(SYSTEM_INC)
-#endif
-#endif
-
-#%.s : %.c
-#	$(SCC) -S $(SCC_CFLAGS) -o $@ $< $(SCC_INC) $(SYSTEM_INC)
-
-#%.o : %.s
-#	$(SCC) $(SCC_ASFLAGS) -o $@ $<
-
-#.PHONY: lib clean dis sym run help asm
-
-#print-%:
-#	@echo $($*)
-
-#out: $(TARGET_BIN)
-
-#$(TARGET_BIN): $(OBJS) $(ASM_OBJS)
-#	$(SCC_LD) -o $(OUTPUT_DIR)/$(EXE) $(SCC_LDFLAGS) $(STARTUP_OBJS) $(OBJS) $(ASM_OBJS) $(SCC_LIBS)
-
-#asm: $(SRC_ASMS)
-
-#lib: $(OBJS) $(ASM_OBJS)
-#	$(SCC_AR) $(SCC_ARFLAGS) lib $(OBJS) $(ASM_OBJS)
-
-#run: $(OUTPUT_DIR)/$(EXE)
-#	$(MRPSIM) --command cmd
-
-#dis:
-#	scc-objdump -disassemble -g -triple=srp-$(TARGET)-xx $(OUTPUT_DIR)/$(EXE)
-
-#sym:
-#	readelf -s $(OUTPUT_DIR)/$(EXE)
-
-#host: $(OBJS)
-#	$(LD) -o host $(OBJS)
-
-#clean::
-#	rm -f $(OUTPUT_DIR)/$(EXE) lib $(OBJS) $(SRC_ASMS) uart_out.mRPsim fifo_out mRPsim.vcd *.dump host *.profile
-
-
-
-###
-
-
-#exec_prefix = /usr/local
 exec_prefix	= $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl
 
 bindir = $(exec_prefix)/bin
 
-#prefix = /usr/local/musl
 prefix = $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl
 includedir = $(prefix)/include
 libdir = $(prefix)/lib
-#syslibdir = /lib
 syslibdir = $(SRPSDK_INSTALL)/lib-musl
 
 SRCS = $(sort $(wildcard src/*/*.c arch/$(ARCH)/src/*.c))
@@ -201,17 +127,14 @@ OBJS = $(SRCS:.c=.o)
 LOBJS = $(OBJS:.o=.lo)
 GENH = include/bits/alltypes.h
 GENH_INT = src/internal/version.h
-IMPH = src/internal/stdio_impl.h src/internal/pthread_impl.h src/internal/libc.h
+IMPH = src/internal/stdio_impl.h src/internal/libc.h
 
-#LDFLAGS = 
-#LIBCC = -lgcc
-#CPPFLAGS =
-CFLAGS = -Os -pipe
-CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc 
+#CFLAGS = -Os -pipe
+#CFLAGS_C99FSE = -std=c99 -ffreestanding -nostdinc 
 
-CFLAGS_ALL = $(CFLAGS_C99FSE)
-CFLAGS_ALL += -D_XOPEN_SOURCE=700 -I./arch/$(ARCH) -I./src/internal -I./include
-CFLAGS_ALL += $(CPPFLAGS) $(CFLAGS)
+#CFLAGS_ALL = $(CFLAGS_C99FSE)
+CFLAGS_ALL = -D_XOPEN_SOURCE=700 -I./arch/$(ARCH) -I./src/internal -I./include
+CFLAGS_ALL += $(CFLAGS)
 CFLAGS_ALL_STATIC = $(CFLAGS_ALL)
 #CFLAGS_ALL_SHARED = $(CFLAGS_ALL) -fPIC -DSHARED
 
@@ -230,7 +153,8 @@ STATIC_LIBS = lib/libc.a
 SHARED_LIBS = lib/libc.so
 #TOOL_LIBS = lib/musl-gcc.specs
 #ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS) $(TOOL_LIBS)
-ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS)
+#ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS)
+ALL_LIBS = $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS)
 #ALL_TOOLS = tools/musl-gcc
 
 LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
@@ -238,11 +162,8 @@ LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
 #-include config.mak
 ARCH=srp4m
 
-#all: $(ALL_LIBS) $(ALL_TOOLS)
 all: $(ALL_LIBS)
 
-
-#install: install-libs install-headers install-tools
 install: install-libs install-headers
 
 clean:
@@ -250,32 +171,9 @@ clean:
 	rm -f $(OBJS)
 	rm -f $(LOBJS)
 	rm -f $(ALL_LIBS) lib/*.[ao] lib/*.so
-	#rm -f $(ALL_TOOLS)
 	rm -f $(GENH) $(GENH_INT)
 	rm -f include/bits
 
-#distclean: clean
-#	rm -f config.mak
-
-#include/bits:
-#@test "$(ARCH)" || { echo "Please set ARCH in config.mak before running make." ; exit 1 ; }
-#ln -sf ../arch/$(ARCH)/bits $@
-
-#include/bits/alltypes.h.in: include/bits
-
-#include/bits/alltypes.h: include/bits/alltypes.h.in include/alltypes.h.in tools/mkalltypes.sed
-#sed -f tools/mkalltypes.sed include/bits/alltypes.h.in include/alltypes.h.in > $@
-
-#src/internal/version.h: $(wildcard VERSION .git)
-#printf '#define VERSION "%s"\n' "$$(sh tools/version.sh)" > $@
-
-#src/internal/version.lo: src/internal/version.h
-
-#src/ldso/dynlink.lo: arch/$(ARCH)/reloc.h
-
-#crt/crt1.o crt/Scrt1.o: $(wildcard arch/$(ARCH)/crt_arch.h)
-
-crt/Scrt1.o: CFLAGS += -fPIC
 
 OPTIMIZE_SRCS = $(wildcard $(OPTIMIZE_GLOBS:%=src/%))
 $(OPTIMIZE_SRCS:%.c=%.o) $(OPTIMIZE_SRCS:%.c=%.lo): CFLAGS += -O3
@@ -283,89 +181,74 @@ $(OPTIMIZE_SRCS:%.c=%.o) $(OPTIMIZE_SRCS:%.c=%.lo): CFLAGS += -O3
 MEMOPS_SRCS = src/string/memcpy.c src/string/memmove.c src/string/memcmp.c src/string/memset.c
 $(MEMOPS_SRCS:%.c=%.o) $(MEMOPS_SRCS:%.c=%.lo): CFLAGS += $(CFLAGS_MEMOPS)
 
-# This incantation ensures that changes to any subarch asm files will
-# force the corresponding object file to be rebuilt, even if the implicit
-# rule below goes indirectly through a .sub file.
 define mkasmdep
 $(dir $(patsubst %/,%,$(dir $(1))))$(notdir $(1:.s=.o)): $(1)
 endef
 $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 
-#%.o: %.c
-#ifeq ($(MODE), HOST_COMPILE)
-#else
-#ifeq ($(LIBGEN), TRUE)
-#	$(SCC) -c $(SCC_CFLAGS) -o $@ $< $(SCC_INC) $(LIBRARY_INC)
-#else
-#	$(SCC) -c $(SCC_CFLAGS) -o $@ $< $(SCC_INC) $(SYSTEM_INC)
-#endif
-#endif
-
-#%.s : %.c
-#	$(SCC) -S $(SCC_CFLAGS) -o $@ $< $(SCC_INC) $(SYSTEM_INC)
-
-#%.o : %.s
-#	$(SCC) $(SCC_ASFLAGS) -o $@ $<
-
-
-
-%.o: $(ARCH)$(ASMSUBARCH)/%.sub
-	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
-
-#%.o: $(ARCH)/%.s
-#$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
-
 %.o: %.c $(GENH) $(IMPH)
+	echo 1
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
-
 %.lo: $(ARCH)$(ASMSUBARCH)/%.sub
+	echo 2
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
 
-#%.lo: $(ARCH)/%.s
-#$(SCC) $(SCC_CFLAGS) -c -o $@ $< $(SYSTEM_INC)
-
 %.lo: %.c $(GENH) $(IMPH)
+	echo 3
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 lib/libc.so: $(LOBJS)
+	echo 4
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 
 lib/libc.a: $(OBJS)
+	echo 5
 	rm -f $@
 	$(AR) rc $@ $(OBJS)
 	$(RANLIB) $@
 
 $(EMPTY_LIBS):
+	echo 6
 	rm -f $@
 	$(AR) rc $@
 
 lib/%.o: crt/%.o
+	echo 7
 	cp $< $@
 
 $(DESTDIR)$(libdir)/%.so: lib/%.so
+	echo 8
 	$(INSTALL) -D -m 755 $< $@
 
 $(DESTDIR)$(libdir)/%: lib/%
+	echo 9
 	$(INSTALL) -D -m 644 $< $@
 
 $(DESTDIR)$(includedir)/bits/%: arch/$(ARCH)/bits/%
+	echo 10
 	$(INSTALL) -D -m 644 $< $@
 
 $(DESTDIR)$(includedir)/%: include/%
+	echo 11
 	$(INSTALL) -D -m 644 $< $@
 
 $(DESTDIR)$(LDSO_PATHNAME): $(DESTDIR)$(libdir)/libc.so
+	echo 12
 	$(INSTALL) -D -l $(libdir)/libc.so $@ || true
 
 install-libs: $(ALL_LIBS:lib/%=$(DESTDIR)$(libdir)/%) $(if $(SHARED_LIBS),$(DESTDIR)$(LDSO_PATHNAME),)
+	echo 13
 
 install-headers: $(ALL_INCLUDES:include/%=$(DESTDIR)$(includedir)/%)
+	echo 14
 
 musl-git-%.tar.gz: .git
+	echo 15
 	 git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ $(patsubst musl-git-%.tar.gz,%,$@)
 
 musl-%.tar.gz: .git
+	echo 16
 	 git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ v$(patsubst musl-%.tar.gz,%,$@)
 
 .PRECIOUS: $(CRT_LIBS:lib/%=crt/%)
