@@ -96,7 +96,7 @@ SYSTEM_INC:= \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/startup \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/system \
 					-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/etc/srp_vector.h \
-					-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/common/legacy.h
+					#-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/common/legacy.h
 
 SYSTEM_LIBS:= \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/common \
@@ -125,7 +125,7 @@ syslibdir = $(SRPSDK_INSTALL)/lib-musl
 SRCS = $(sort $(wildcard src/*/*.c arch/$(ARCH)/src/*.c))
 OBJS = $(SRCS:.c=.o)
 LOBJS = $(OBJS:.o=.lo)
-#GENH = include/bits/alltypes.h
+GENH = include/bits/alltypes.h
 #GENH_INT = src/internal/version.h
 IMPH = src/internal/stdio_impl.h src/internal/libc.h
 
@@ -174,6 +174,13 @@ clean:
 	rm -f $(GENH) $(GENH_INT)
 	rm -f include/bits
 
+include/bits:
+	ln -sf ../arch/i386/bits $@
+
+include/bits/alltypes.h.in: include/bits
+
+include/bits/alltypes.h: include/bits/alltypes.h.in include/alltypes.h.in tools/mkalltypes.sed
+	sed -f tools/mkalltypes.sed include/bits/alltypes.h.in include/alltypes.h.in > $@
 
 OPTIMIZE_SRCS = $(wildcard $(OPTIMIZE_GLOBS:%=src/%))
 $(OPTIMIZE_SRCS:%.c=%.o) $(OPTIMIZE_SRCS:%.c=%.lo): CFLAGS += -O3
