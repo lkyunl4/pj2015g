@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <fcntl.h>
 
@@ -52,3 +54,5 @@ fail:
 }
 
 LFS64(freopen);
+
+#endif

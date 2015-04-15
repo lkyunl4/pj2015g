@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <string.h>
 
@@ -35,3 +37,5 @@ size_t fwrite(const void *restrict src, size_t size, size_t nmemb, FILE *restric
 }
 
 weak_alias(fwrite, fwrite_unlocked);
+
+#endif

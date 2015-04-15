@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <uchar.h>
 #include <errno.h>
 #include <wchar.h>
@@ -33,3 +35,5 @@ ilseq:
 	errno = EILSEQ;
 	return -1;
 }
+
+#endif

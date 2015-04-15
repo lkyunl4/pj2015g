@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <string.h>
 #include <inttypes.h>
@@ -62,3 +64,5 @@ oom:
 }
 
 weak_alias(getdelim, __getdelim);
+
+#endif

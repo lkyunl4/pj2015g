@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
@@ -29,3 +31,5 @@ tail:
 	if (*s==c) return d+1;
 	return 0;
 }
+
+#endif

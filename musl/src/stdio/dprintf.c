@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -10,3 +12,5 @@ int dprintf(int fd, const char *restrict fmt, ...)
 	va_end(ap);
 	return ret;
 }
+
+#endif

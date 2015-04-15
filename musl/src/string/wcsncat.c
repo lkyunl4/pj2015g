@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 wchar_t *wcsncat(wchar_t *restrict d, const wchar_t *restrict s, size_t n)
@@ -8,3 +10,4 @@ wchar_t *wcsncat(wchar_t *restrict d, const wchar_t *restrict s, size_t n)
 	*d++ = 0;
 	return a;
 }
+#endif

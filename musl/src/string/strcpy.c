@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 
 char *__stpcpy(char *, const char *);
@@ -14,3 +16,5 @@ char *strcpy(char *restrict dest, const char *restrict src)
 	return dest;
 #endif
 }
+
+#endif

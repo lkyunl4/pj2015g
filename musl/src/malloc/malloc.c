@@ -6,8 +6,11 @@
 #include <errno.h>
 #include <sys/mman.h>
 #include "libc.h"
+
+#ifndef SCC_TEST
 #include "atomic.h"
 #include "pthread_impl.h"
+#endif
 
 #if defined(__GNUC__) && defined(__PIC__)
 #define inline inline __attribute__((always_inline))

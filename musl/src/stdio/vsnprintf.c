@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <limits.h>
 #include <string.h>
@@ -40,3 +42,5 @@ int vsnprintf(char *restrict s, size_t n, const char *restrict fmt, va_list ap)
 	if (n) f.wpos[-(f.wpos == f.wend)] = 0;
 	return r;
 }
+
+#endif

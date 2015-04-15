@@ -1,3 +1,4 @@
+#ifndef SCC_TEST
 #include <wordexp.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -191,3 +192,4 @@ void wordfree(wordexp_t *we)
 	we->we_wordv = 0;
 	we->we_wordc = 0;
 }
+#endif

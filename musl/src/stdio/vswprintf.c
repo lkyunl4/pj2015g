@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <limits.h>
 #include <string.h>
@@ -51,3 +53,5 @@ int vswprintf(wchar_t *restrict s, size_t n, const wchar_t *restrict fmt, va_lis
 	sw_write(&f, 0, 0);
 	return r>=n ? -1 : r;
 }
+
+#endif

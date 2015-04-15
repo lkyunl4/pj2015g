@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <limits.h>
 #include <sys/stat.h>
@@ -43,3 +45,5 @@ err:
 	__syscall(SYS_close, fd);
 	return 0;
 }
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
@@ -29,3 +31,4 @@ tail:
 
 weak_alias(__stpncpy, stpncpy);
 
+#endif

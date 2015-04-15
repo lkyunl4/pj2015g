@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include "shgetc.h"
 #include "floatscan.h"
@@ -38,3 +40,5 @@ weak_alias(strtold, strtold_l);
 weak_alias(strtof, __strtof_l);
 weak_alias(strtod, __strtod_l);
 weak_alias(strtold, __strtold_l);
+
+#endif

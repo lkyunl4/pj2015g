@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <string.h>
 
@@ -44,3 +46,5 @@ char *fgets(char *restrict s, int n, FILE *restrict f)
 }
 
 weak_alias(fgets, fgets_unlocked);
+
+#endif

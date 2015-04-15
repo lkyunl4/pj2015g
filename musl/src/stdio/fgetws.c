@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <wchar.h>
 
@@ -26,3 +28,5 @@ wchar_t *fgetws(wchar_t *restrict s, int n, FILE *restrict f)
 }
 
 weak_alias(fgetws, fgetws_unlocked);
+
+#endif

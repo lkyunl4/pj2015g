@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include "libc.h"
 #include <wchar.h>
@@ -37,3 +39,5 @@ int vswscanf(const wchar_t *restrict s, const wchar_t *restrict fmt, va_list ap)
 }
 
 weak_alias(vswscanf,__isoc99_vswscanf);
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <fcntl.h>
 #include <string.h>
@@ -31,3 +33,5 @@ FILE *fopen(const char *restrict filename, const char *restrict mode)
 }
 
 LFS64(fopen);
+
+#endif

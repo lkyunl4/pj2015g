@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include "intscan.h"
 #include "shgetc.h"
@@ -80,3 +82,5 @@ uintmax_t wcstoumax(const wchar_t *restrict s, wchar_t **restrict p, int base)
 {
 	return wcstoull(s, p, base);
 }
+
+#endif

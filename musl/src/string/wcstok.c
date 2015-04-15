@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 wchar_t *wcstok(wchar_t *restrict s, const wchar_t *restrict sep, wchar_t **restrict p)
@@ -10,3 +12,5 @@ wchar_t *wcstok(wchar_t *restrict s, const wchar_t *restrict sep, wchar_t **rest
 	else *p = 0;
 	return s;
 }
+
+#endif

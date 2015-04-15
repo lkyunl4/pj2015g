@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include "syscall.h"
@@ -37,3 +39,5 @@ int __setxid(int nr, int id, int eid, int sid)
 	}
 	return 0;
 }
+
+#endif

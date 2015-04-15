@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <errno.h>
 #include <ctype.h>
@@ -689,3 +691,5 @@ int vfprintf(FILE *restrict f, const char *restrict fmt, va_list ap)
 	va_end(ap2);
 	return ret;
 }
+
+#endif

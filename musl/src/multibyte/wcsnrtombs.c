@@ -1,3 +1,4 @@
+#ifndef SCC_TEST
 /* 
  * This code was written by Rich Felker in 2010; no copyright is claimed.
  * This code is in the public domain. Attribution is appreciated but
@@ -45,3 +46,5 @@ size_t wcsnrtombs(char *restrict dst, const wchar_t **restrict wcs, size_t wn, s
 	if (dst) *wcs = ws;
 	return cnt;
 }
+
+#endif

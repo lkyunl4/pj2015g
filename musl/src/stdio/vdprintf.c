@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 static size_t wrap_write(FILE *f, const unsigned char *buf, size_t len)
@@ -14,3 +16,5 @@ int vdprintf(int fd, const char *restrict fmt, va_list ap)
 	};
 	return vfprintf(&f, fmt, ap);
 }
+
+#endif

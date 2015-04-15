@@ -76,7 +76,7 @@ SYM_DEF= \
 					$(SYSTEM_SYM_DEF) \
 					$(USER_SYM_DEF)
 
-SCC_LDFLAGS= -T $(LINKER_SCRIPT) $(SYM_DEF) -gc-sections
+SCC_LDFLAGS= -T $(LINKER_SCRIPT) $(SYM_DEF) #-gc-sections
 
 LIBRARY_INC:= \
 					-I $(SRPSDK_SRC)/library/compiler-rt \
@@ -203,7 +203,8 @@ $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 lib/libc.so: $(LOBJS)
-	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
+	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(SCC_LDFLAGS) -o $@ $(LOBJS) $(LIBCC)
+#$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 
 lib/libc.a: $(OBJS)
 	rm -f $@

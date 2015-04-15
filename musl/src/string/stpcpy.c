@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
@@ -26,3 +28,5 @@ char *__stpcpy(char *restrict d, const char *restrict s)
 }
 
 weak_alias(__stpcpy, stpcpy);
+
+#endif

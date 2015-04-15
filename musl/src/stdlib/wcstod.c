@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "shgetc.h"
 #include "floatscan.h"
 #include "stdio_impl.h"
@@ -63,3 +65,5 @@ long double wcstold(const wchar_t *restrict s, wchar_t **restrict p)
 {
 	return wcstox(s, p, 2);
 }
+
+#endif

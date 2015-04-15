@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <wchar.h>
@@ -14,3 +16,5 @@ int wscanf(const wchar_t *restrict fmt, ...)
 }
 
 weak_alias(wscanf,__isoc99_wscanf);
+
+#endif

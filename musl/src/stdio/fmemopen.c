@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <errno.h>
 #include <string.h>
@@ -118,3 +120,5 @@ FILE *fmemopen(void *restrict buf, size_t size, const char *restrict mode)
 
 	return f;
 }
+
+#endif
