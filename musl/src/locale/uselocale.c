@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "locale_impl.h"
 #include "pthread_impl.h"
 #include "libc.h"
@@ -24,3 +26,5 @@ locale_t __uselocale(locale_t new)
 }
 
 weak_alias(__uselocale, uselocale);
+
+#endif

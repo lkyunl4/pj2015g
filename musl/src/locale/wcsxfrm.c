@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 #include <locale.h>
 #include "locale_impl.h"
@@ -22,3 +24,5 @@ size_t wcsxfrm(wchar_t *restrict dest, const wchar_t *restrict src, size_t n)
 }
 
 weak_alias(__wcsxfrm_l, wcsxfrm_l);
+
+#endif

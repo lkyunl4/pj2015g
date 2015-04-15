@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <libintl.h>
 #include <stdlib.h>
 #include <string.h>
@@ -253,3 +255,5 @@ char *dgettext(const char *domainname, const char *msgid)
 {
 	return dcngettext(domainname, msgid, 0, 1, LC_MESSAGES);
 }
+
+#endif

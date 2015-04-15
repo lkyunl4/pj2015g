@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <libintl.h>
 #include <string.h>
 #include <stdlib.h>
@@ -42,3 +44,5 @@ char *ngettext(const char *msgid1, const char *msgid2, unsigned long int n)
 {
 	return dngettext(0, msgid1, msgid2, n);
 }
+
+#endif

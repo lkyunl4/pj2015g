@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <iconv.h>
 #include <errno.h>
 #include <wchar.h>
@@ -452,3 +454,5 @@ end:
 	errno = err;
 	return x;
 }
+
+#endif

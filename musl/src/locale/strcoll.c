@@ -1,3 +1,4 @@
+#ifndef SCC_TEST
 #include <string.h>
 #include <locale.h>
 #include "locale_impl.h"
@@ -14,3 +15,4 @@ int strcoll(const char *l, const char *r)
 }
 
 weak_alias(__strcoll_l, strcoll_l);
+#endif

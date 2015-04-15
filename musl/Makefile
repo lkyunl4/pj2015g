@@ -85,7 +85,7 @@ LIBRARY_INC:= \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/etc \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/hal \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/system/$(TARGET_SYS)/src \
-					-include $(SRPSDK_SRC)/arch/$(TARGET)/etc/srp_vector.h
+					#-include $(SRPSDK_SRC)/arch/$(TARGET)/etc/srp_vector.h
 
 SYSTEM_INC:= \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/common \
@@ -95,7 +95,7 @@ SYSTEM_INC:= \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/startup \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/system \
-					-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/etc/srp_vector.h \
+					#-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/etc/srp_vector.h \
 					#-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/common/legacy.h
 
 SYSTEM_LIBS:= \

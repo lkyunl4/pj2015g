@@ -1,3 +1,4 @@
+#ifndef SCC_TEST
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -1651,3 +1652,5 @@ int dlclose(void *p)
 {
 	return invalid_dso_handle(p);
 }
+
+#endif

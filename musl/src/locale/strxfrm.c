@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <locale.h>
 #include "locale_impl.h"
@@ -17,3 +19,5 @@ size_t strxfrm(char *restrict dest, const char *restrict src, size_t n)
 }
 
 weak_alias(__strxfrm_l, strxfrm_l);
+
+#endif

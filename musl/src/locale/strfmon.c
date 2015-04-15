@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <ctype.h>
 #include <stdarg.h>
@@ -99,3 +101,5 @@ ssize_t strfmon(char *restrict s, size_t n, const char *restrict fmt, ...)
 
 	return ret;
 }
+
+#endif
