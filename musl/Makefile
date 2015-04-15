@@ -125,8 +125,8 @@ syslibdir = $(SRPSDK_INSTALL)/lib-musl
 SRCS = $(sort $(wildcard src/*/*.c arch/$(ARCH)/src/*.c))
 OBJS = $(SRCS:.c=.o)
 LOBJS = $(OBJS:.o=.lo)
-GENH = include/bits/alltypes.h
-GENH_INT = src/internal/version.h
+#GENH = include/bits/alltypes.h
+#GENH_INT = src/internal/version.h
 IMPH = src/internal/stdio_impl.h src/internal/libc.h
 
 #CFLAGS = -Os -pipe
@@ -187,69 +187,53 @@ endef
 $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 
 %.o: %.c $(GENH) $(IMPH)
-	echo 1
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 %.lo: $(ARCH)$(ASMSUBARCH)/%.sub
-	echo 2
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $(dir $<)$(shell cat $<) $(SYSTEM_INC)
 
 %.lo: %.c $(GENH) $(IMPH)
-	echo 3
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
 lib/libc.so: $(LOBJS)
-	echo 4
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 
 lib/libc.a: $(OBJS)
-	echo 5
 	rm -f $@
 	$(AR) rc $@ $(OBJS)
 	$(RANLIB) $@
 
 $(EMPTY_LIBS):
-	echo 6
 	rm -f $@
 	$(AR) rc $@
 
 lib/%.o: crt/%.o
-	echo 7
 	cp $< $@
 
 $(DESTDIR)$(libdir)/%.so: lib/%.so
-	echo 8
 	$(INSTALL) -D -m 755 $< $@
 
 $(DESTDIR)$(libdir)/%: lib/%
-	echo 9
 	$(INSTALL) -D -m 644 $< $@
 
 $(DESTDIR)$(includedir)/bits/%: arch/$(ARCH)/bits/%
-	echo 10
 	$(INSTALL) -D -m 644 $< $@
 
 $(DESTDIR)$(includedir)/%: include/%
-	echo 11
 	$(INSTALL) -D -m 644 $< $@
 
 $(DESTDIR)$(LDSO_PATHNAME): $(DESTDIR)$(libdir)/libc.so
-	echo 12
 	$(INSTALL) -D -l $(libdir)/libc.so $@ || true
 
 install-libs: $(ALL_LIBS:lib/%=$(DESTDIR)$(libdir)/%) $(if $(SHARED_LIBS),$(DESTDIR)$(LDSO_PATHNAME),)
-	echo 13
 
 install-headers: $(ALL_INCLUDES:include/%=$(DESTDIR)$(includedir)/%)
-	echo 14
 
 musl-git-%.tar.gz: .git
-	echo 15
-	 git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ $(patsubst musl-git-%.tar.gz,%,$@)
+	git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ $(patsubst musl-git-%.tar.gz,%,$@)
 
 musl-%.tar.gz: .git
-	echo 16
-	 git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ v$(patsubst musl-%.tar.gz,%,$@)
+	git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ v$(patsubst musl-%.tar.gz,%,$@)
 
 .PRECIOUS: $(CRT_LIBS:lib/%=crt/%)
 
