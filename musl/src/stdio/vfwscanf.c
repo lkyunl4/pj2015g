@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -329,4 +331,5 @@ match_fail:
 
 weak_alias(vfwscanf,__isoc99_vfwscanf);
 
+#endif
 #endif

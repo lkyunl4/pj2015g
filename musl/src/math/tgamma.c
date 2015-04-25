@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /*
 "A Precision Approximation of the Gamma Function" - Cornelius Lanczos (1964)
 "Lanczos Implementation of the Gamma Function" - Paul Godfrey (2001)
@@ -219,4 +221,5 @@ double __lgamma_r(double x, int *sign)
 }
 
 weak_alias(__lgamma_r, lgamma_r);
+#endif
 #endif

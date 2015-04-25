@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 #include <pthread.h>
 
@@ -13,3 +15,4 @@ struct spwd *fgetspent(FILE *f)
 	pthread_setcancelstate(cs, 0);
 	return res;
 }
+#endif

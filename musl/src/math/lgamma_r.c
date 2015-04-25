@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_lgamma_r.c */
 /*
  * ====================================================
@@ -282,3 +284,4 @@ double __lgamma_r(double x, int *signgamp)
 }
 
 weak_alias(__lgamma_r, lgamma_r);
+#endif

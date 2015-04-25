@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 
 void *bsearch(const void *key, const void *base, size_t nel, size_t width, int (*cmp)(const void *, const void *))
@@ -18,3 +20,4 @@ void *bsearch(const void *key, const void *base, size_t nel, size_t width, int (
 	}
 	return NULL;
 }
+#endif

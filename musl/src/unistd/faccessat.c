@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -61,3 +63,4 @@ int faccessat(int fd, const char *filename, int amode, int flag)
 
 	return __syscall_ret(ret);
 }
+#endif

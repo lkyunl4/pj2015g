@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <dirent.h>
 #include <fcntl.h>
@@ -19,3 +21,4 @@ DIR *opendir(const char *name)
 	dir->fd = fd;
 	return dir;
 }
+#endif

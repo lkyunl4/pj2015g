@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <stdint.h>
 #include <errno.h>
@@ -55,3 +57,4 @@ void *__memalign(size_t align, size_t len)
 }
 
 weak_alias(__memalign, memalign);
+#endif

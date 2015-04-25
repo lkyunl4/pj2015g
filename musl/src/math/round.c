@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if FLT_EVAL_METHOD==0 || FLT_EVAL_METHOD==1
@@ -33,3 +35,4 @@ double round(double x)
 		y = -y;
 	return y;
 }
+#endif

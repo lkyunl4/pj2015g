@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -18,3 +20,4 @@ int dup2(int old, int new)
 #endif
 	return __syscall_ret(r);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_tan.c */
 /*
  * ====================================================
@@ -108,3 +110,4 @@ double __tan(double x, double y, int odd)
 	SET_LOW_WORD(a0, 0);
 	return a0 + a*(1.0 + a0*w0 + a0*v);
 }
+#endif

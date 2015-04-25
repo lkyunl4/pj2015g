@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifndef INTSCAN_H
 #define INTSCAN_H
 
@@ -5,4 +7,5 @@
 
 unsigned long long __intscan(FILE *, unsigned, int, unsigned long long);
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <float.h>
 #include <math.h>
 #include <stdint.h>
@@ -26,3 +28,4 @@ double rint(double x)
 		return s ? -0.0 : 0;
 	return y;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_expm1f.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -109,3 +111,4 @@ float expm1f(float x)
 		y = (x-(e+u.f)+1)*twopk;
 	return y;
 }
+#endif

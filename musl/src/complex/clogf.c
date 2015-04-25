@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 // FIXME
@@ -10,3 +12,4 @@ float complex clogf(float complex z)
 	phi = cargf(z);
 	return CMPLXF(logf(r), phi);
 }
+#endif

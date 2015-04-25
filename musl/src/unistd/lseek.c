@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include "syscall.h"
 #include "libc.h"
@@ -13,3 +15,4 @@ off_t lseek(int fd, off_t offset, int whence)
 }
 
 LFS64(lseek);
+#endif

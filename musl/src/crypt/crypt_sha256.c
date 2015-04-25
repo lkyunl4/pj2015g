@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /*
  * public domain sha256 crypt implementation
  *
@@ -320,3 +322,4 @@ char *__crypt_sha256(const char *key, const char *setting, char *output)
 		return "*";
 	return p;
 }
+#endif

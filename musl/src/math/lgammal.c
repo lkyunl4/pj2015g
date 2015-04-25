@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/ld80/e_lgammal.c */
 /*
  * ====================================================
@@ -358,3 +360,4 @@ long double lgammal(long double x)
 }
 
 weak_alias(__lgammal_r, lgammal_r);
+#endif

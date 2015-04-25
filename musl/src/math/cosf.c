@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_cosf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -76,3 +78,4 @@ float cosf(float x)
 		return  __sindf(y);
 	}
 }
+#endif

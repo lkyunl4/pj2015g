@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* Modified by Rich Felker in for inclusion in musl libc, based on
  * Solar Designer's second size-optimized version sent to the musl
  * mailing list. */
@@ -796,3 +798,4 @@ char *__crypt_blowfish(const char *key, const char *setting, char *output)
 
 	return "*";
 }
+#endif

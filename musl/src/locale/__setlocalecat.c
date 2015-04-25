@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <locale.h>
 #include <string.h>
 #include "locale_impl.h"
@@ -112,4 +114,5 @@ int __setlocalecat(locale_t loc, int cat, const char *val)
 	return 0;
 }
 
+#endif
 #endif

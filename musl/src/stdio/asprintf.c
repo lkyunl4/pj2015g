@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdarg.h>
@@ -11,3 +13,4 @@ int asprintf(char **s, const char *fmt, ...)
 	va_end(ap);
 	return ret;
 }
+#endif

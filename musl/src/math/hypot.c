@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 #include <float.h>
@@ -65,3 +67,4 @@ double hypot(double x, double y)
 	sq(&hy, &ly, y);
 	return z*sqrt(ly+lx+hy+hx);
 }
+#endif

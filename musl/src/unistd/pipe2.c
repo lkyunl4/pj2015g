@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -20,3 +22,4 @@ int pipe2(int fd[2], int flag)
 	}
 	return 0;
 }
+#endif

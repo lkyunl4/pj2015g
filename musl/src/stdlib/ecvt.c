@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
@@ -18,3 +20,4 @@ char *ecvt(double x, int n, int *dp, int *sign)
 
 	return buf;
 }
+#endif

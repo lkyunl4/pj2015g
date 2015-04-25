@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 
 static unsigned temper(unsigned x)
@@ -13,3 +15,4 @@ int rand_r(unsigned *seed)
 {
 	return temper(*seed = *seed * 1103515245 + 12345)/2;
 }
+#endif

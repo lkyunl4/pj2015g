@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <ctype.h>
 
@@ -155,3 +157,4 @@ unsigned long __pleval(const char *s, unsigned long n)
 	s = evalexpr(&st, s, 100);
 	return *s == ';' ? st.r : -1;
 }
+#endif

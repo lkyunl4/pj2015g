@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <utmpx.h>
 #include <stddef.h>
 #include "libc.h"
@@ -41,3 +43,4 @@ weak_alias(getutxid, getutid);
 weak_alias(getutxline, getutline);
 weak_alias(pututxline, pututline);
 weak_alias(updwtmpx, updwtmp);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -9,3 +11,4 @@ int __fpclassifyf(float x)
 	if (e==0xff) return u.i<<9 ? FP_NAN : FP_INFINITE;
 	return FP_NORMAL;
 }
+#endif

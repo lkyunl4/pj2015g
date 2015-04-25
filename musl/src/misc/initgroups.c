@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <grp.h>
 #include <limits.h>
@@ -9,3 +11,4 @@ int initgroups(const char *user, gid_t gid)
 	if (getgrouplist(user, gid, groups, &count) < 0) return -1;
 	return setgroups(count, groups);
 }
+#endif

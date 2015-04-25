@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_atan.c */
 /*
  * ====================================================
@@ -114,3 +116,4 @@ double atan(double x)
 	z = atanhi[id] - (x*(s1+s2) - atanlo[id] - x);
 	return sign ? -z : z;
 }
+#endif

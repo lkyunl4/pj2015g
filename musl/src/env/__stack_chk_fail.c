@@ -1,4 +1,6 @@
 #ifndef SCC_TEST
+
+#ifndef SCC_TEST
 #include <string.h>
 #include <stdint.h>
 #include "pthread_impl.h"
@@ -18,4 +20,5 @@ void __stack_chk_fail(void)
 {
 	a_crash();
 }
+#endif
 #endif

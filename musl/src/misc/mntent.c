@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <string.h>
 #include <mntent.h>
@@ -66,3 +68,4 @@ char *hasmntopt(const struct mntent *mnt, const char *opt)
 {
 	return strstr(mnt->mnt_opts, opt);
 }
+#endif

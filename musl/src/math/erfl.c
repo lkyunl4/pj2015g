@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/ld80/e_erfl.c */
 /*
  * ====================================================
@@ -350,4 +352,5 @@ long double erfcl(long double x)
 {
 	return erfc(x);
 }
+#endif
 #endif

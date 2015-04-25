@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 #undef isdigit
@@ -13,3 +15,4 @@ int __isdigit_l(int c, locale_t l)
 }
 
 weak_alias(__isdigit_l, isdigit_l);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 
 int strncmp(const char *_l, const char *_r, size_t n)
@@ -7,3 +9,4 @@ int strncmp(const char *_l, const char *_r, size_t n)
 	for (; *l && *r && n && *l == *r ; l++, r++, n--);
 	return *l - *r;
 }
+#endif

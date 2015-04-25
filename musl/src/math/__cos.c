@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_cos.c */
 /*
  * ====================================================
@@ -69,3 +71,4 @@ double __cos(double x, double y)
 	w  = 1.0-hz;
 	return w + (((1.0-w)-hz) + (z*r-x*y));
 }
+#endif

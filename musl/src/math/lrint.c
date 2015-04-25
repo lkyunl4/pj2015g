@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <limits.h>
 #include <fenv.h>
 #include "libm.h"
@@ -43,4 +45,5 @@ long lrint(double x)
 {
 	return rint(x);
 }
+#endif
 #endif

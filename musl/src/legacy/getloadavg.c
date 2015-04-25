@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdlib.h>
 #include <sys/sysinfo.h>
@@ -12,3 +14,4 @@ int getloadavg(double *a, int n)
 		a[i] = 1.0/(1<<SI_LOAD_SHIFT) * si.loads[i];
 	return n;
 }
+#endif

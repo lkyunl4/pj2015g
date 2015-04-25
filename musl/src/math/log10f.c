@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_log10f.c */
 /*
  * ====================================================
@@ -75,3 +77,4 @@ float log10f(float x)
 	dk = k;
 	return dk*log10_2lo + (lo+hi)*ivln10lo + lo*ivln10hi + hi*ivln10hi + dk*log10_2hi;
 }
+#endif

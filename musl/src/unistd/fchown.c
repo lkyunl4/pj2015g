@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -20,3 +22,4 @@ int fchown(int fd, uid_t uid, gid_t gid)
 #endif
 
 }
+#endif

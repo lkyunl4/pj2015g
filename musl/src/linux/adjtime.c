@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <sys/time.h>
 #include <sys/timex.h>
@@ -25,3 +27,4 @@ int adjtime(const struct timeval *in, struct timeval *out)
 	}
 	return 0;
 }
+#endif

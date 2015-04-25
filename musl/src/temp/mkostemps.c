@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _BSD_SOURCE
 #include <string.h>
 #include <fcntl.h>
@@ -29,3 +31,4 @@ int __mkostemps(char *template, int len, int flags)
 
 weak_alias(__mkostemps, mkostemps);
 weak_alias(__mkostemps, mkostemps64);
+#endif

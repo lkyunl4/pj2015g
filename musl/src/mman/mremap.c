@@ -1,3 +1,7 @@
+#ifndef SCC_TEST
+
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <sys/mman.h>
 #include <stdarg.h>
@@ -17,3 +21,5 @@ void *__mremap(void *old_addr, size_t old_len, size_t new_len, int flags, ...)
 }
 
 weak_alias(__mremap, mremap);
+#endif
+#endif

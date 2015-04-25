@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_cbrt.c */
 /*
  * ====================================================
@@ -101,3 +103,4 @@ double cbrt(double x)
 	t = t+t*r;       /* error <= 0.5 + 0.5/3 + epsilon */
 	return t;
 }
+#endif

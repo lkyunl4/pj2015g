@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/msg.h>
 #include "syscall.h"
 #include "ipc.h"
@@ -10,3 +12,4 @@ int msgget(key_t k, int flag)
 	return syscall(SYS_ipc, IPCOP_msgget, k, flag);
 #endif
 }
+#endif

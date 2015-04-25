@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float tanhf(float x)
@@ -37,3 +39,4 @@ float tanhf(float x)
 	}
 	return sign ? -t : t;
 }
+#endif

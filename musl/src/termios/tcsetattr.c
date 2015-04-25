@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <errno.h>
@@ -10,3 +12,4 @@ int tcsetattr(int fd, int act, const struct termios *tio)
 	}
 	return ioctl(fd, TCSETS+act, tio);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <termios.h>
 #include <sys/ioctl.h>
 
@@ -8,3 +10,4 @@ pid_t tcgetsid(int fd)
 		return -1;
 	return sid;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_powf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -257,3 +259,4 @@ float powf(float x, float y)
 		SET_FLOAT_WORD(z, j);
 	return sn*z;
 }
+#endif

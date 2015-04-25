@@ -1,4 +1,6 @@
 #ifndef SCC_TEST
+
+#ifndef SCC_TEST
 #include "pthread_impl.h"
 
 int *__errno_location(void)
@@ -7,4 +9,5 @@ int *__errno_location(void)
 	if (libc.has_thread_pointer) return &__pthread_self()->errno_val;
 	return &e;
 }
+#endif
 #endif

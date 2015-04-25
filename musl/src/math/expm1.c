@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_expm1.c */
 /*
  * ====================================================
@@ -199,3 +201,4 @@ double expm1(double x)
 		y = (x-(e+u.f)+1)*twopk;
 	return y;
 }
+#endif

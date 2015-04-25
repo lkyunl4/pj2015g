@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <wchar.h>
 #include <limits.h>
@@ -32,3 +34,4 @@ wint_t ungetwc(wint_t c, FILE *f)
 	FUNLOCK(f);
 	return c;
 }
+#endif

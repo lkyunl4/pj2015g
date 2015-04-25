@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <utmp.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
@@ -12,3 +14,4 @@ int login_tty(int fd)
 	if (fd>2) close(fd);
 	return 0;
 }
+#endif

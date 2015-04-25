@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <wchar.h>
 #include "libc.h"
@@ -9,3 +11,4 @@ wchar_t *wcsdup(const wchar_t *s)
 	if (!d) return NULL;
 	return wmemcpy(d, s, l+1);
 }
+#endif

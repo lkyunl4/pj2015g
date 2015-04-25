@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 #undef isprint
@@ -13,3 +15,4 @@ int __isprint_l(int c, locale_t l)
 }
 
 weak_alias(__isprint_l, isprint_l);
+#endif

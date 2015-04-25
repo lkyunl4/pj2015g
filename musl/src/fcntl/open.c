@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fcntl.h>
 #include <stdarg.h>
 #include "syscall.h"
@@ -22,3 +24,4 @@ int open(const char *filename, int flags, ...)
 }
 
 LFS64(open);
+#endif

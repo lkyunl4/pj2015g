@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <errno.h>
 
@@ -13,3 +15,4 @@ char *ptsname(int fd)
 	}
 	return buf;
 }
+#endif

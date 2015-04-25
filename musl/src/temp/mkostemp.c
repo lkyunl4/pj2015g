@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _BSD_SOURCE
 #include <stdlib.h>
 #include "libc.h"
@@ -10,3 +12,4 @@ int mkostemp(char *template, int flags)
 }
 
 LFS64(mkostemp);
+#endif

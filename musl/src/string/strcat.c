@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <string.h>
 
 char *strcat(char *restrict dest, const char *restrict src)
@@ -8,4 +10,5 @@ char *strcat(char *restrict dest, const char *restrict src)
 	return dest;
 }
 
+#endif
 #endif

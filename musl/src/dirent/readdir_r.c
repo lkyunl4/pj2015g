@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <dirent.h>
 #include <errno.h>
 #include <string.h>
@@ -30,4 +32,5 @@ int readdir_r(DIR *restrict dir, struct dirent *restrict buf, struct dirent **re
 
 LFS64_2(readdir_r, readdir64_r);
 
+#endif
 #endif

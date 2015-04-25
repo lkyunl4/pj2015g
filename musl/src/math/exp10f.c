@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <math.h>
 #include <stdint.h>
@@ -21,3 +23,4 @@ float exp10f(float x)
 }
 
 weak_alias(exp10f, pow10f);
+#endif

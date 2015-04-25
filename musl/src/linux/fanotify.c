@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "syscall.h"
 #include <sys/fanotify.h>
 
@@ -12,3 +14,4 @@ int fanotify_mark(int fanotify_fd, unsigned flags, unsigned long long mask,
 	return syscall(SYS_fanotify_mark, fanotify_fd, flags, __SYSCALL_LL_E(mask), dfd, pathname);
 }
 
+#endif

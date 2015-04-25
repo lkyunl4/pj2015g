@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <poll.h>
 #include <signal.h>
@@ -8,3 +10,4 @@ int ppoll(struct pollfd *fds, nfds_t n, const struct timespec *to, const sigset_
 	return syscall_cp(SYS_ppoll, fds, n,
 		to ? (struct timespec []){*to} : 0, mask, _NSIG/8);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 void __procfdname(char *buf, unsigned fd)
 {
 	unsigned i, j;
@@ -11,3 +13,4 @@ void __procfdname(char *buf, unsigned fd)
 	buf[i] = 0;
 	for (; fd; fd/=10) buf[--i] = '0' + fd%10;
 }
+#endif

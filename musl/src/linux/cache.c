@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "syscall.h"
 #include "libc.h"
 
@@ -15,4 +17,5 @@ int __cachectl(void *addr, int len, int op)
 	return syscall(SYS_cachectl, addr, len, op);
 }
 weak_alias(__cachectl, cachectl);
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_erf.c */
 /*
  * ====================================================
@@ -271,3 +273,4 @@ double erfc(double x)
 	}
 	return sign ? 2 - 0x1p-1022 : 0x1p-1022*0x1p-1022;
 }
+#endif

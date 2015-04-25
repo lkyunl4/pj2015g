@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 static int __fflush_unlocked(FILE *f)
@@ -47,3 +49,4 @@ int fflush(FILE *f)
 }
 
 weak_alias(__fflush_unlocked, fflush_unlocked);
+#endif

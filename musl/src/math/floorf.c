@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float floorf(float x)
@@ -25,3 +27,4 @@ float floorf(float x)
 	}
 	return u.f;
 }
+#endif

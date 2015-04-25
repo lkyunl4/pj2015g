@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <string.h>
 
@@ -7,3 +9,4 @@ char *strcasestr(const char *h, const char *n)
 	for (; *h; h++) if (!strncasecmp(h, n, l)) return (char *)h;
 	return 0;
 }
+#endif

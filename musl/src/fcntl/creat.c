@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fcntl.h>
 #include "libc.h"
 
@@ -7,3 +9,4 @@ int creat(const char *filename, mode_t mode)
 }
 
 LFS64(creat);
+#endif

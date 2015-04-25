@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <limits.h>
 #include <errno.h>
@@ -213,3 +215,4 @@ long sysconf(int name)
 	}
 	return values[name];
 }
+#endif

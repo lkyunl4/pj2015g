@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_sinf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -34,3 +36,4 @@ float __sindf(double x)
 	s = z*x;
 	return (x + s*(S1 + z*S2)) + s*w*r;
 }
+#endif

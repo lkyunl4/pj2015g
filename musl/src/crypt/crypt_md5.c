@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /*
  * md5 crypt implementation
  *
@@ -283,3 +285,4 @@ char *__crypt_md5(const char *key, const char *setting, char *output)
 		return "*";
 	return p;
 }
+#endif

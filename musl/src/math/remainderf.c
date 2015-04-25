@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include "libc.h"
 
@@ -8,3 +10,4 @@ float remainderf(float x, float y)
 }
 
 weak_alias(remainderf, dremf);
+#endif

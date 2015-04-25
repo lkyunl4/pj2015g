@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 #undef isalpha
@@ -13,3 +15,4 @@ int __isalpha_l(int c, locale_t l)
 }
 
 weak_alias(__isalpha_l, isalpha_l);
+#endif

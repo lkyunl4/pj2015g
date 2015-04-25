@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <stdint.h>
 #include "libc.h"
@@ -32,3 +34,4 @@ _Noreturn void exit(int code)
 
 	_Exit(code);
 }
+#endif

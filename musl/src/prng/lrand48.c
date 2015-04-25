@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <inttypes.h>
 
@@ -13,3 +15,4 @@ long lrand48(void)
 {
 	return nrand48(__seed48);
 }
+#endif

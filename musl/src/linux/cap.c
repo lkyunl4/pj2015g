@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "syscall.h"
 
 int capset(void *a, void *b)
@@ -9,3 +11,4 @@ int capget(void *a, void *b)
 {
 	return syscall(SYS_capget, a, b);
 }
+#endif

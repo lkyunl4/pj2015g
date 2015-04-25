@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_log10.c */
 /*
  * ====================================================
@@ -99,3 +101,4 @@ double log10(double x)
 
 	return val_lo + val_hi;
 }
+#endif

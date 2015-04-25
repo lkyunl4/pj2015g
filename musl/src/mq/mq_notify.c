@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <mqueue.h>
 #include <pthread.h>
 #include <errno.h>
@@ -71,3 +73,4 @@ int mq_notify(mqd_t mqd, const struct sigevent *sev)
 
 	return 0;
 }
+#endif

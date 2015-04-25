@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_rem_pio2.c */
 /*
  * ====================================================
@@ -175,3 +177,4 @@ medium:
 	y[1] = ty[1];
 	return n;
 }
+#endif

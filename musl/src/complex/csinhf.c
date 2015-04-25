@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_csinhf.c */
 /*-
  * Copyright (c) 2005 Bruce D. Evans and Steven G. Kargl
@@ -88,3 +90,4 @@ float complex csinhf(float complex z)
 
 	return CMPLXF((x * x) * (y - y), (x + x) * (y - y));
 }
+#endif

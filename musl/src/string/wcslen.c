@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 size_t wcslen(const wchar_t *s)
@@ -6,3 +8,4 @@ size_t wcslen(const wchar_t *s)
 	for (a=s; *s; s++);
 	return s-a;
 }
+#endif

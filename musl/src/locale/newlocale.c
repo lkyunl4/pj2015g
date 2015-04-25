@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 #include "locale_impl.h"
@@ -24,3 +26,4 @@ locale_t __newlocale(int mask, const char *name, locale_t loc)
 }
 
 weak_alias(__newlocale, newlocale);
+#endif

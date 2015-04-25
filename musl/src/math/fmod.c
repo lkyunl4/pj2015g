@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -66,3 +68,4 @@ double fmod(double x, double y)
 	ux.i = uxi;
 	return ux.f;
 }
+#endif

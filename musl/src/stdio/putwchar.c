@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <wchar.h>
 
@@ -7,3 +9,4 @@ wint_t putwchar(wchar_t c)
 }
 
 weak_alias(putwchar, putwchar_unlocked);
+#endif

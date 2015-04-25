@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include "stdio_impl.h"
 #include <string.h>
@@ -19,3 +21,4 @@ char *fgetln(FILE *f, size_t *plen)
 	FUNLOCK(f);
 	return ret;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ftw.h>
 #include "libc.h"
 
@@ -10,3 +12,4 @@ int ftw(const char *path, int (*fn)(const char *, const struct stat *, int), int
 }
 
 LFS64(ftw);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include "stdio_impl.h"
 #include <stdio_ext.h>
@@ -55,3 +57,4 @@ int __fpurge(FILE *f)
 }
 
 weak_alias(__fpurge, fpurge);
+#endif

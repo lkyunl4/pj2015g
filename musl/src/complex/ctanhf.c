@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_ctanhf.c */
 /*-
  * Copyright (c) 2011 David Schultz
@@ -64,3 +66,4 @@ float complex ctanhf(float complex z)
 	denom = 1 + beta * s * s;
 	return CMPLXF((beta * rho * s) / denom, t / denom);
 }
+#endif

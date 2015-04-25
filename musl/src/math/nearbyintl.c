@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <float.h>
 
@@ -23,4 +25,5 @@ long double nearbyintl(long double x)
 #endif
 	return x;
 }
+#endif
 #endif

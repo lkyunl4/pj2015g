@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fcntl.h>
 #include <stdarg.h>
 #include "syscall.h"
@@ -18,3 +20,4 @@ int openat(int fd, const char *filename, int flags, ...)
 }
 
 LFS64(openat);
+#endif

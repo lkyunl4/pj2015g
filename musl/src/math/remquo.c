@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -80,3 +82,4 @@ end:
 	*quo = sx^sy ? -(int)q : (int)q;
 	return sx ? -x : x;
 }
+#endif

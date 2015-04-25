@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_acos.c */
 /*
  * ====================================================
@@ -99,3 +101,4 @@ double acos(double x)
 	w = R(z)*s+c;
 	return 2*(df+w);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 #include "libc.h"
@@ -12,3 +14,4 @@ char *getenv(const char *name)
 	if (__environ[i]) return __environ[i] + l+1;
 	return NULL;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <sys/resource.h>
 #include "syscall.h"
@@ -10,3 +12,4 @@ int nice(int inc)
 	return setpriority(PRIO_PROCESS, 0, getpriority(PRIO_PROCESS, 0)+inc);
 #endif
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/xattr.h>
 #include "syscall.h"
 
@@ -60,3 +62,4 @@ int fremovexattr(int fd, const char *name)
 {
 	return syscall(SYS_fremovexattr, fd, name);
 }
+#endif

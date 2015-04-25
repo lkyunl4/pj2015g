@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_tanf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -62,3 +64,4 @@ float tanf(float x)
 	n = __rem_pio2f(x, &y);
 	return __tandf(y, n&1);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <inttypes.h>
 
@@ -17,3 +19,4 @@ double drand48(void)
 {
 	return erand48(__seed48);
 }
+#endif

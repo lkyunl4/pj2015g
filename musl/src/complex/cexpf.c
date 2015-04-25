@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_cexpf.c */
 /*-
  * Copyright (c) 2011 David Schultz <das@FreeBSD.ORG>
@@ -81,3 +83,4 @@ float complex cexpf(float complex z)
 		return CMPLXF(exp_x * cosf(y), exp_x * sinf(y));
 	}
 }
+#endif

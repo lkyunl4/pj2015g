@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/resource.h>
 #include "syscall.h"
 
@@ -7,3 +9,4 @@ int getpriority(int which, id_t who)
 	if (ret < 0) return ret;
 	return 20-ret;
 }
+#endif

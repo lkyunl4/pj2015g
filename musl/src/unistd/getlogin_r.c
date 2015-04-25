@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
@@ -10,3 +12,4 @@ int getlogin_r(char *name, size_t size)
 	strcpy(name, logname);
 	return 0;
 }
+#endif

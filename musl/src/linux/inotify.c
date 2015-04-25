@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/inotify.h>
 #include <errno.h>
 #include "syscall.h"
@@ -24,3 +26,4 @@ int inotify_rm_watch(int fd, int wd)
 {
 	return syscall(SYS_inotify_rm_watch, fd, wd);
 }
+#endif

@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <wchar.h>
 #include <locale.h>
 #include "locale_impl.h"
@@ -18,4 +20,5 @@ int wcscoll(const wchar_t *l, const wchar_t *r)
 
 weak_alias(__wcscoll_l, wcscoll_l);
 
+#endif
 #endif

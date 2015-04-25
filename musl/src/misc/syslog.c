@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdarg.h>
 #include <sys/socket.h>
 #include <stdio.h>
@@ -138,3 +140,4 @@ void syslog(int priority, const char *message, ...)
 }
 
 weak_alias(__vsyslog, vsyslog);
+#endif

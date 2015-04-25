@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float truncf(float x)
@@ -17,3 +19,4 @@ float truncf(float x)
 	u.i &= ~m;
 	return u.f;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/ld80/e_powl.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -519,4 +521,5 @@ long double powl(long double x, long double y)
 {
 	return pow(x, y);
 }
+#endif
 #endif

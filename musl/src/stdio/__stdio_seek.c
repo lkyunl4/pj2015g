@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 off_t __stdio_seek(FILE *f, off_t off, int whence)
@@ -11,3 +13,4 @@ off_t __stdio_seek(FILE *f, off_t off, int whence)
 #endif
 	return ret;
 }
+#endif

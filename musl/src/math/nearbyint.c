@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fenv.h>
 #include <math.h>
 
@@ -18,3 +20,4 @@ double nearbyint(double x)
 #endif
 	return x;
 }
+#endif

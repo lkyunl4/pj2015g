@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "syscall.h"
 
 int init_module(void *a, unsigned long b, const char *c)
@@ -9,3 +11,4 @@ int delete_module(const char *a, unsigned b)
 {
 	return syscall(SYS_delete_module, a, b);
 }
+#endif

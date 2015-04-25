@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <limits.h>
 #include <math.h>
 
@@ -9,3 +11,4 @@ float scalblnf(float x, long n)
 		n = INT_MIN;
 	return scalbnf(x, n);
 }
+#endif

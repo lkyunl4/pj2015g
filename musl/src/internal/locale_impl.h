@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <locale.h>
 #include <stdlib.h>
 #include "libc.h"
@@ -28,3 +30,4 @@ const char *__lctrans_cur(const char *);
 
 #undef MB_CUR_MAX
 #define MB_CUR_MAX (CURRENT_UTF8 ? 4 : 1)
+#endif

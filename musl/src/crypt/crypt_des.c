@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /*
  * This version has been further modified by Rich Felker, primary author
  * and maintainer of musl libc, to remove table generation code and
@@ -1016,3 +1018,4 @@ char *__crypt_des(const char *key, const char *setting, char *output)
 
 	return (setting[0]=='*') ? "x" : "*";
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_logf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -67,3 +69,4 @@ float logf(float x)
 	dk = k;
 	return s*(hfsq+R) + dk*ln2_lo - hfsq + f + dk*ln2_hi;
 }
+#endif

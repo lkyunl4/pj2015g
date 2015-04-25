@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float coshf(float x)
@@ -31,3 +33,4 @@ float coshf(float x)
 	t = __expo2f(x);
 	return t;
 }
+#endif

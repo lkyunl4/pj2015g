@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 void rewind(FILE *f)
@@ -7,3 +9,4 @@ void rewind(FILE *f)
 	f->flags &= ~F_ERR;
 	FUNLOCK(f);
 }
+#endif

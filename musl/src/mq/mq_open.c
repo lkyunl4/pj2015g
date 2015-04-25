@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <mqueue.h>
 #include <fcntl.h>
 #include <stdarg.h>
@@ -17,3 +19,4 @@ mqd_t mq_open(const char *name, int flags, ...)
 	}
 	return syscall(SYS_mq_open, name, flags, mode, attr);
 }
+#endif

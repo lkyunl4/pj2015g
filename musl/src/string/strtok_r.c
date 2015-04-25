@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <string.h>
 
 char *strtok_r(char *restrict s, const char *restrict sep, char **restrict p)
@@ -13,4 +15,5 @@ char *strtok_r(char *restrict s, const char *restrict sep, char **restrict p)
 	return s;
 }
 
+#endif
 #endif

@@ -1,3 +1,7 @@
+#ifndef SCC_TEST
+
+#ifndef SCC_TEST
+
 #include <sys/mman.h>
 #include "syscall.h"
 #include "libc.h"
@@ -17,3 +21,5 @@ int __munmap(void *start, size_t len)
 }
 
 weak_alias(__munmap, munmap);
+#endif
+#endif

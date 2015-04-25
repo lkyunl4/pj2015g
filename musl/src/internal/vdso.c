@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <elf.h>
 #include <limits.h>
 #include <stdint.h>
@@ -88,4 +90,5 @@ void *__vdsosym(const char *vername, const char *name)
 	return 0;
 }
 
+#endif
 #endif

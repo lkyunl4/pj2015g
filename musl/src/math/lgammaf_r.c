@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_lgammaf_r.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -217,3 +219,4 @@ float __lgammaf_r(float x, int *signgamp)
 }
 
 weak_alias(__lgammaf_r, lgammaf_r);
+#endif

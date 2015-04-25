@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _BSD_SOURCE
 #include <string.h>
 #include <stdint.h>
@@ -30,3 +32,4 @@ size_t strlcpy(char *d, const char *s, size_t n)
 finish:
 	return d-d0 + strlen(s);
 }
+#endif

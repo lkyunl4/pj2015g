@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 size_t wcsnlen(const wchar_t *s, size_t n)
@@ -6,3 +8,4 @@ size_t wcsnlen(const wchar_t *s, size_t n)
 	if (z) n = z-s;
 	return n;
 }
+#endif

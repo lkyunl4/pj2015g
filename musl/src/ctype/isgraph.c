@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 #undef isgraph
@@ -13,3 +15,4 @@ int __isgraph_l(int c, locale_t l)
 }
 
 weak_alias(__isgraph_l, isgraph_l);
+#endif

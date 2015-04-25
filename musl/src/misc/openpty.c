@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -38,3 +40,4 @@ fail:
 	pthread_setcancelstate(cs, 0);
 	return -1;
 }
+#endif

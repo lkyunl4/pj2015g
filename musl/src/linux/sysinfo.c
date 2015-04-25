@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/sysinfo.h>
 #include "syscall.h"
 #include "libc.h"
@@ -8,3 +10,4 @@ int __lsysinfo(struct sysinfo *info)
 }
 
 weak_alias(__lsysinfo, sysinfo);
+#endif

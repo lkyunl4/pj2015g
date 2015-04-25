@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <stdio.h>
 #include <errno.h>
@@ -15,3 +17,4 @@ size_t confstr(int name, char *buf, size_t len)
 	// this completely useless function and its truncation semantics
 	return snprintf(buf, len, "%s", s) + 1;
 }
+#endif

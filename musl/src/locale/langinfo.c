@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <locale.h>
 #include <langinfo.h>
 #include "locale_impl.h"
@@ -71,4 +73,5 @@ char *__nl_langinfo(nl_item item)
 weak_alias(__nl_langinfo, nl_langinfo);
 weak_alias(__nl_langinfo_l, nl_langinfo_l);
 
+#endif
 #endif

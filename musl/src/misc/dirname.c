@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <libgen.h>
 
@@ -12,3 +14,4 @@ char *dirname(char *s)
 	s[i+1] = 0;
 	return s;
 }
+#endif

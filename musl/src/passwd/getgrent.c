@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 
 static FILE *f;
@@ -37,3 +39,4 @@ struct group *getgrnam(const char *name)
 	__getgr_a(name, 0, &gr, &line, &size, &mem, &nmem, &res);
 	return res;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include "libc.h"
 
@@ -10,3 +12,4 @@ void *__memrchr(const void *m, int c, size_t n)
 }
 
 weak_alias(__memrchr, memrchr);
+#endif

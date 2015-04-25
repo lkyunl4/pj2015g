@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <unistd.h>
 #include <time.h>
@@ -10,3 +12,4 @@ int usleep(unsigned useconds)
 	};
 	return nanosleep(&tv, &tv);
 }
+#endif

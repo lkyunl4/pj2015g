@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_jn.c */
 /*
  * ====================================================
@@ -278,3 +280,4 @@ double yn(int n, double x)
 	}
 	return sign ? -b : b;
 }
+#endif

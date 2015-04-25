@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_ccosh.c */
 /*-
  * Copyright (c) 2005 Bruce D. Evans and Steven G. Kargl
@@ -138,3 +140,4 @@ double complex ccosh(double complex z)
 	 */
 	return CMPLX((x * x) * (y - y), (x + x) * (y - y));
 }
+#endif

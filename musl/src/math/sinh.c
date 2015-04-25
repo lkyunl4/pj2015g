@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 /* sinh(x) = (exp(x) - 1/exp(x))/2
@@ -37,3 +39,4 @@ double sinh(double x)
 	t = 2*h*__expo2(absx);
 	return t;
 }
+#endif

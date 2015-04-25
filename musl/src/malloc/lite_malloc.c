@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <stdint.h>
 #include <limits.h>
@@ -44,3 +46,4 @@ toobig:
 }
 
 weak_alias(__simple_malloc, malloc);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <limits.h>
 #include "libm.h"
 
@@ -24,3 +26,4 @@ int ilogb(double x)
 	}
 	return e - 0x3ff;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifndef FLOATSCAN_H
 #define FLOATSCAN_H
 
@@ -5,4 +7,5 @@
 
 long double __floatscan(FILE *, int, int);
 
+#endif
 #endif

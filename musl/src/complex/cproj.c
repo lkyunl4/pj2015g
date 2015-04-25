@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 double complex cproj(double complex z)
@@ -6,3 +8,4 @@ double complex cproj(double complex z)
 		return CMPLX(INFINITY, copysign(0.0, creal(z)));
 	return z;
 }
+#endif

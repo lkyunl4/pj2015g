@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <stdarg.h>
 #include "libc.h"
@@ -16,4 +18,5 @@ int sscanf(const char *restrict s, const char *restrict fmt, ...)
 
 weak_alias(sscanf,__isoc99_sscanf);
 
+#endif
 #endif

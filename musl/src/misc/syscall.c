@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "syscall.h"
 #include <stdarg.h>
 
@@ -17,3 +19,4 @@ long syscall(long n, ...)
 	va_end(ap);
 	return __syscall_ret(__syscall(n,a,b,c,d,e,f));
 }
+#endif

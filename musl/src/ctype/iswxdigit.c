@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -12,3 +14,4 @@ int __iswxdigit_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswxdigit_l, iswxdigit_l);
+#endif

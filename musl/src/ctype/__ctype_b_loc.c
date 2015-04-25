@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <endian.h>
 
 #if __BYTE_ORDER == __BIG_ENDIAN
@@ -39,3 +41,4 @@ const unsigned short **__ctype_b_loc(void)
 {
 	return (void *)&ptable;
 }
+#endif

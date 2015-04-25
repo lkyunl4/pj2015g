@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_tan.c */
 /*
  * ====================================================
@@ -68,3 +70,4 @@ double tan(double x)
 	n = __rem_pio2(x, y);
 	return __tan(y[0], y[1], n&1);
 }
+#endif

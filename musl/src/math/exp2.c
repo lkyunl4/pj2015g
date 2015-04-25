@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_exp2.c */
 /*-
  * Copyright (c) 2005 David Schultz <das@FreeBSD.ORG>
@@ -373,3 +375,4 @@ double exp2(double x)
 
 	return scalbn(r, k.i);
 }
+#endif

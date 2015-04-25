@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_sin.c */
 /*
  * ====================================================
@@ -76,3 +78,4 @@ double sin(double x)
 		return -__cos(y[0], y[1]);
 	}
 }
+#endif

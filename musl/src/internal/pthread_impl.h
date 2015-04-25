@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #ifndef _PTHREAD_IMPL_H
 #define _PTHREAD_IMPL_H
 
@@ -136,4 +138,5 @@ void __restore_sigs(void *);
 
 #endif
 
+#endif
 #endif

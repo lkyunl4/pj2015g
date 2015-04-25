@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <grp.h>
 #include <stdio.h>
@@ -15,3 +17,4 @@ done:
 	funlockfile(f);
 	return r<0 ? -1 : 0;
 }
+#endif

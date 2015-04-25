@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -12,3 +14,4 @@ int __iswupper_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswupper_l, iswupper_l);
+#endif

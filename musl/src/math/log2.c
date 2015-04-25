@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_log2.c */
 /*
  * ====================================================
@@ -120,3 +122,4 @@ double log2(double x)
 
 	return val_lo + val_hi;
 }
+#endif

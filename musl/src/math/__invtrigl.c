@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <float.h>
 #include "__invtrigl.h"
 
@@ -60,4 +62,5 @@ long double __invtrigl_R(long double z)
 	q = 1.0+z*(qS1+z*(qS2+z*(qS3+z*(qS4+z*(qS5+z*(pS6+z*(pS7+z*(pS8+z*pS9))))))));
 	return p/q;
 }
+#endif
 #endif

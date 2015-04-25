@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if FLT_EVAL_METHOD==0 || FLT_EVAL_METHOD==1
@@ -29,3 +31,4 @@ double floor(double x)
 		return x + y - 1;
 	return x + y;
 }
+#endif

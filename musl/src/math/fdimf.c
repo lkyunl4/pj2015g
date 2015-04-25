@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 
 float fdimf(float x, float y)
@@ -8,3 +10,4 @@ float fdimf(float x, float y)
 		return y;
 	return x > y ? x - y : 0;
 }
+#endif

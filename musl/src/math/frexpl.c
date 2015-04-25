@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -26,4 +28,5 @@ long double frexpl(long double x, int *e)
 	u.i.se |= 0x3ffe;
 	return u.f;
 }
+#endif
 #endif

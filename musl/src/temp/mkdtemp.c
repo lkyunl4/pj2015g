@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -23,3 +25,4 @@ char *mkdtemp(char *template)
 	memcpy(template+l-6, "XXXXXX", 6);
 	return 0;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifndef _INTERNAL_FUTEX_H
 #define _INTERNAL_FUTEX_H
 
@@ -18,4 +20,5 @@
 
 int __futex(volatile int *, int, int, void *);
 
+#endif
 #endif

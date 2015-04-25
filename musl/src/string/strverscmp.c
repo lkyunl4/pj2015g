@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <ctype.h>
 #include <string.h>
@@ -39,3 +41,4 @@ int strverscmp(const char *l, const char *r)
 		return (*l -  *r);
 	}
 }
+#endif

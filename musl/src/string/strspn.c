@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 
 #define BITOP(a,b,op) \
@@ -18,3 +20,4 @@ size_t strspn(const char *s, const char *c)
 	for (; *s && BITOP(byteset, *(unsigned char *)s, &); s++);
 	return s-a;
 }
+#endif

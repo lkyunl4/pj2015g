@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <uchar.h>
 #include <errno.h>
 #include <wchar.h>
@@ -36,4 +38,5 @@ ilseq:
 	return -1;
 }
 
+#endif
 #endif

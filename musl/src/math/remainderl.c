@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <float.h>
 
@@ -12,4 +14,5 @@ long double remainderl(long double x, long double y)
 	int q;
 	return remquol(x, y, &q);
 }
+#endif
 #endif

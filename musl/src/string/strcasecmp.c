@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <strings.h>
 #include <ctype.h>
 #include "libc.h"
@@ -15,3 +17,4 @@ int __strcasecmp_l(const char *l, const char *r, locale_t loc)
 }
 
 weak_alias(__strcasecmp_l, strcasecmp_l);
+#endif

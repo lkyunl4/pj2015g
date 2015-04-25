@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <unistd.h>
 
 void swab(const void *restrict _src, void *restrict _dest, ssize_t n)
@@ -14,4 +16,5 @@ void swab(const void *restrict _src, void *restrict _dest, ssize_t n)
 	}
 }
 
+#endif
 #endif

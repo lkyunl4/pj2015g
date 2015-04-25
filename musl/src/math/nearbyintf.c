@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fenv.h>
 #include <math.h>
 
@@ -16,3 +18,4 @@ float nearbyintf(float x)
 #endif
 	return x;
 }
+#endif

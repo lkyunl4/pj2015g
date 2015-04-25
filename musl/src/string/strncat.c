@@ -1,4 +1,6 @@
 #ifndef SCC_TEST
+
+#ifndef SCC_TEST
 #include <string.h>
 
 char *strncat(char *restrict d, const char *restrict s, size_t n)
@@ -10,4 +12,5 @@ char *strncat(char *restrict d, const char *restrict s, size_t n)
 	return a;
 }
 
+#endif
 #endif

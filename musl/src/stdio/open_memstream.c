@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <errno.h>
 #include <limits.h>
@@ -87,3 +89,4 @@ FILE *open_memstream(char **bufp, size_t *sizep)
 
 	return f;
 }
+#endif

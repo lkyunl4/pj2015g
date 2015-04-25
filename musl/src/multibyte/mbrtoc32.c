@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <uchar.h>
 #include <wchar.h>
 
@@ -14,4 +16,5 @@ size_t mbrtoc32(char32_t *restrict pc32, const char *restrict s, size_t n, mbsta
 	return ret;
 }
 
+#endif
 #endif

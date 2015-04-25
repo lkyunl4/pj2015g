@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stddef.h>
 #include <getopt.h>
@@ -129,3 +131,4 @@ int getopt_long_only(int argc, char *const *argv, const char *optstring, const s
 {
 	return __getopt_long(argc, argv, optstring, longopts, idx, 1);
 }
+#endif

@@ -173,6 +173,10 @@ clean:
 	rm -f $(ALL_LIBS) lib/*.[ao] lib/*.so
 	rm -f $(GENH) $(GENH_INT)
 	rm -f include/bits
+	rm -rf $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include/*
+	rm -rf $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/lib/*
+	rm -f $(SRPSDK_INSTALL)/install/lib-musl/*
+
 
 include/bits:
 	ln -sf ../arch/i386/bits $@

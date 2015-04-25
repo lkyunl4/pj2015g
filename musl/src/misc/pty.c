@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <sys/ioctl.h>
 #include <stdio.h>
@@ -32,3 +34,4 @@ int __ptsname_r(int fd, char *buf, size_t len)
 }
 
 weak_alias(__ptsname_r, ptsname_r);
+#endif

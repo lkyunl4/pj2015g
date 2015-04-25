@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
@@ -28,3 +30,4 @@ int setenv(const char *var, const char *value, int overwrite)
 	free(s);
 	return -1;
 }
+#endif

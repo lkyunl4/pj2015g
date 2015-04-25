@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <err.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -65,3 +67,4 @@ _Noreturn void errx(int status, const char *fmt, ...)
 	verrx(status, fmt, ap);
 	va_end(ap);
 }
+#endif

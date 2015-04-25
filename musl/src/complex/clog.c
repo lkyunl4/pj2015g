@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 // FIXME
@@ -12,3 +14,4 @@ double complex clog(double complex z)
 	phi = carg(z);
 	return CMPLX(log(r), phi);
 }
+#endif

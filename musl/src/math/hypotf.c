@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -33,3 +35,4 @@ float hypotf(float x, float y)
 	}
 	return z*sqrtf((double)x*x + (double)y*y);
 }
+#endif

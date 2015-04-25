@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 
 int memcmp(const void *vl, const void *vr, size_t n)
@@ -6,3 +8,4 @@ int memcmp(const void *vl, const void *vr, size_t n)
 	for (; n && *l == *r; n--, l++, r++);
 	return n ? *l-*r : 0;
 }
+#endif

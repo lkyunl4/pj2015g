@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 
 float logbf(float x)
@@ -8,3 +10,4 @@ float logbf(float x)
 		return -1/(x*x);
 	return ilogbf(x);
 }
+#endif

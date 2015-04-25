@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_cbrtf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -64,3 +66,4 @@ float cbrtf(float x)
 	/* rounding to 24 bits is perfect in round-to-nearest mode */
 	return T;
 }
+#endif

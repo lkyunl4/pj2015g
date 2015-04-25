@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ftw.h>
 #include <dirent.h>
 #include <sys/stat.h>
@@ -121,3 +123,4 @@ int nftw(const char *path, int (*fn)(const char *, const struct stat *, int, str
 }
 
 LFS64(nftw);
+#endif

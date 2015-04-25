@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <string.h>
 #include <stdint.h>
@@ -146,3 +148,4 @@ void *memmem(const void *h0, size_t k, const void *n0, size_t l)
 
 	return twoway_memmem(h, h+k, n, l);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 double trunc(double x)
@@ -17,3 +19,4 @@ double trunc(double x)
 	u.i &= ~m;
 	return u.f;
 }
+#endif

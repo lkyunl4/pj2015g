@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_asin.c */
 /*
  * ====================================================
@@ -105,3 +107,4 @@ double asin(double x)
 		return -x;
 	return x;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -17,4 +19,5 @@ long double complex casinl(long double complex z)
 	w = CMPLXL(1.0 - (x - y)*(x + y), -2.0*x*y);
 	return clogl(CMPLXL(-y, x) + csqrtl(w));
 }
+#endif
 #endif

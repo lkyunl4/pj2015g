@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <malloc.h>
 
 void *(*const __realloc_dep)(void *, size_t) = realloc;
@@ -15,3 +17,4 @@ size_t malloc_usable_size(void *p)
 {
 	return CHUNK_SIZE(MEM_TO_CHUNK(p)) - OVERHEAD;
 }
+#endif

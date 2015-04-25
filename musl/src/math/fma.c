@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fenv.h>
 #include "libm.h"
 
@@ -457,4 +459,5 @@ double fma(double x, double y, double z)
 	else
 		return add_and_denormalize(r.hi, adj, spread);
 }
+#endif
 #endif

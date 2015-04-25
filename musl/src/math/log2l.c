@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/ld80/e_log2l.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -179,4 +181,5 @@ long double log2l(long double x)
 {
 	return log2(x);
 }
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 
@@ -153,3 +155,4 @@ char *strstr(const char *h, const char *n)
 
 	return twoway_strstr((void *)h, (void *)n);
 }
+#endif

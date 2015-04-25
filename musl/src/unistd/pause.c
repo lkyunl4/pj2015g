@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <signal.h>
 #include "syscall.h"
@@ -11,3 +13,4 @@ int pause(void)
 	return syscall_cp(SYS_ppoll, 0, 0, 0, 0);
 #endif
 }
+#endif

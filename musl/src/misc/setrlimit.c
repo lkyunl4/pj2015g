@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/resource.h>
 #include <errno.h>
 #include "syscall.h"
@@ -48,3 +50,4 @@ int setrlimit(int resource, const struct rlimit *rlim)
 }
 
 LFS64(setrlimit);
+#endif

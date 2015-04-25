@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include "locale_impl.h"
 #include "libc.h"
@@ -8,3 +10,4 @@ void freelocale(locale_t l)
 }
 
 weak_alias(freelocale, __freelocale);
+#endif

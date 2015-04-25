@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <dirent.h>
 #include "libc.h"
@@ -8,3 +10,4 @@ int alphasort(const struct dirent **a, const struct dirent **b)
 }
 
 LFS64(alphasort);
+#endif

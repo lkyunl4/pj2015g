@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/ld80/k_tanl.c */
 /* origin: FreeBSD /usr/src/lib/msun/ld128/k_tanl.c */
 /*
@@ -140,4 +142,5 @@ long double __tanl(long double x, long double y, int odd) {
 	s = 1.0 + t * z;
 	return t + a * (s + t * v);
 }
+#endif
 #endif

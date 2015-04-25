@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_cosf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -33,3 +35,4 @@ float __cosdf(double x)
 	r = C2+z*C3;
 	return ((1.0+z*C0) + w*C1) + (w*z)*r;
 }
+#endif

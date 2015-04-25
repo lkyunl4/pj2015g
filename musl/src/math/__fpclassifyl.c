@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -31,4 +33,5 @@ int __fpclassifyl(long double x)
 		return u.i2.lo | u.i2.hi ? FP_NAN : FP_INFINITE;
 	return FP_NORMAL;
 }
+#endif
 #endif

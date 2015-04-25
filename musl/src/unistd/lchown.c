@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <fcntl.h>
 #include "syscall.h"
@@ -10,3 +12,4 @@ int lchown(const char *path, uid_t uid, gid_t gid)
 	return syscall(SYS_fchownat, AT_FDCWD, path, uid, gid, AT_SYMLINK_NOFOLLOW);
 #endif
 }
+#endif

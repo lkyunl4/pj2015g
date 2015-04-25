@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <string.h>
 
@@ -11,3 +13,4 @@ char *strsep(char **str, const char *sep)
 	*str = end;
 	return s;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -114,3 +116,4 @@ int getspnam_r(const char *name, struct spwd *sp, char *buf, size_t size, struct
 	pthread_cleanup_pop(1);
 	return rv;
 }
+#endif

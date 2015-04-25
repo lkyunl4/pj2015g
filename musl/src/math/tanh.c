@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 /* tanh(x) = (exp(x) - exp(-x))/(exp(x) + exp(-x))
@@ -43,3 +45,4 @@ double tanh(double x)
 	}
 	return sign ? -t : t;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -11,3 +13,4 @@ int futimes(int fd, const struct timeval tv[2])
 	times[1].tv_nsec = tv[1].tv_usec * 1000;
 	return futimens(fd, times);
 }
+#endif

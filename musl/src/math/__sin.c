@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_sin.c */
 /*
  * ====================================================
@@ -62,3 +64,4 @@ double __sin(double x, double y, int iy)
 	else
 		return x - ((z*(0.5*y - v*r) - y) - v*S1);
 }
+#endif

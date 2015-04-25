@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include "syscall.h"
 #include "libc.h"
@@ -8,3 +10,4 @@ int truncate(const char *path, off_t length)
 }
 
 LFS64(truncate);
+#endif

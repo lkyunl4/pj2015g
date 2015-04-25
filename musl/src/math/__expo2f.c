@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 /* k is such that k*ln2 has minimal relative error and x - kln2 > log(FLT_MIN) */
@@ -14,3 +16,4 @@ float __expo2f(float x)
 	/* exp(x - k ln2) * 2**(k-1) */
 	return expf(x - kln2) * scale * scale;
 }
+#endif

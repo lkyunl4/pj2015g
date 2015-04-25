@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/ioctl.h>
 #include <stdarg.h>
 #include "syscall.h"
@@ -11,3 +13,4 @@ int ioctl(int fd, int req, ...)
 	va_end(ap);
 	return syscall(SYS_ioctl, fd, req, arg);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <dirent.h>
 #include <string.h>
 #include <stdlib.h>
@@ -46,3 +48,4 @@ int scandir(const char *path, struct dirent ***res,
 }
 
 LFS64(scandir);
+#endif

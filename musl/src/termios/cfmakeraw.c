@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <termios.h>
 
@@ -11,3 +13,4 @@ void cfmakeraw(struct termios *t)
 	t->c_cc[VMIN] = 1;
 	t->c_cc[VTIME] = 0;
 }
+#endif

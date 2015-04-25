@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include <limits.h>
@@ -12,3 +14,4 @@ char *ttyname(int fd)
 	}
 	return buf;
 }
+#endif

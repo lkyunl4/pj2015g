@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -15,3 +17,4 @@ int fchdir(int fd)
 	__procfdname(buf, fd);
 	return syscall(SYS_chdir, buf);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/sysinfo.h>
 #include <unistd.h>
 
@@ -20,3 +22,4 @@ long get_avphys_pages()
 {
 	return sysconf(_SC_AVPHYS_PAGES);	
 }
+#endif

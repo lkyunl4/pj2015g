@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 int fgetpos(FILE *restrict f, fpos_t *restrict pos)
@@ -12,4 +14,5 @@ int fgetpos(FILE *restrict f, fpos_t *restrict pos)
 
 LFS64(fgetpos);
 
+#endif
 #endif

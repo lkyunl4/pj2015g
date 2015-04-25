@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -15,3 +17,4 @@ int __iswcntrl_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswcntrl_l, iswcntrl_l);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/ld80/e_tgammal.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -278,4 +280,5 @@ long double tgammal(long double x)
 {
 	return tgamma(x);
 }
+#endif
 #endif

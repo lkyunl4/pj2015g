@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 /* This function will never be called if there is already data
@@ -9,3 +11,4 @@ int __uflow(FILE *f)
 	if ((f->rend || !__toread(f)) && f->read(f, &c, 1)==1) return c;
 	return EOF;
 }
+#endif

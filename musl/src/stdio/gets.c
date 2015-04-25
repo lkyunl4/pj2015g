@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <limits.h>
 #include <string.h>
@@ -8,3 +10,4 @@ char *gets(char *s)
 	if (ret && s[strlen(s)-1] == '\n') s[strlen(s)-1] = 0;
 	return ret;
 }
+#endif

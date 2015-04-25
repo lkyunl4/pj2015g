@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <elf.h>
 #include <limits.h>
 #include <sys/mman.h>
@@ -121,4 +123,5 @@ void __init_tls(size_t *aux)
 void __init_tls(size_t *auxv) { }
 #endif
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/ld80/e_rem_pio2.c */
 /*
  * ====================================================
@@ -138,4 +140,5 @@ int __rem_pio2l(long double x, long double *y)
 	y[1] = w;
 	return n;
 }
+#endif
 #endif

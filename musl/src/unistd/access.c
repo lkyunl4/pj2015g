@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <fcntl.h>
 #include "syscall.h"
@@ -10,3 +12,4 @@ int access(const char *filename, int amode)
 	return syscall(SYS_faccessat, AT_FDCWD, filename, amode, 0);
 #endif
 }
+#endif

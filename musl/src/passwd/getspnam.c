@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 
 #define LINE_LIM 256
@@ -15,3 +17,4 @@ struct spwd *getspnam(const char *name)
 	if (e) errno = e;
 	return res;
 }
+#endif

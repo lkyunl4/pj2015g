@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include "intscan.h"
 #include "shgetc.h"
@@ -65,4 +67,5 @@ weak_alias(strtoull, __strtoull_internal);
 weak_alias(strtoimax, __strtoimax_internal);
 weak_alias(strtoumax, __strtoumax_internal);
 
+#endif
 #endif

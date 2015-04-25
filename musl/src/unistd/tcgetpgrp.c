@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <termios.h>
 #include <sys/ioctl.h>
@@ -9,3 +11,4 @@ pid_t tcgetpgrp(int fd)
 		return -1;
 	return pgrp;
 }
+#endif

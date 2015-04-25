@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 #undef isspace
@@ -13,3 +15,4 @@ int __isspace_l(int c, locale_t l)
 }
 
 weak_alias(__isspace_l, isspace_l);
+#endif

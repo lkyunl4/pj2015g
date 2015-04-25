@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -58,3 +60,4 @@ void encrypt(char *block, int edflag)
 		for (j = 31; j >= 0; j--)
 			*p++ = b[i]>>j & 1;
 }
+#endif

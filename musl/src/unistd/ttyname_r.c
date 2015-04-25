@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 
@@ -20,3 +22,4 @@ int ttyname_r(int fd, char *name, size_t size)
 		return 0;
 	}
 }
+#endif

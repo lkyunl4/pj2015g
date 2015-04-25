@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <dirent.h>
 #include <unistd.h>
 #include "__dirent.h"
@@ -9,3 +11,4 @@ int closedir(DIR *dir)
 	free(dir);
 	return ret;
 }
+#endif

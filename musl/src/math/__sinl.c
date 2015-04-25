@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/ld80/k_sinl.c */
 /* origin: FreeBSD /usr/src/lib/msun/ld128/k_sinl.c */
 /*
@@ -75,4 +77,5 @@ long double __sinl(long double x, long double y, int iy)
 		return x+v*(S1+z*r);
 	return x-((z*(0.5*y-v*r)-y)-v*S1);
 }
+#endif
 #endif

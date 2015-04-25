@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/ld80/e_expm1l.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -120,4 +122,5 @@ long double expm1l(long double x)
 {
 	return expm1(x);
 }
+#endif
 #endif

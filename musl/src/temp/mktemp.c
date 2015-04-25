@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <string.h>
 #include <stdlib.h>
@@ -30,3 +32,4 @@ char *mktemp(char *template)
 	errno = EEXIST;
 	return template;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <string.h>
 
@@ -14,3 +16,4 @@ size_t __string_read(FILE *f, unsigned char *buf, size_t len)
 	f->cookie = src+k;
 	return len;
 }
+#endif

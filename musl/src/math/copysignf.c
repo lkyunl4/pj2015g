@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -8,3 +10,4 @@ float copysignf(float x, float y)
 	ux.i |= uy.i & 0x80000000;
 	return ux.f;
 }
+#endif

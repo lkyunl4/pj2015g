@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/auxv.h>
 #include <errno.h>
 #include "libc.h"
@@ -11,3 +13,4 @@ unsigned long getauxval(unsigned long item)
 	errno = ENOENT;
 	return 0;
 }
+#endif

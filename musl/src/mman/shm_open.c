@@ -1,3 +1,7 @@
+#ifndef SCC_TEST
+
+#ifndef SCC_TEST
+
 #include <sys/mman.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -43,3 +47,5 @@ int shm_unlink(const char *name)
 	if (!(name = __shm_mapname(name, buf))) return -1;
 	return unlink(name);
 }
+#endif
+#endif

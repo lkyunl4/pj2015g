@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_cexp.c */
 /*-
  * Copyright (c) 2011 David Schultz <das@FreeBSD.ORG>
@@ -81,3 +83,4 @@ double complex cexp(double complex z)
 		return CMPLX(exp_x * cos(y), exp_x * sin(y));
 	}
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_ctanh.c */
 /*-
  * Copyright (c) 2011 David Schultz
@@ -125,3 +127,4 @@ double complex ctanh(double complex z)
 	denom = 1 + beta * s * s;
 	return CMPLX((beta * rho * s) / denom, t / denom);
 }
+#endif

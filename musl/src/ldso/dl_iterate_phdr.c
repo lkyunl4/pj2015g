@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifndef SHARED
 
 #include <elf.h>
@@ -40,4 +42,5 @@ int dl_iterate_phdr(int(*callback)(struct dl_phdr_info *info, size_t size, void 
 	}
 	return (callback)(&info, sizeof (info), data);
 }
+#endif
 #endif

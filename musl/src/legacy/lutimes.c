@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -12,3 +14,4 @@ int lutimes(const char *filename, const struct timeval tv[2])
 	times[1].tv_nsec = tv[1].tv_usec * 1000;
 	return utimensat(AT_FDCWD, filename, times, AT_SYMLINK_NOFOLLOW);
 }
+#endif

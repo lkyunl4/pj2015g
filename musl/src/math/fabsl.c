@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
 long double fabsl(long double x)
@@ -12,4 +14,5 @@ long double fabsl(long double x)
 	u.i.se &= 0x7fff;
 	return u.f;
 }
+#endif
 #endif

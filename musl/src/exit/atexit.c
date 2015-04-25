@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <stdint.h>
 #include "libc.h"
@@ -72,3 +74,4 @@ int atexit(void (*func)(void))
 {
 	return __cxa_atexit(call, (void *)(uintptr_t)func, 0);
 }
+#endif

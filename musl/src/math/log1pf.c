@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_log1pf.c */
 /*
  * ====================================================
@@ -75,3 +77,4 @@ float log1pf(float x)
 	dk = k;
 	return s*(hfsq+R) + (dk*ln2_lo+c) - hfsq + f + dk*ln2_hi;
 }
+#endif

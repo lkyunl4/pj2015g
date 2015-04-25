@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 wchar_t *wmemset(wchar_t *d, wchar_t c, size_t n)
@@ -6,3 +8,4 @@ wchar_t *wmemset(wchar_t *d, wchar_t c, size_t n)
 	while (n--) *d++ = c;
 	return ret;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -29,3 +31,4 @@ float scalbnf(float x, int n)
 	x = y * u.f;
 	return x;
 }
+#endif

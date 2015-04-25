@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_exp.c */
 /*-
  * Copyright (c) 2011 David Schultz <das@FreeBSD.ORG>
@@ -85,3 +87,4 @@ double complex __ldexp_cexp(double complex z, int expt)
 
 	return CMPLX(cos(y) * exp_x * scale1 * scale2, sin(y) * exp_x * scale1 * scale2);
 }
+#endif

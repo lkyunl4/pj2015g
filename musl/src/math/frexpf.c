@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -21,3 +23,4 @@ float frexpf(float x, int *e)
 	y.i |= 0x3f000000ul;
 	return y.f;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fcntl.h>
 #include <string.h>
 
@@ -14,3 +16,4 @@ int __fmodeflags(const char *mode)
 	if (*mode == 'a') flags |= O_APPEND;
 	return flags;
 }
+#endif

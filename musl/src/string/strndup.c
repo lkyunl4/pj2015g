@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -10,3 +12,4 @@ char *strndup(const char *s, size_t n)
 	d[l] = 0;
 	return d;
 }
+#endif

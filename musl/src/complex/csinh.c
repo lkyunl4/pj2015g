@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_csinh.c */
 /*-
  * Copyright (c) 2005 Bruce D. Evans and Steven G. Kargl
@@ -139,3 +141,4 @@ double complex csinh(double complex z)
 	 */
 	return CMPLX((x * x) * (y - y), (x + x) * (y - y));
 }
+#endif

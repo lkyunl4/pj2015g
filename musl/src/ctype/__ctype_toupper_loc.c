@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdint.h>
 
 static const int32_t table[] = {
@@ -28,3 +30,4 @@ const int32_t **__ctype_toupper_loc(void)
 {
 	return (void *)&ptable;
 }
+#endif

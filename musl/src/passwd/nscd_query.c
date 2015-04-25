@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/socket.h>
 #include <byteswap.h>
 #include <unistd.h>
@@ -101,3 +103,4 @@ error:
 	fclose(f);
 	return 0;
 }
+#endif

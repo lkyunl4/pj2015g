@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_csqrt.c */
 /*-
  * Copyright (c) 2007 David Schultz <das@FreeBSD.ORG>
@@ -98,3 +100,4 @@ double complex csqrt(double complex z)
 		result *= 2;
 	return result;
 }
+#endif

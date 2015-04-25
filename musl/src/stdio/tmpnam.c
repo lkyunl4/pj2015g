@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -27,3 +29,4 @@ char *tmpnam(char *buf)
 	}
 	return 0;
 }
+#endif

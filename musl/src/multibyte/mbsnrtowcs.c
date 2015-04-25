@@ -1,4 +1,6 @@
 #ifndef SCC_TEST
+
+#ifndef SCC_TEST
 /* 
  * This code was written by Rich Felker in 2010; no copyright is claimed.
  * This code is in the public domain. Attribution is appreciated but
@@ -58,4 +60,5 @@ size_t mbsnrtowcs(wchar_t *restrict wcs, const char **restrict src, size_t n, si
 	if (wcs) *src = s;
 	return cnt;
 }
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -7,3 +9,4 @@ double fabs(double x)
 	u.i &= -1ULL/2;
 	return u.f;
 }
+#endif

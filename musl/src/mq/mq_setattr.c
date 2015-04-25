@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <mqueue.h>
 #include "syscall.h"
 
@@ -8,4 +10,5 @@ int mq_setattr(mqd_t mqd, const struct mq_attr *restrict new, struct mq_attr *re
 	return syscall(SYS_mq_getsetattr, mqd, new, old);
 }
 
+#endif
 #endif

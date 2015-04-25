@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <pwd.h>
 #include <stdio.h>
@@ -12,3 +14,4 @@ char *cuserid(char *buf)
 	snprintf(buf, L_cuserid, "%s", pw.pw_name);
 	return buf;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <termios.h>
 #include <sys/ioctl.h>
 
@@ -7,3 +9,4 @@ int tcgetattr(int fd, struct termios *tio)
 		return -1;
 	return 0;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <float.h>
 
@@ -18,4 +20,5 @@ long double fminl(long double x, long double y)
 		return signbit(x) ? x : y;
 	return x < y ? x : y;
 }
+#endif
 #endif

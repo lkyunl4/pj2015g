@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define IPCOP_semop      1
 #define IPCOP_semget     2
 #define IPCOP_semctl     3
@@ -10,3 +12,4 @@
 #define IPCOP_shmdt     22
 #define IPCOP_shmget    23
 #define IPCOP_shmctl    24
+#endif

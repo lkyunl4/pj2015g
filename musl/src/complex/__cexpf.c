@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_expf.c */
 /*-
  * Copyright (c) 2011 David Schultz <das@FreeBSD.ORG>
@@ -66,3 +68,4 @@ float complex __ldexp_cexpf(float complex z, int expt)
 	return CMPLXF(cosf(y) * exp_x * scale1 * scale2,
 	  sinf(y) * exp_x * scale1 * scale2);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <dlfcn.h>
 
@@ -7,3 +9,4 @@ int dlinfo(void *dso, int req, void *res)
 {
 	return __dlinfo(dso, req, res);
 }
+#endif

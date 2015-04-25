@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -31,4 +33,5 @@ long double floorl(long double x)
 		return x + y - 1;
 	return x + y;
 }
+#endif
 #endif

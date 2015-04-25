@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_expf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -79,3 +81,4 @@ float expf(float x)
 		return y;
 	return scalbnf(y, k);
 }
+#endif

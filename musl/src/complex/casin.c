@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 // FIXME
@@ -14,3 +16,4 @@ double complex casin(double complex z)
 	w = CMPLX(1.0 - (x - y)*(x + y), -2.0*x*y);
 	return clog(CMPLX(-y, x) + csqrt(w));
 }
+#endif

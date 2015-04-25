@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 #include <pthread.h>
 
@@ -65,3 +67,4 @@ end:
 	if(rv) errno = rv;
 	return rv;
 }
+#endif

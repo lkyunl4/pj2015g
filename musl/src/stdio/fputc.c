@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 int fputc(int c, FILE *f)
@@ -8,3 +10,4 @@ int fputc(int c, FILE *f)
 	__unlockfile(f);
 	return c;
 }
+#endif

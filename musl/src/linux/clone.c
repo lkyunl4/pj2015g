@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdarg.h>
 #include <unistd.h>
 #include "pthread_impl.h"
@@ -17,3 +19,4 @@ int clone(int (*func)(void *), void *stack, int flags, void *arg, ...)
 
 	return __syscall_ret(__clone(func, stack, flags, arg, ptid, tls, ctid));
 }
+#endif

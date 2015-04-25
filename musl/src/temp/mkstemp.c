@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include "libc.h"
 
@@ -9,3 +11,4 @@ int mkstemp(char *template)
 }
 
 LFS64(mkstemp);
+#endif

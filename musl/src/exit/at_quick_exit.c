@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include "libc.h"
 
@@ -27,3 +29,4 @@ int at_quick_exit(void (*func)(void))
 	UNLOCK(lock);
 	return 0;
 }
+#endif

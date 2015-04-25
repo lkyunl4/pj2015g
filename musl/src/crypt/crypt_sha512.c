@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /*
  * public domain sha512 crypt implementation
  *
@@ -369,3 +371,4 @@ char *__crypt_sha512(const char *key, const char *setting, char *output)
 		return "*";
 	return p;
 }
+#endif

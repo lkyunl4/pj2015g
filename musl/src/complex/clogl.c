@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -15,4 +17,5 @@ long double complex clogl(long double complex z)
 	phi = cargl(z);
 	return CMPLXL(logl(r), phi);
 }
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <time.h>
 #include <stdint.h>
 
@@ -18,3 +20,4 @@ char *__randname(char *template)
 
 	return template;
 }
+#endif

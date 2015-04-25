@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 #include <pthread.h>
 
@@ -46,3 +48,4 @@ int getgrgid_r(gid_t gid, struct group *gr, char *buf, size_t size, struct group
 {
 	return getgr_r(0, gid, gr, buf, size, res);
 }
+#endif

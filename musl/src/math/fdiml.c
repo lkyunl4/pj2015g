@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <float.h>
 
@@ -15,4 +17,5 @@ long double fdiml(long double x, long double y)
 		return y;
 	return x > y ? x - y : 0;
 }
+#endif
 #endif

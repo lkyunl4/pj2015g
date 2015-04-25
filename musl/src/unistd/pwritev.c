@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _BSD_SOURCE
 #include <sys/uio.h>
 #include <unistd.h>
@@ -11,3 +13,4 @@ ssize_t pwritev(int fd, const struct iovec *iov, int count, off_t ofs)
 }
 
 LFS64(pwritev);
+#endif

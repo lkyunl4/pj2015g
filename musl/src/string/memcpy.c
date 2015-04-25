@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 #include <endian.h>
@@ -125,4 +127,5 @@ void *memcpy(void *restrict dest, const void *restrict src, size_t n)
 	return dest;
 }
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -13,4 +15,5 @@ long double copysignl(long double x, long double y)
 	ux.i.se |= uy.i.se & 0x8000;
 	return ux.f;
 }
+#endif
 #endif

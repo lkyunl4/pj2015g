@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <dirent.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -25,3 +27,4 @@ DIR *fdopendir(int fd)
 	dir->fd = fd;
 	return dir;
 }
+#endif

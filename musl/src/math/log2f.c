@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_log2f.c */
 /*
  * ====================================================
@@ -72,3 +74,4 @@ float log2f(float x)
 	lo = f - hi - hfsq + s*(hfsq+R);
 	return (lo+hi)*ivln2lo + lo*ivln2hi + hi*ivln2hi + k;
 }
+#endif

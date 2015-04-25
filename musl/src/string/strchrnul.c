@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
@@ -24,3 +26,4 @@ char *__strchrnul(const char *s, int c)
 }
 
 weak_alias(__strchrnul, strchrnul);
+#endif

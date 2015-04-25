@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_acosl.c */
 /*
  * ====================================================
@@ -64,4 +66,5 @@ long double acosl(long double x)
 	c = (z - f*f)/(s + f);
 	return 2*(__invtrigl_R(z)*s + c + f);
 }
+#endif
 #endif

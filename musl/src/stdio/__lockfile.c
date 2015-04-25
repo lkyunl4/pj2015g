@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include "pthread_impl.h"
 
@@ -29,4 +31,5 @@ void __unlockfile(FILE *f)
 	if (f->waiters) __wake(&f->lock, 1, 1);
 }
 
+#endif
 #endif

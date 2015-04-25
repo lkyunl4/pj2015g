@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/ptrace.h>
 #include <stdarg.h>
 #include <unistd.h>
@@ -23,3 +25,4 @@ long ptrace(int req, ...)
 	if (ret < 0 || req-1U >= 3) return ret;
 	return result;
 }
+#endif

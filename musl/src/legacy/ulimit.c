@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/resource.h>
 #include <ulimit.h>
 #include <stdarg.h>
@@ -17,3 +19,4 @@ long ulimit(int cmd, ...)
 	}
 	return rl.rlim_cur / 512;
 }
+#endif

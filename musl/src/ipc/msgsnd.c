@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/msg.h>
 #include "syscall.h"
 #include "ipc.h"
@@ -11,3 +13,4 @@ int msgsnd(int q, const void *m, size_t len, int flag)
 	return syscall_cp(SYS_ipc, IPCOP_msgsnd, q, len, flag, m);
 #endif
 }
+#endif

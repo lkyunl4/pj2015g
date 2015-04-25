@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 static unsigned char buf[UNGET];
@@ -14,3 +16,4 @@ static FILE f = {
 };
 FILE *const stderr = &f;
 FILE *volatile __stderr_used = &f;
+#endif

@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 /* This function makes no attempt to protect the user from his/her own
@@ -25,4 +27,5 @@ int setvbuf(FILE *restrict f, char *restrict buf, int type, size_t size)
 	return 0;
 }
 
+#endif
 #endif

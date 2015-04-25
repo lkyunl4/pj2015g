@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifdef SHARED
 
 #include "version.h"
@@ -9,4 +11,5 @@ const char *__libc_get_version()
 	return version;
 }
 
+#endif
 #endif

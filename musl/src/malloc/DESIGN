@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 
 
 In principle, this memory allocator is roughly equivalent to Doug
@@ -20,3 +22,4 @@ split it into two chunks and free the tail portion.
 
 
 
+#endif

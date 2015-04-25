@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_sqrt.c */
 /*
  * ====================================================
@@ -183,3 +185,4 @@ double sqrt(double x)
 	INSERT_WORDS(z, ix0, ix1);
 	return z;
 }
+#endif

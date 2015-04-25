@@ -1,4 +1,6 @@
 #ifndef SCC_TEST
+
+#ifndef SCC_TEST
 /* Copyright (C) 2011 by Valentin Ochs
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -214,4 +216,5 @@ void qsort(void *base, size_t nel, size_t width, cmpfun cmp)
 		head -= width;
 	}
 }
+#endif
 #endif

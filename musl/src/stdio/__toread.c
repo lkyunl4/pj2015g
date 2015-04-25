@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdio_impl.h>
 
 int __toread(FILE *f)
@@ -19,3 +21,4 @@ void __toread_needs_stdio_exit()
 {
 	__stdio_exit_needed();
 }
+#endif

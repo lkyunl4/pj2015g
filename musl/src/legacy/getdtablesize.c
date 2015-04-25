@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <unistd.h>
 #include <limits.h>
@@ -9,3 +11,4 @@ int getdtablesize(void)
 	getrlimit(RLIMIT_NOFILE, &rl);
 	return rl.rlim_max < INT_MAX ? rl.rlim_max : INT_MAX;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -7,3 +9,4 @@ float fabsf(float x)
 	u.i &= 0x7fffffff;
 	return u.f;
 }
+#endif

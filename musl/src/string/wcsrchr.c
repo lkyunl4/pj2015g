@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 wchar_t *wcsrchr(const wchar_t *s, wchar_t c)
@@ -6,3 +8,4 @@ wchar_t *wcsrchr(const wchar_t *s, wchar_t c)
 	for (p=s+wcslen(s); p>=s && *p!=c; p--);
 	return p>=s ? (wchar_t *)p : 0;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -63,4 +65,5 @@ long double hypotl(long double x, long double y)
 	sq(&hy, &ly, y);
 	return z*sqrtl(ly+lx+hy+hx);
 }
+#endif
 #endif

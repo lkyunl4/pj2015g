@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/s_catanl.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -123,4 +125,5 @@ ovrf:
 	w = LDBL_MAX + LDBL_MAX * I;
 	return w;
 }
+#endif
 #endif

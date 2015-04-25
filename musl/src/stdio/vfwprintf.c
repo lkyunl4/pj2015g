@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <errno.h>
 #include <ctype.h>
@@ -369,4 +371,5 @@ int vfwprintf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
 	return ret;
 }
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <string.h>
 #include <dirent.h>
@@ -10,3 +12,4 @@ int versionsort(const struct dirent **a, const struct dirent **b)
 
 #undef versionsort64
 LFS64(versionsort);
+#endif

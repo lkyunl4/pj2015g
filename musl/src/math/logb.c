@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 
 /*
@@ -15,3 +17,4 @@ double logb(double x)
 		return -1/(x*x);
 	return ilogb(x);
 }
+#endif

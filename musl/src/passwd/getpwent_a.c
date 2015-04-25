@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 #include <pthread.h>
 
@@ -52,3 +54,4 @@ int __getpwent_a(FILE *f, struct passwd *pw, char **line, size_t *size, struct p
 	if (rv) errno = rv;
 	return rv;
 }
+#endif

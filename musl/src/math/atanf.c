@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_atanf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -92,3 +94,4 @@ float atanf(float x)
 	z = atanhi[id] - ((x*(s1+s2) - atanlo[id]) - x);
 	return sign ? -z : z;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_asinl.c */
 /*
  * ====================================================
@@ -68,4 +70,5 @@ long double asinl(long double x)
 	}
 	return sign ? -x : x;
 }
+#endif
 #endif

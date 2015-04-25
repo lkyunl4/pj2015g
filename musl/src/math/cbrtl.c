@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_cbrtl.c */
 /*-
  * ====================================================
@@ -121,4 +123,5 @@ long double cbrtl(long double x)
 	t *= v.f;
 	return t;
 }
+#endif
 #endif

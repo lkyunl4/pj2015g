@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <dlfcn.h>
 
@@ -7,3 +9,4 @@ int dladdr(const void *addr, Dl_info *info)
 {
 	return __dladdr(addr, info);
 }
+#endif

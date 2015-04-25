@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <sys/utsname.h>
 
@@ -11,3 +13,4 @@ int gethostname(char *name, size_t len)
 	if (i==len) name[i-1] = 0;
 	return 0;
 }
+#endif

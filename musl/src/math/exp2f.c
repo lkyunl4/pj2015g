@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_exp2f.c */
 /*-
  * Copyright (c) 2005 David Schultz <das@FreeBSD.ORG>
@@ -122,3 +124,4 @@ float exp2f(float x)
 	/* Scale by 2**k */
 	return r * uk.f;
 }
+#endif

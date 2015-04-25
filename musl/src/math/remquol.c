@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -121,4 +123,5 @@ long double remquol(long double x, long double y, int *quo)
 	*quo = sx^sy ? -(int)q : (int)q;
 	return sx ? -x : x;
 }
+#endif
 #endif

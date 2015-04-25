@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -21,3 +23,4 @@ double frexp(double x, int *e)
 	y.i |= 0x3fe0000000000000ull;
 	return y.d;
 }
+#endif

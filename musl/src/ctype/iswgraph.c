@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -13,3 +15,4 @@ int __iswgraph_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswgraph_l, iswgraph_l);
+#endif

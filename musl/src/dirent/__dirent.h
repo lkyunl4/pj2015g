@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 struct __dirstream
 {
 	int fd;
@@ -7,3 +9,4 @@ struct __dirstream
 	volatile int lock[2];
 	char buf[2048];
 };
+#endif

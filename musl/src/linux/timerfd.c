@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/timerfd.h>
 #include "syscall.h"
 
@@ -15,3 +17,4 @@ int timerfd_gettime(int fd, struct itimerspec *cur)
 {
 	return syscall(SYS_timerfd_gettime, fd, cur);
 }
+#endif

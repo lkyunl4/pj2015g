@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 
 extern int __signgam;
@@ -7,3 +9,4 @@ float lgammaf(float x)
 {
 	return __lgammaf_r(x, &__signgam);
 }
+#endif

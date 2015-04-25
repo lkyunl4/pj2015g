@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/ld80/k_cosl.c */
 /* origin: FreeBSD /usr/src/lib/msun/ld128/k_cosl.c */
 /*
@@ -93,4 +95,5 @@ long double __cosl(long double x, long double y)
 	w  = 1.0-hz;
 	return w + (((1.0-w)-hz) + (z*r-x*y));
 }
+#endif
 #endif

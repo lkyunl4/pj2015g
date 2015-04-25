@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdint.h>
 #include <stdio.h>
 #include <math.h>
@@ -502,3 +504,4 @@ long double __floatscan(FILE *f, int prec, int pok)
 
 	return decfloat(f, c, bits, emin, sign, pok);
 }
+#endif

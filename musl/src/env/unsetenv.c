@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
@@ -29,3 +31,4 @@ again:
 	}
 	return 0;
 }
+#endif

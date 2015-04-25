@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <fcntl.h>
 #include <unistd.h>
@@ -31,3 +33,4 @@ int daemon(int nochdir, int noclose)
 
 	return 0;
 }
+#endif

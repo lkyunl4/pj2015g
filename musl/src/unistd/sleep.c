@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <time.h>
 
@@ -8,3 +10,4 @@ unsigned sleep(unsigned seconds)
 		return tv.tv_sec;
 	return 0;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <unistd.h>
 #include <sys/utsname.h>
@@ -15,3 +17,4 @@ int getdomainname(char *name, size_t len)
 	strcpy(name, temp.domainname);
 	return 0;
 }
+#endif

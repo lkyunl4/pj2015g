@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <shadow.h>
 #include <stdio.h>
 
@@ -11,3 +13,4 @@ int putspent(const struct spwd *sp, FILE *f)
 		NUM(sp->sp_min), NUM(sp->sp_max), NUM(sp->sp_warn),
 		NUM(sp->sp_inact), NUM(sp->sp_expire), NUM(sp->sp_flag)) < 0 ? -1 : 0;
 }
+#endif

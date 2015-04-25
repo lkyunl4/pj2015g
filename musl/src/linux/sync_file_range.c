@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <fcntl.h>
 #include <errno.h>
@@ -15,3 +17,4 @@ int sync_file_range(int fd, off_t pos, off_t len, unsigned flags)
 	return __syscall_ret(-ENOSYS);
 #endif
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include "pwf.h"
 
@@ -10,3 +12,4 @@ struct passwd *fgetpwent(FILE *f)
 	__getpwent_a(f, &pw, &line, &size, &res);
 	return res;
 }
+#endif

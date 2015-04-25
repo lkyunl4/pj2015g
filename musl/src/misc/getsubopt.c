@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -21,3 +23,4 @@ int getsubopt(char **opt, char *const *keys, char **val)
 	}
 	return -1;
 }
+#endif

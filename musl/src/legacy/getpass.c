@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <termios.h>
@@ -38,3 +40,4 @@ char *getpass(const char *prompt)
 
 	return l<0 ? 0 : password;
 }
+#endif

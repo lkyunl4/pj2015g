@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_atan2f.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -81,3 +83,4 @@ float atan2f(float y, float x)
 		return (z-pi_lo) - pi; /* atan(-,-) */
 	}
 }
+#endif

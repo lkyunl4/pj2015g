@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <libintl.h>
 #include <string.h>
 #include <strings.h>
@@ -9,3 +11,4 @@ char *bind_textdomain_codeset(const char *domainname, const char *codeset)
 		errno = EINVAL;
 	return NULL;
 }
+#endif

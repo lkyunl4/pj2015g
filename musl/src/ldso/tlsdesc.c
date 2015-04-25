@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifdef SHARED
 
 #include <stddef.h>
@@ -10,4 +12,5 @@ ptrdiff_t __tlsdesc_static()
 
 weak_alias(__tlsdesc_static, __tlsdesc_dynamic);
 
+#endif
 #endif

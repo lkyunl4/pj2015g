@@ -1,4 +1,6 @@
 #ifndef SCC_TEST
+
+#ifndef SCC_TEST
 #ifndef SHARED
 
 #include <string.h>
@@ -20,5 +22,6 @@ void __reset_tls()
 	memset((char *)self->dtv[1]+T.len, 0, T.size-T.len);
 }
 
+#endif
 #endif
 #endif

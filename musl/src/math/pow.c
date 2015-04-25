@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_pow.c */
 /*
  * ====================================================
@@ -326,3 +328,4 @@ double pow(double x, double y)
 		SET_HIGH_WORD(z, j);
 	return s*z;
 }
+#endif

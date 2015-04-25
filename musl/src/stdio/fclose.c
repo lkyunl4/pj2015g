@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include "libc.h"
 
@@ -29,3 +31,4 @@ int fclose(FILE *f)
 	
 	return r;
 }
+#endif

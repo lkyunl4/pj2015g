@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <libgen.h>
 #include "libc.h"
@@ -13,3 +15,4 @@ char *basename(char *s)
 }
 
 weak_alias(basename, __xpg_basename);
+#endif

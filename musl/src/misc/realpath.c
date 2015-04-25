@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <limits.h>
 #include <sys/stat.h>
@@ -46,4 +48,5 @@ err:
 	return 0;
 }
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_rem_pio2f.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -73,3 +75,4 @@ int __rem_pio2f(float x, double *y)
 	*y = ty[0];
 	return n;
 }
+#endif

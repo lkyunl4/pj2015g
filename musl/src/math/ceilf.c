@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float ceilf(float x)
@@ -25,3 +27,4 @@ float ceilf(float x)
 	}
 	return u.f;
 }
+#endif

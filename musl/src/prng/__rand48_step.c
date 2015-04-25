@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdint.h>
 
 uint64_t __rand48_step(unsigned short *xi, unsigned short *lc)
@@ -11,3 +13,4 @@ uint64_t __rand48_step(unsigned short *xi, unsigned short *lc)
 	xi[2] = x>>32;
 	return x & 0xffffffffffffull;
 }
+#endif

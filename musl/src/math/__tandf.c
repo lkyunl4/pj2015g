@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_tanf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -52,3 +54,4 @@ float __tandf(double x, int odd)
 	r = (x + s*u) + (s*w)*(t + w*r);
 	return odd ? -1.0/r : r;
 }
+#endif

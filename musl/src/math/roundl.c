@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
@@ -34,4 +36,5 @@ long double roundl(long double x)
 		y = -y;
 	return y;
 }
+#endif
 #endif

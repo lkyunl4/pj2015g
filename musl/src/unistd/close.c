@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include "syscall.h"
@@ -17,3 +19,4 @@ int close(int fd)
 	if (r == -EINTR) r = 0;
 	return __syscall_ret(r);
 }
+#endif

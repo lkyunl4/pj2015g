@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <signal.h>
 #include <string.h>
 #include "locale_impl.h"
@@ -114,3 +116,4 @@ char *strsignal(int signum)
 
 	return (char *)LCTRANS_CUR(s);
 }
+#endif

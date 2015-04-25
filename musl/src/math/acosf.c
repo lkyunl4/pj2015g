@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_acosf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -69,3 +71,4 @@ float acosf(float x)
 	w = R(z)*s+c;
 	return 2*(df+w);
 }
+#endif

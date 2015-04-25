@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 
@@ -12,3 +14,4 @@ int __iscntrl_l(int c, locale_t l)
 }
 
 weak_alias(__iscntrl_l, iscntrl_l);
+#endif

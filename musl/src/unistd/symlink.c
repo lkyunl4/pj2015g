@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <fcntl.h>
 #include "syscall.h"
@@ -10,3 +12,4 @@ int symlink(const char *existing, const char *new)
 	return syscall(SYS_symlinkat, existing, AT_FDCWD, new);
 #endif
 }
+#endif

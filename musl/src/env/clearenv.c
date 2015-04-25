@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdlib.h>
 
@@ -8,3 +10,4 @@ int clearenv()
 	__environ[0] = 0;
 	return 0;
 }
+#endif

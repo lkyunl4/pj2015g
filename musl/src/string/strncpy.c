@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <string.h>
 
 char *__stpncpy(char *, const char *, size_t);
@@ -10,4 +12,5 @@ char *strncpy(char *restrict d, const char *restrict s, size_t n)
 	return d;
 }
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_sqrtf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -82,3 +84,4 @@ float sqrtf(float x)
 	SET_FLOAT_WORD(z, ix);
 	return z;
 }
+#endif

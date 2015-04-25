@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <unistd.h>
 #include <sys/time.h>
@@ -11,3 +13,4 @@ unsigned ualarm(unsigned value, unsigned interval)
 	setitimer(ITIMER_REAL, &it, &it);
 	return it.it_value.tv_sec*1000000 + it.it_value.tv_usec;
 }
+#endif

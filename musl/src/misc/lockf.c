@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -31,3 +33,4 @@ int lockf(int fd, int op, off_t size)
 }
 
 LFS64(lockf);
+#endif

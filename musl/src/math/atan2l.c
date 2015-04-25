@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_atan2l.c */
 /*
  * ====================================================
@@ -82,4 +84,5 @@ long double atan2l(long double y, long double x)
 		return (z-2*pio2_lo)-2*pio2_hi; /* atan(-,-) */
 	}
 }
+#endif
 #endif

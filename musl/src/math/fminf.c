@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 
 float fminf(float x, float y)
@@ -11,3 +13,4 @@ float fminf(float x, float y)
 		return signbit(x) ? x : y;
 	return x < y ? x : y;
 }
+#endif

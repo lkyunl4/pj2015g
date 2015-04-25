@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_csqrtf.c */
 /*-
  * Copyright (c) 2007 David Schultz <das@FreeBSD.ORG>
@@ -80,3 +82,4 @@ float complex csqrtf(float complex z)
 		return CMPLXF(fabsf(b) / (2.0 * t), copysignf(t, b));
 	}
 }
+#endif

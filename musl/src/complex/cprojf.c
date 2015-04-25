@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float complex cprojf(float complex z)
@@ -6,3 +8,4 @@ float complex cprojf(float complex z)
 		return CMPLXF(INFINITY, copysignf(0.0, crealf(z)));
 	return z;
 }
+#endif

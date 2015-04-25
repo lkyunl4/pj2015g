@@ -177,6 +177,9 @@ int putw(int, FILE *);
 char *fgetln(FILE *, size_t *);
 int asprintf(char **, const char *, ...);
 int vasprintf(char **, const char *, __isoc_va_list);
+
+void my_swap(int*, int*);
+
 #endif
 
 #ifdef _GNU_SOURCE

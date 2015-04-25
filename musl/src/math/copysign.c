@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 double copysign(double x, double y) {
@@ -6,3 +8,4 @@ double copysign(double x, double y) {
 	ux.i |= uy.i & 1ULL<<63;
 	return ux.f;
 }
+#endif

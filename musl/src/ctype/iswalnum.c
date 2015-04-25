@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -12,3 +14,4 @@ int __iswalnum_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswalnum_l, iswalnum_l);
+#endif

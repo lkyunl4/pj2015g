@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -20,3 +22,4 @@ int __iswalpha_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswalpha_l, iswalpha_l);
+#endif

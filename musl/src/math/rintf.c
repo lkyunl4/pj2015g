@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <float.h>
 #include <math.h>
 #include <stdint.h>
@@ -28,3 +30,4 @@ float rintf(float x)
 		return s ? -0.0f : 0.0f;
 	return y;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include <string.h>
 #include "libc.h"
@@ -74,3 +76,4 @@ wctype_t __wctype_l(const char *s, locale_t l)
 
 weak_alias(__iswctype_l, iswctype_l);
 weak_alias(__wctype_l, wctype_l);
+#endif

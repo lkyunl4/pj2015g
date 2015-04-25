@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
@@ -71,3 +73,4 @@ fail:
 	errno = e;
 	return 0;
 }
+#endif

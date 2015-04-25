@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "shgetc.h"
 
 void __shlim(FILE *f, off_t lim)
@@ -25,3 +27,4 @@ int __shgetc(FILE *f)
 	if (f->rpos[-1] != c) f->rpos[-1] = c;
 	return c;
 }
+#endif

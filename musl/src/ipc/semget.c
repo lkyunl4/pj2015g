@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/sem.h>
 #include <limits.h>
 #include <errno.h>
@@ -17,3 +19,4 @@ int semget(key_t key, int n, int fl)
 	return syscall(SYS_ipc, IPCOP_semget, key, n, fl);
 #endif
 }
+#endif

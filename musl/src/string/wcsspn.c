@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 size_t wcsspn(const wchar_t *s, const wchar_t *c)
@@ -6,3 +8,4 @@ size_t wcsspn(const wchar_t *s, const wchar_t *c)
 	for (a=s; *s && wcschr(c, *s); s++);
 	return s-a;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 static FILE *volatile dummy_file = 0;
@@ -23,3 +25,4 @@ void __stdio_exit(void)
 }
 
 weak_alias(__stdio_exit, __stdio_exit_needed);
+#endif

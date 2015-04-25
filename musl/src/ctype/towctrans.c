@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -277,3 +279,4 @@ wint_t __towlower_l(wint_t c, locale_t l)
 
 weak_alias(__towupper_l, towupper_l);
 weak_alias(__towlower_l, towlower_l);
+#endif

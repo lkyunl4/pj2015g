@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 
 float fmaxf(float x, float y)
@@ -11,3 +13,4 @@ float fmaxf(float x, float y)
 		return signbit(x) ? y : x;
 	return x < y ? y : x;
 }
+#endif

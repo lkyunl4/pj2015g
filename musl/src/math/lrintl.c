@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <limits.h>
 #include <fenv.h>
 #include "libm.h"
@@ -33,4 +35,5 @@ long lrintl(long double x)
 {
 	return rintl(x);
 }
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -55,3 +57,4 @@ int putenv(char *s)
 {
 	return __putenv(s, 0);
 }
+#endif

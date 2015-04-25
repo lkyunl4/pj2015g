@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 int putc(int c, FILE *f)
@@ -10,3 +12,4 @@ int putc(int c, FILE *f)
 }
 
 weak_alias(putc, _IO_putc);
+#endif

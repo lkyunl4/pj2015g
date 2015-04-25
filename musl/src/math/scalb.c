@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_scalb.c */
 /*
  * ====================================================
@@ -33,3 +35,4 @@ double scalb(double x, double fn)
 	if (-fn > 65000.0) return scalbn(x,-65000);
 	return scalbn(x,(int)fn);
 }
+#endif

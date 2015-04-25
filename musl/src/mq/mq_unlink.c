@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <mqueue.h>
 #include <errno.h>
 #include "syscall.h"
@@ -14,3 +16,4 @@ int mq_unlink(const char *name)
 	}
 	return ret;
 }
+#endif

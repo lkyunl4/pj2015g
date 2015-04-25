@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include "pwf.h"
 #include <grp.h>
@@ -78,3 +80,4 @@ cleanup:
 	free(mem);
 	return ret;
 }
+#endif

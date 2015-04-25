@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 #define MAX(a,b) ((a)>(b)?(a):(b))
@@ -106,4 +108,5 @@ wchar_t *wcsstr(const wchar_t *restrict h, const wchar_t *restrict n)
 	return twoway_wcsstr(h, n);
 }
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <errno.h>
@@ -20,3 +22,4 @@ int cfsetispeed(struct termios *tio, speed_t speed)
 }
 
 weak_alias(cfsetospeed, cfsetspeed);
+#endif

@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <fcntl.h>
 #include "syscall.h"
@@ -12,4 +14,5 @@ ssize_t readlink(const char *restrict path, char *restrict buf, size_t bufsize)
 	return syscall(SYS_readlinkat, AT_FDCWD, path, buf, bufsize);
 #endif
 }
+#endif
 #endif

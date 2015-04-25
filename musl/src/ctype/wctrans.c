@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include <string.h>
 #include "libc.h"
@@ -28,3 +30,4 @@ wint_t __towctrans_l(wint_t c, wctrans_t t, locale_t l)
 
 weak_alias(__wctrans_l, wctrans_l);
 weak_alias(__towctrans_l, towctrans_l);
+#endif

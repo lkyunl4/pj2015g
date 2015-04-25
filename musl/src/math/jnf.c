@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_jnf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -200,3 +202,4 @@ float ynf(int n, float x)
 	}
 	return sign ? -b : b;
 }
+#endif

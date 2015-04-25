@@ -1,3 +1,7 @@
+#ifndef SCC_TEST
+
+#ifndef SCC_TEST
+
 #include <sys/mman.h>
 #include "libc.h"
 #include "syscall.h"
@@ -11,3 +15,5 @@ int __mprotect(void *addr, size_t len, int prot)
 }
 
 weak_alias(__mprotect, mprotect);
+#endif
+#endif

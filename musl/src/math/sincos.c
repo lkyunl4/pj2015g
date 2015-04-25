@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_sin.c */
 /*
  * ====================================================
@@ -67,3 +69,4 @@ void sincos(double x, double *sin, double *cos)
 		break;
 	}
 }
+#endif

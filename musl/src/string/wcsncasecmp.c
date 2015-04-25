@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 #include <wctype.h>
 
@@ -7,3 +9,4 @@ int wcsncasecmp(const wchar_t *l, const wchar_t *r, size_t n)
 	for (; *l && *r && n && (*l == *r || towlower(*l) == towlower(*r)); l++, r++, n--);
 	return towlower(*l) - towlower(*r);
 }
+#endif

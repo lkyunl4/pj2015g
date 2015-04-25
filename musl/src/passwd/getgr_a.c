@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <pthread.h>
 #include <byteswap.h>
 #include <string.h>
@@ -167,3 +169,4 @@ done:
 	if (rv) errno = rv;
 	return rv;
 }
+#endif

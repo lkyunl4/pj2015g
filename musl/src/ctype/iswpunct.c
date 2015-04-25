@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include "libc.h"
 
@@ -18,3 +20,4 @@ int __iswpunct_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswpunct_l, iswpunct_l);
+#endif

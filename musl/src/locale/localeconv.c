@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <locale.h>
 
 static const struct lconv posix_lconv = {
@@ -31,3 +33,4 @@ struct lconv *localeconv(void)
 {
 	return (void *)&posix_lconv;
 }
+#endif

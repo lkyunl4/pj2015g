@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 
 double fdim(double x, double y)
@@ -8,3 +10,4 @@ double fdim(double x, double y)
 		return y;
 	return x > y ? x - y : 0;
 }
+#endif

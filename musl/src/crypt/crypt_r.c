@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <crypt.h>
 #include "libc.h"
 
@@ -30,3 +32,4 @@ char *__crypt_r(const char *key, const char *salt, struct crypt_data *data)
 }
 
 weak_alias(__crypt_r, crypt_r);
+#endif

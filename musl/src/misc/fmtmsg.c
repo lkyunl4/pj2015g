@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* Public domain fmtmsg()
  * Written by Isaac Dunham, 2014
  */
@@ -88,3 +90,4 @@ int fmtmsg(long classification, const char *label, int severity,
 
 	return ret;
 }
+#endif

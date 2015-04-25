@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_j1.c */
 /*
  * ====================================================
@@ -360,3 +362,4 @@ static double qone(double x)
 	s = 1.0+z*(q[0]+z*(q[1]+z*(q[2]+z*(q[3]+z*(q[4]+z*q[5])))));
 	return (.375 + r/s)/x;
 }
+#endif

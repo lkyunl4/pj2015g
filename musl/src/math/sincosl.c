@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include "libm.h"
 
@@ -57,4 +59,5 @@ void sincosl(long double x, long double *sin, long double *cos)
 		break;
 	}
 }
+#endif
 #endif

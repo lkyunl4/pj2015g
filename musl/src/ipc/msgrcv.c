@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/msg.h>
 #include "syscall.h"
 #include "ipc.h"
@@ -11,3 +13,4 @@ ssize_t msgrcv(int q, void *m, size_t len, long type, int flag)
 	return syscall_cp(SYS_ipc, IPCOP_msgrcv, q, len, flag, ((long[]){ (long)m, type }));
 #endif
 }
+#endif

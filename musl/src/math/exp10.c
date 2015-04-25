@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <math.h>
 #include <stdint.h>
@@ -23,3 +25,4 @@ double exp10(double x)
 }
 
 weak_alias(exp10, pow10);
+#endif

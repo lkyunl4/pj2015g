@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float nexttowardf(float x, long double y)
@@ -33,3 +35,4 @@ float nexttowardf(float x, long double y)
 		FORCE_EVAL(x*x + ux.f*ux.f);
 	return ux.f;
 }
+#endif

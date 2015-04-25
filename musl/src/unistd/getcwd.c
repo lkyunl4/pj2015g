@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <errno.h>
 #include <limits.h>
@@ -17,3 +19,4 @@ char *getcwd(char *buf, size_t size)
 	if (syscall(SYS_getcwd, buf, size) < 0) return 0;
 	return buf == tmp ? strdup(buf) : buf;
 }
+#endif

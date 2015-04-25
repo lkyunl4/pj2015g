@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <errno.h>
 #include <unistd.h>
@@ -11,3 +13,4 @@ int pclose(FILE *f)
 	if (r<0) return __syscall_ret(r);
 	return status;
 }
+#endif

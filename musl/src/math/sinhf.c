@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float sinhf(float x)
@@ -29,3 +31,4 @@ float sinhf(float x)
 	t = 2*h*__expo2f(absx);
 	return t;
 }
+#endif

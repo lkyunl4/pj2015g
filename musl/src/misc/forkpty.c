@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <pty.h>
 #include <utmp.h>
 #include <unistd.h>
@@ -55,3 +57,4 @@ out:
 
 	return pid;
 }
+#endif

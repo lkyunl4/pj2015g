@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/polevll.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -90,4 +92,5 @@ long double __p1evll(long double x, const long double *P, int n)
 
 	return y;
 }
+#endif
 #endif

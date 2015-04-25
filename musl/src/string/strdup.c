@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 #include "libc.h"
@@ -11,3 +13,4 @@ char *__strdup(const char *s)
 }
 
 weak_alias(__strdup, strdup);
+#endif

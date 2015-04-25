@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -63,3 +65,4 @@ float fmodf(float x, float y)
 	ux.i = uxi;
 	return ux.f;
 }
+#endif

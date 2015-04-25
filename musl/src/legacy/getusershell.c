@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <unistd.h>
@@ -30,3 +32,4 @@ char *getusershell(void)
 	if (line[l-1]=='\n') line[l-1]=0;
 	return line;
 }
+#endif

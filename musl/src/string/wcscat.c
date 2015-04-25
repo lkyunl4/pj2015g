@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 wchar_t *wcscat(wchar_t *restrict dest, const wchar_t *restrict src)
@@ -8,4 +10,5 @@ wchar_t *wcscat(wchar_t *restrict dest, const wchar_t *restrict src)
 	return dest;
 }
 
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <stdint.h>
 #include "libc.h"
@@ -120,3 +122,4 @@ end:
 	UNLOCK(lock);
 	return k;
 }
+#endif

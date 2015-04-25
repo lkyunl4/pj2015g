@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 // FIXME: Hull et al. "Implementing the complex arcsine and arccosine functions using exception handling" 1997
@@ -9,3 +11,4 @@ double complex cacos(double complex z)
 	z = casin(z);
 	return CMPLX(M_PI_2 - creal(z), -cimag(z));
 }
+#endif

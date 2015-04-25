@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/ld80/e_log10l.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -188,4 +190,5 @@ long double log10l(long double x)
 {
 	return log10(x);
 }
+#endif
 #endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include "pwf.h"
 
@@ -10,3 +12,4 @@ struct group *fgetgrent(FILE *f)
 	__getgrent_a(f, &gr, &line, &size, &mem, &nmem, &res);
 	return res;
 }
+#endif

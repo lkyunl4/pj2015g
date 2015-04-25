@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/ld80/s_exp2l.c and /usr/src/lib/msun/ld128/s_exp2l.c */
 /*-
  * Copyright (c) 2005-2008 David Schultz <das@FreeBSD.ORG>
@@ -616,4 +618,5 @@ exp2l(long double x)
 
 	return scalbnl(r, k.i);
 }
+#endif
 #endif

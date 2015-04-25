@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 #include <wctype.h>
 #include "libc.h"
@@ -23,3 +25,4 @@ int __iswspace_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswspace_l, iswspace_l);
+#endif

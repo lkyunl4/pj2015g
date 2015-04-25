@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <limits.h>
 #include <errno.h>
 #include <ctype.h>
@@ -98,3 +100,4 @@ done:
 	}
 	return (y^neg)-neg;
 }
+#endif

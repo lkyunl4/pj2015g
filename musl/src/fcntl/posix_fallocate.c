@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <fcntl.h>
 #include "syscall.h"
 #include "libc.h"
@@ -9,3 +11,4 @@ int posix_fallocate(int fd, off_t base, off_t len)
 }
 
 LFS64(posix_fallocate);
+#endif

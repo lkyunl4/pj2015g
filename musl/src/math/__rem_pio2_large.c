@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/k_rem_pio2.c */
 /*
  * ====================================================
@@ -440,3 +442,4 @@ recompute:
 	}
 	return n&7;
 }
+#endif

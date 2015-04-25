@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 int fsetpos(FILE *f, const fpos_t *pos)
@@ -6,3 +8,4 @@ int fsetpos(FILE *f, const fpos_t *pos)
 }
 
 LFS64(fsetpos);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/sem.h>
 #include <stdarg.h>
 #include "syscall.h"
@@ -33,3 +35,4 @@ int semctl(int id, int num, int cmd, ...)
 #endif
 
 }
+#endif

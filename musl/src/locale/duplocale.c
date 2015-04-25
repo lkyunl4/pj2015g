@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 #include "locale_impl.h"
@@ -19,3 +21,4 @@ locale_t __duplocale(locale_t old)
 }
 
 weak_alias(__duplocale, duplocale);
+#endif

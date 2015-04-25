@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 int getc(FILE *f)
@@ -11,3 +13,4 @@ int getc(FILE *f)
 }
 
 weak_alias(getc, _IO_getc);
+#endif

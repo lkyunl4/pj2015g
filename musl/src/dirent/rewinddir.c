@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <dirent.h>
 #include <unistd.h>
 #include "__dirent.h"
@@ -11,3 +13,4 @@ void rewinddir(DIR *dir)
 	dir->tell = 0;
 	UNLOCK(dir->lock);
 }
+#endif

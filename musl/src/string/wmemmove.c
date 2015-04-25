@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 wchar_t *wmemmove(wchar_t *d, const wchar_t *s, size_t n)
@@ -9,3 +11,4 @@ wchar_t *wmemmove(wchar_t *d, const wchar_t *s, size_t n)
 		while (n--) *d++ = *s++;
 	return d0;
 }
+#endif

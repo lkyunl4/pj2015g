@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 int ungetc(int c, FILE *f)
@@ -17,3 +19,4 @@ int ungetc(int c, FILE *f)
 	FUNLOCK(f);
 	return c;
 }
+#endif

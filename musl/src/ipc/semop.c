@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/sem.h>
 #include "syscall.h"
 #include "ipc.h"
@@ -10,3 +12,4 @@ int semop(int id, struct sembuf *buf, size_t n)
 	return syscall(SYS_ipc, IPCOP_semop, id, n, 0, buf);
 #endif
 }
+#endif

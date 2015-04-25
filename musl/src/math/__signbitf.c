@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 // FIXME: macro in math.h
@@ -9,3 +11,4 @@ int __signbitf(float x)
 	} y = { x };
 	return y.i>>31;
 }
+#endif

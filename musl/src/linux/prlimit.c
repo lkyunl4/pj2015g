@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <sys/resource.h>
 #include "syscall.h"
@@ -25,3 +27,4 @@ int prlimit(pid_t pid, int resource, const struct rlimit *new_limit, struct rlim
 
 #undef prlimit64
 LFS64(prlimit);
+#endif

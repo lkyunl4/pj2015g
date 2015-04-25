@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wchar.h>
 
 static const unsigned char table[] = {
@@ -27,3 +29,4 @@ int wcwidth(wchar_t wc)
 		return 0;
 	return 1;
 }
+#endif

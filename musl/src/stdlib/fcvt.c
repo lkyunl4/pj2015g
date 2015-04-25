@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
@@ -23,3 +25,4 @@ char *fcvt(double x, int n, int *dp, int *sign)
 
 	return ecvt(x, n-lz, dp, sign);
 }
+#endif

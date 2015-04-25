@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 #undef isupper
@@ -13,3 +15,4 @@ int __isupper_l(int c, locale_t l)
 }
 
 weak_alias(__isupper_l, isupper_l);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include "syscall.h"
 #include "libc.h"
@@ -8,3 +10,4 @@ ssize_t pwrite(int fd, const void *buf, size_t size, off_t ofs)
 }
 
 LFS64(pwrite);
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include <wchar.h>
 #include <string.h>
@@ -101,3 +103,4 @@ int getopt(int argc, char * const argv[], const char *optstring)
 }
 
 weak_alias(getopt, __posix_getopt);
+#endif

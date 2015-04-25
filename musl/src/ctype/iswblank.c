@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <wctype.h>
 #include <ctype.h>
 #include "libc.h"
@@ -13,3 +15,4 @@ int __iswblank_l(wint_t c, locale_t l)
 }
 
 weak_alias(__iswblank_l, iswblank_l);
+#endif

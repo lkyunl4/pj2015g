@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/signalfd.h>
 #include <signal.h>
 #include <errno.h>
@@ -19,3 +21,4 @@ int signalfd(int fd, const sigset_t *sigs, int flags)
 #endif
 	return __syscall_ret(ret);
 }
+#endif

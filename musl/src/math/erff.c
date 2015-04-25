@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_erff.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -181,3 +183,4 @@ float erfcf(float x)
 	}
 	return sign ? 2 - 0x1p-120f : 0x1p-120f*0x1p-120f;
 }
+#endif

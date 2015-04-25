@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 
 void setspent()
@@ -12,3 +14,4 @@ struct spwd *getspent()
 {
 	return 0;
 }
+#endif

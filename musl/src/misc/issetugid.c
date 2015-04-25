@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <unistd.h>
 #include "libc.h"
 
@@ -5,3 +7,4 @@ int issetugid(void)
 {
 	return libc.secure;
 }
+#endif

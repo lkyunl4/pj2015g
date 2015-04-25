@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/e_exp.c */
 /*
  * ====================================================
@@ -132,3 +134,4 @@ double exp(double x)
 		return y;
 	return scalbn(y, k);
 }
+#endif

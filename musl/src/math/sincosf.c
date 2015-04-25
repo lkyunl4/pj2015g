@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: FreeBSD /usr/src/lib/msun/src/s_sinf.c */
 /*
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
@@ -115,3 +117,4 @@ void sincosf(float x, float *sin, float *cos)
 		break;
 	}
 }
+#endif

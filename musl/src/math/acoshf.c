@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if FLT_EVAL_METHOD==2
@@ -24,3 +26,4 @@ float acoshf(float x)
 	/* x >= 0x1p12 */
 	return logf(x) + 0.693147180559945309417232121458176568f;
 }
+#endif

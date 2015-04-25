@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 float modff(float x, float *iptr)
@@ -32,3 +34,4 @@ float modff(float x, float *iptr)
 	*iptr = u.f;
 	return x - u.f;
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
@@ -21,3 +23,4 @@ void *memchr(const void *src, int c, size_t n)
 	}
 	return n ? (void *)s : 0;
 }
+#endif

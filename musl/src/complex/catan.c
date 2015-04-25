@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 /* origin: OpenBSD /usr/src/lib/libm/src/s_catan.c */
 /*
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
@@ -117,3 +119,4 @@ ovrf:
 	w = MAXNUM + MAXNUM * I;
 	return w;
 }
+#endif

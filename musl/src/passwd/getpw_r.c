@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 #include <pthread.h>
 
@@ -39,3 +41,4 @@ int getpwuid_r(uid_t uid, struct passwd *pw, char *buf, size_t size, struct pass
 {
 	return getpw_r(0, uid, pw, buf, size, res);
 }
+#endif

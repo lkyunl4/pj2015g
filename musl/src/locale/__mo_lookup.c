@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdint.h>
 #include <string.h>
 
@@ -40,3 +42,4 @@ const char *__mo_lookup(const void *p, size_t size, const char *s)
 	}
 	return 0;
 }
+#endif

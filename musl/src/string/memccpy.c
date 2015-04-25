@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
@@ -32,4 +34,5 @@ tail:
 	return 0;
 }
 
+#endif
 #endif

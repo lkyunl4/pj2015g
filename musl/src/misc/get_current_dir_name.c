@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #define _GNU_SOURCE
 #include <stdlib.h>
 #include <string.h>
@@ -13,3 +15,4 @@ char *get_current_dir_name(void) {
 		return strdup(res);
 	return getcwd(0, 0);
 }
+#endif

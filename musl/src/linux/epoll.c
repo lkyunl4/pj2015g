@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <sys/epoll.h>
 #include <signal.h>
 #include <errno.h>
@@ -35,3 +37,4 @@ int epoll_wait(int fd, struct epoll_event *ev, int cnt, int to)
 {
 	return epoll_pwait(fd, ev, cnt, to, 0);
 }
+#endif

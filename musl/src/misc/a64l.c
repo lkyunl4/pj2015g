@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
@@ -24,3 +26,4 @@ char *l64a(long x0)
 	*p = 0;
 	return s;
 }
+#endif

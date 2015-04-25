@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #ifndef NSCD_H
 #define NSCD_H
 
@@ -41,4 +43,5 @@
 
 FILE *__nscd_query(int32_t req, const char *key, int32_t *buf, size_t len, int *swap);
 
+#endif
 #endif

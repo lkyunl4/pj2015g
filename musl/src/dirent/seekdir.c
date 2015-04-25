@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <dirent.h>
 #include <unistd.h>
 #include "__dirent.h"
@@ -10,3 +12,4 @@ void seekdir(DIR *dir, long off)
 	dir->buf_pos = dir->buf_end = 0;
 	UNLOCK(dir->lock);
 }
+#endif

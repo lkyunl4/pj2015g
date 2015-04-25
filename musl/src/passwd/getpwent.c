@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "pwf.h"
 
 static FILE *f;
@@ -35,3 +37,4 @@ struct passwd *getpwnam(const char *name)
 	__getpw_a(name, 0, &pw, &line, &size, &res);
 	return res;
 }
+#endif

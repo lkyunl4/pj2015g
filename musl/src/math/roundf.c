@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 #if FLT_EVAL_METHOD==0
@@ -34,3 +36,4 @@ float roundf(float x)
 		y = -y;
 	return y;
 }
+#endif

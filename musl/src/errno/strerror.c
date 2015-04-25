@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <errno.h>
 #include <string.h>
 #include "locale_impl.h"
@@ -40,3 +42,4 @@ char *strerror(int e)
 }
 
 weak_alias(__strerror_l, strerror_l);
+#endif

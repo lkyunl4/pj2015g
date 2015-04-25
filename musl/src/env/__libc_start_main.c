@@ -1,5 +1,7 @@
 #ifndef SCC_TEST
 
+#ifndef SCC_TEST
+
 #include <elf.h>
 #include <poll.h>
 #include <fcntl.h>
@@ -79,4 +81,5 @@ int __libc_start_main(int (*main)(int,char **,char **), int argc, char **argv)
 	return 0;
 }
 
+#endif
 #endif

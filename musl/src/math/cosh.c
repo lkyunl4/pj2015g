@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "libm.h"
 
 /* cosh(x) = (exp(x) + 1/exp(x))/2
@@ -38,3 +40,4 @@ double cosh(double x)
 	t = __expo2(x);
 	return t;
 }
+#endif

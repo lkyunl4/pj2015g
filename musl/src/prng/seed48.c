@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -10,3 +12,4 @@ unsigned short *seed48(unsigned short *s)
 	memcpy(__seed48, s, sizeof p);
 	return p;
 }
+#endif

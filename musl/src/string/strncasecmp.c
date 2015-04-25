@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <strings.h>
 #include <ctype.h>
 #include "libc.h"
@@ -16,3 +18,4 @@ int __strncasecmp_l(const char *l, const char *r, size_t n, locale_t loc)
 }
 
 weak_alias(__strncasecmp_l, strncasecmp_l);
+#endif

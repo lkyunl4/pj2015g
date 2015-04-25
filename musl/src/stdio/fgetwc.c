@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 #include <wchar.h>
 #include <errno.h>
@@ -50,3 +52,4 @@ wint_t fgetwc(FILE *f)
 
 weak_alias(__fgetwc_unlocked, fgetwc_unlocked);
 weak_alias(__fgetwc_unlocked, getwc_unlocked);
+#endif

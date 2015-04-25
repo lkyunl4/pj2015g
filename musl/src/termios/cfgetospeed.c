@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <termios.h>
 #include <sys/ioctl.h>
 
@@ -10,3 +12,4 @@ speed_t cfgetispeed(const struct termios *tio)
 {
 	return cfgetospeed(tio);
 }
+#endif

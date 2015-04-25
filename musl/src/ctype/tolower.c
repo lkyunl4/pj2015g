@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <ctype.h>
 #include "libc.h"
 
@@ -13,3 +15,4 @@ int __tolower_l(int c, locale_t l)
 }
 
 weak_alias(__tolower_l, tolower_l);
+#endif

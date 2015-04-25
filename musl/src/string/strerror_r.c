@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <string.h>
 #include <errno.h>
 #include "libc.h"
@@ -18,3 +20,4 @@ int strerror_r(int err, char *buf, size_t buflen)
 }
 
 weak_alias(strerror_r, __xpg_strerror_r);
+#endif

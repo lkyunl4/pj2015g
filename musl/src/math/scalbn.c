@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <math.h>
 #include <stdint.h>
 
@@ -29,3 +31,4 @@ double scalbn(double x, int n)
 	x = y * u.f;
 	return x;
 }
+#endif

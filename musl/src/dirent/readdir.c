@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <dirent.h>
 #include <errno.h>
 #include "__dirent.h"
@@ -26,3 +28,4 @@ struct dirent *readdir(DIR *dir)
 }
 
 LFS64(readdir);
+#endif

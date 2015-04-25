@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include "stdio_impl.h"
 
 int __overflow(FILE *f, int _c)
@@ -8,3 +10,4 @@ int __overflow(FILE *f, int _c)
 	if (f->write(f, &c, 1)!=1) return EOF;
 	return c;
 }
+#endif
