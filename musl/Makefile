@@ -150,11 +150,11 @@ EMPTY_LIB_NAMES = m rt pthread crypt util xnet resolv dl
 EMPTY_LIBS = $(EMPTY_LIB_NAMES:%=lib/lib%.a)
 #CRT_LIBS = lib/crt1.o lib/Scrt1.o lib/crti.o lib/crtn.o
 STATIC_LIBS = lib/libc.a
-SHARED_LIBS = lib/libc.so
+#SHARED_LIBS = lib/libc.so
 #TOOL_LIBS = lib/musl-gcc.specs
 #ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS) $(TOOL_LIBS)
 #ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS)
-ALL_LIBS = $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS)
+ALL_LIBS = $(STATIC_LIBS) $(EMPTY_LIBS) #$(SHARED_LIBS)
 #ALL_TOOLS = tools/musl-gcc
 
 LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
@@ -163,6 +163,8 @@ LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
 ARCH=srp4m
 
 all: $(ALL_LIBS)
+#	mkdir $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include
+#	cp include/* $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include/
 
 install: install-libs install-headers
 
@@ -206,8 +208,8 @@ $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 %.lo: %.c $(GENH) $(IMPH)
 	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) -c -o $@ $< $(SYSTEM_INC)
 
-lib/libc.so: $(LOBJS)
-	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(SCC_LDFLAGS) -o $@ $(LOBJS) $(LIBCC)
+#lib/libc.so: $(LOBJS)
+#	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(SCC_LDFLAGS) -o $@ $(LOBJS) $(LIBCC)
 #$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 
 lib/libc.a: $(OBJS)
@@ -222,8 +224,8 @@ $(EMPTY_LIBS):
 lib/%.o: crt/%.o
 	cp $< $@
 
-$(DESTDIR)$(libdir)/%.so: lib/%.so
-	$(INSTALL) -D -m 755 $< $@
+#$(DESTDIR)$(libdir)/%.so: lib/%.so
+#	$(INSTALL) -D -m 755 $< $@
 
 $(DESTDIR)$(libdir)/%: lib/%
 	$(INSTALL) -D -m 644 $< $@
@@ -234,10 +236,11 @@ $(DESTDIR)$(includedir)/bits/%: arch/$(ARCH)/bits/%
 $(DESTDIR)$(includedir)/%: include/%
 	$(INSTALL) -D -m 644 $< $@
 
-$(DESTDIR)$(LDSO_PATHNAME): $(DESTDIR)$(libdir)/libc.so
+#$(DESTDIR)$(LDSO_PATHNAME): $(DESTDIR)$(libdir)/libc.so
 	$(INSTALL) -D -l $(libdir)/libc.so $@ || true
 
-install-libs: $(ALL_LIBS:lib/%=$(DESTDIR)$(libdir)/%) $(if $(SHARED_LIBS),$(DESTDIR)$(LDSO_PATHNAME),)
+#install-libs: $(ALL_LIBS:lib/%=$(DESTDIR)$(libdir)/%) $(if $(SHARED_LIBS),$(DESTDIR)$(LDSO_PATHNAME),)
+install-libs: $(ALL_LIBS:lib/%=$(DESTDIR)$(libdir)/%) $(if $(DESTDIR)$(LDSO_PATHNAME),)
 
 install-headers: $(ALL_INCLUDES:include/%=$(DESTDIR)$(includedir)/%)
 

@@ -240,6 +240,7 @@ LIBRARY_INC:= \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/hal \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/system/$(TARGET_SYS)/src \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include \
+					-I ../musl/include \
 					-include $(SRPSDK_SRC)/arch/$(TARGET)/etc/srp_vector.h
 
 # Essential header include path
@@ -250,6 +251,7 @@ SYSTEM_INC:= \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/etc \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/hal \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include \
+					-I ../musl/include \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/startup \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/system \
@@ -266,6 +268,7 @@ SYSTEM_LIBS:= \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/newlib \
 					-L $(SRPSDK_INSTALL)/include/arch/srp4m/system/sim/musl/lib \
 					-L $(SRPSDK_INSTALL)/include/arch/srp4m/system/sim/musl \
+					-L ../musl/lib \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/system \
 					-lc -lcrypt  -ldl  -lm  -lresolv  -lrt  -lutil  -lsrp\
