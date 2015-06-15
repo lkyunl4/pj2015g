@@ -46,7 +46,7 @@ OPTIONS= \
 					$(COMPILE_OPTIONS)
 
 MUSLLIB_COMPILE_OPTIONS= -srp-subtarget $(TARGET) $(MACRO_DEFINES)
-SCC_CFLAGS= $(MUSLLIB_COMPILE_OPTIONS) $(OPTIMIZE) $(OPTIONS) -D SCC_TEST -g
+SCC_CFLAGS= $(MUSLLIB_COMPILE_OPTIONS) $(OPTIMIZE) $(OPTIONS) -D SCC_TEST -w -g
 
 SCC_ASFLAGS= -c $(OPTIMIZE) -srp-subtarget $(TARGET)
 
@@ -85,6 +85,7 @@ LIBRARY_INC:= \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/etc \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/hal \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/system/$(TARGET_SYS)/src \
+					-I ../musl/include \
 					#-include $(SRPSDK_SRC)/arch/$(TARGET)/etc/srp_vector.h
 
 SYSTEM_INC:= \
@@ -95,6 +96,7 @@ SYSTEM_INC:= \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/startup \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/system \
+					-I ../musl/include \
 					#-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/etc/srp_vector.h \
 					#-include $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/common/legacy.h
 

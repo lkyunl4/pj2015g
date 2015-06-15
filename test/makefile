@@ -241,6 +241,7 @@ LIBRARY_INC:= \
 					-I $(SRPSDK_SRC)/arch/$(TARGET)/system/$(TARGET_SYS)/src \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include \
 					-I ../musl/include \
+					-I ../musl/src/internal \
 					-include $(SRPSDK_SRC)/arch/$(TARGET)/etc/srp_vector.h
 
 # Essential header include path
@@ -252,6 +253,7 @@ SYSTEM_INC:= \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/hal \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include \
 					-I ../musl/include \
+					-I ../musl/src/internal \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/startup \
 					-I $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/system \

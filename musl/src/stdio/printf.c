@@ -1,11 +1,7 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <stdarg.h>
 
-int printf(const char *restrict fmt, ...)
+int printf(const char * fmt, ...)
 {
 	int ret;
 	va_list ap;
@@ -14,6 +10,3 @@ int printf(const char *restrict fmt, ...)
 	va_end(ap);
 	return ret;
 }
-
-#endif
-#endif

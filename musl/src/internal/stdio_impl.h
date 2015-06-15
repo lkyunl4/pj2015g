@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #ifndef _STDIO_IMPL_H
 #define _STDIO_IMPL_H
 
@@ -93,5 +91,4 @@ int __fmodeflags(const char *);
 FILE *__fopen_rb_ca(const char *, FILE *, unsigned char *, size_t);
 int __fclose_ca(FILE *);
 
-#endif
 #endif
