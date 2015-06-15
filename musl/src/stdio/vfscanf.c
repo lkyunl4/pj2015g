@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdlib.h>
 #include <stdarg.h>
 #include <ctype.h>
@@ -57,7 +53,7 @@ static void *arg_n(va_list ap, unsigned int n)
 	return p;
 }
 
-int vfscanf(FILE *restrict f, const char *restrict fmt, va_list ap)
+int vfscanf(FILE * f, const char * fmt, va_list ap)
 {
 	int width;
 	int size;
@@ -333,7 +329,4 @@ match_fail:
 	return matches;
 }
 
-weak_alias(vfscanf,__isoc99_vfscanf);
-
-#endif
-#endif
+//weak_alias(vfscanf,__isoc99_vfscanf);

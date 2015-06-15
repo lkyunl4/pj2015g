@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 void clearerr(FILE *f)
@@ -9,5 +7,4 @@ void clearerr(FILE *f)
 	FUNLOCK(f);
 }
 
-weak_alias(clearerr, clearerr_unlocked);
-#endif
+//weak_alias(clearerr, clearerr_unlocked);

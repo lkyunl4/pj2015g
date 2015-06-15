@@ -1,12 +1,8 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <stdarg.h>
 #include "libc.h"
 
-int scanf(const char *restrict fmt, ...)
+int scanf(const char * fmt, ...)
 {
 	int ret;
 	va_list ap;
@@ -16,7 +12,5 @@ int scanf(const char *restrict fmt, ...)
 	return ret;
 }
 
-weak_alias(scanf,__isoc99_scanf);
+//weak_alias(scanf,__isoc99_scanf);
 
-#endif
-#endif
