@@ -1,12 +1,8 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <stdarg.h>
 #include "libc.h"
 
-int fscanf(FILE *restrict f, const char *restrict fmt, ...)
+int fscanf(FILE * f, const char * fmt, ...)
 {
 	int ret;
 	va_list ap;
@@ -16,7 +12,4 @@ int fscanf(FILE *restrict f, const char *restrict fmt, ...)
 	return ret;
 }
 
-weak_alias(fscanf, __isoc99_fscanf);
-
-#endif
-#endif
+//weak_alias(fscanf, __isoc99_fscanf);

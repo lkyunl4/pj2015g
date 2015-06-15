@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include <wchar.h>
 #include "stdio_impl.h"
 
@@ -14,4 +12,3 @@ int fwide(FILE *f, int mode)
 	FUNLOCK(f);
 	return mode;
 }
-#endif

@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <wchar.h>
 #include <errno.h>
@@ -91,4 +89,3 @@ FILE *open_wmemstream(wchar_t **bufp, size_t *sizep)
 
 	return f;
 }
-#endif

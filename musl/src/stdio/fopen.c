@@ -1,11 +1,9 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <fcntl.h>
 #include <string.h>
 #include <errno.h>
 
-FILE *fopen(const char *restrict filename, const char *restrict mode)
+FILE *fopen(const char * filename, const char * mode)
 {
 	FILE *f;
 	int fd;
@@ -32,6 +30,4 @@ FILE *fopen(const char *restrict filename, const char *restrict mode)
 	return 0;
 }
 
-LFS64(fopen);
-
-#endif
+//LFS64(fopen);

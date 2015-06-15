@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 int __fseeko_unlocked(FILE *f, off_t off, int whence)
@@ -40,7 +38,6 @@ int fseek(FILE *f, long off, int whence)
 	return __fseeko(f, off, whence);
 }
 
-weak_alias(__fseeko, fseeko);
+//weak_alias(__fseeko, fseeko);
 
-LFS64(fseeko);
-#endif
+//LFS64(fseeko);

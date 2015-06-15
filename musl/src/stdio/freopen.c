@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <fcntl.h>
 
@@ -15,7 +11,7 @@
 
 int __dup3(int, int, int);
 
-FILE *freopen(const char *restrict filename, const char *restrict mode, FILE *restrict f)
+FILE *freopen(const char * filename, const char * mode, FILE * f)
 {
 	int fl = __fmodeflags(mode);
 	FILE *f2;
@@ -55,7 +51,4 @@ fail:
 	return NULL;
 }
 
-LFS64(freopen);
-
-#endif
-#endif
+//LFS64(freopen);

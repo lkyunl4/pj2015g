@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include "libc.h"
 
-int sscanf(const char *restrict s, const char *restrict fmt, ...)
+int sscanf(const char * s, const char * fmt, ...)
 {
 	int ret;
 	va_list ap;

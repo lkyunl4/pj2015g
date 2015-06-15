@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdarg.h>
@@ -15,4 +13,3 @@ int vasprintf(char **s, const char *fmt, va_list ap)
 	if (l<0 || !(*s=malloc(l+1U))) return -1;
 	return vsnprintf(*s, l+1U, fmt, ap);
 }
-#endif

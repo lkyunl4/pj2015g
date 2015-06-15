@@ -1,7 +1,5 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
-#include "pthread_impl.h"
+//#include "pthread_impl.h"
 
 void flockfile(FILE *f)
 {
@@ -10,4 +8,3 @@ void flockfile(FILE *f)
 		if (owner) __wait(&f->lock, &f->waiters, owner, 1);
 	}
 }
-#endif

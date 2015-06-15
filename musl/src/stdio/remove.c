@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -19,4 +17,3 @@ int remove(const char *path)
 #endif
 	return __syscall_ret(r);
 }
-#endif

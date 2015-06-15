@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 #undef ferror
@@ -12,6 +10,5 @@ int ferror(FILE *f)
 	return ret;
 }
 
-weak_alias(ferror, ferror_unlocked);
-weak_alias(ferror, _IO_ferror_unlocked);
-#endif
+//weak_alias(ferror, ferror_unlocked);
+//weak_alias(ferror, _IO_ferror_unlocked);

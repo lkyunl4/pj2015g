@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <stdlib.h>
 #include <sys/ioctl.h>
@@ -65,5 +63,4 @@ FILE *__fdopen(int fd, const char *mode)
 	return f;
 }
 
-weak_alias(__fdopen, fdopen);
-#endif
+//weak_alias(__fdopen, fdopen);

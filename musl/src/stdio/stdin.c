@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 static unsigned char buf[BUFSIZ+UNGET];
@@ -15,4 +13,3 @@ static FILE f = {
 };
 FILE *const stdin = &f;
 FILE *volatile __stdin_used = &f;
-#endif

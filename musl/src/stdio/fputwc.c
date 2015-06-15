@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <wchar.h>
 #include <limits.h>
@@ -33,6 +31,5 @@ wint_t fputwc(wchar_t c, FILE *f)
 	return c;
 }
 
-weak_alias(__fputwc_unlocked, fputwc_unlocked);
-weak_alias(__fputwc_unlocked, putwc_unlocked);
-#endif
+//weak_alias(__fputwc_unlocked, fputwc_unlocked);
+//weak_alias(__fputwc_unlocked, putwc_unlocked);

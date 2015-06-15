@@ -1,13 +1,9 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <wchar.h>
 
 wint_t __fgetwc_unlocked(FILE *);
 
-wchar_t *fgetws(wchar_t *restrict s, int n, FILE *restrict f)
+wchar_t *fgetws(wchar_t * s, int n, FILE * f)
 {
 	wchar_t *p = s;
 
@@ -29,7 +25,5 @@ wchar_t *fgetws(wchar_t *restrict s, int n, FILE *restrict f)
 	return (p == s) ? NULL : s;
 }
 
-weak_alias(fgetws, fgetws_unlocked);
+//weak_alias(fgetws, fgetws_unlocked);
 
-#endif
-#endif

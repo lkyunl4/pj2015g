@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <string.h>
 #include <inttypes.h>
@@ -9,7 +5,7 @@
 
 #define MIN(a,b) ((a)<(b) ? (a) : (b))
 
-ssize_t getdelim(char **restrict s, size_t *restrict n, int delim, FILE *restrict f)
+ssize_t getdelim(char ** s, size_t * n, int delim, FILE * f)
 {
 	char *tmp;
 	unsigned char *z;
@@ -65,7 +61,4 @@ oom:
 	return -1;
 }
 
-weak_alias(getdelim, __getdelim);
-
-#endif
-#endif
+//weak_alias(getdelim, __getdelim);

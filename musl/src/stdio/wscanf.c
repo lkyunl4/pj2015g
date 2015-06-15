@@ -1,13 +1,9 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <stdarg.h>
 #include <wchar.h>
 #include "libc.h"
 
-int wscanf(const wchar_t *restrict fmt, ...)
+int wscanf(const wchar_t * fmt, ...)
 {
 	int ret;
 	va_list ap;
@@ -17,7 +13,4 @@ int wscanf(const wchar_t *restrict fmt, ...)
 	return ret;
 }
 
-weak_alias(wscanf,__isoc99_wscanf);
-
-#endif
-#endif
+//weak_alias(wscanf,__isoc99_wscanf);

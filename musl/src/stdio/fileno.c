@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 int fileno(FILE *f)
@@ -12,5 +10,4 @@ int fileno(FILE *f)
 	return f->fd;
 }
 
-weak_alias(fileno, fileno_unlocked);
-#endif
+//weak_alias(fileno, fileno_unlocked);

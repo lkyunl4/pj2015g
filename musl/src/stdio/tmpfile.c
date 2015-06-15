@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <fcntl.h>
 #include "stdio_impl.h"
@@ -31,5 +29,4 @@ FILE *tmpfile(void)
 	return 0;
 }
 
-LFS64(tmpfile);
-#endif
+//LFS64(tmpfile);

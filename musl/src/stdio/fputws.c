@@ -1,11 +1,7 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <wchar.h>
 
-int fputws(const wchar_t *restrict ws, FILE *restrict f)
+int fputws(const wchar_t * ws, FILE * f)
 {
 	unsigned char buf[BUFSIZ];
 	size_t l=0;
@@ -25,7 +21,4 @@ int fputws(const wchar_t *restrict ws, FILE *restrict f)
 	return l; /* 0 or -1 */
 }
 
-weak_alias(fputws, fputws_unlocked);
-
-#endif
-#endif
+//weak_alias(fputws, fputws_unlocked);

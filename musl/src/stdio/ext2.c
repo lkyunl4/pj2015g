@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 size_t __freadahead(FILE *f)
@@ -24,4 +22,3 @@ void __fseterr(FILE *f)
 {
 	f->flags |= F_ERR;
 }
-#endif

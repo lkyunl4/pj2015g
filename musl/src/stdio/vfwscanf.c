@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -88,7 +84,7 @@ static int in_set(const wchar_t *set, int c)
 	((f)->rend && (c)<128U ? *--(f)->rpos : ungetwc((c),(f)))
 #endif
 
-int vfwscanf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
+int vfwscanf(FILE * f, const wchar_t * fmt, va_list ap)
 {
 	int width;
 	int size;
@@ -329,7 +325,4 @@ match_fail:
 	return matches;
 }
 
-weak_alias(vfwscanf,__isoc99_vfwscanf);
-
-#endif
-#endif
+//weak_alias(vfwscanf,__isoc99_vfwscanf);

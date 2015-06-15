@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <limits.h>
 #include <errno.h>
@@ -34,7 +32,6 @@ long ftell(FILE *f)
 	return pos;
 }
 
-weak_alias(__ftello, ftello);
+//weak_alias(__ftello, ftello);
 
-LFS64(ftello);
-#endif
+//LFS64(ftello);

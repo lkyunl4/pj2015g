@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 int puts(const char *s)
@@ -10,4 +8,3 @@ int puts(const char *s)
 	FUNLOCK(stdout);
 	return r;
 }
-#endif

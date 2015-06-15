@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <limits.h>
 #include <string.h>
@@ -18,7 +14,7 @@ static size_t sn_write(FILE *f, const unsigned char *s, size_t l)
 	return l;
 }
 
-int vsnprintf(char *restrict s, size_t n, const char *restrict fmt, va_list ap)
+int vsnprintf(char * s, size_t n, const char * fmt, va_list ap)
 {
 	int r;
 	char b;
@@ -44,6 +40,3 @@ int vsnprintf(char *restrict s, size_t n, const char *restrict fmt, va_list ap)
 	if (n) f.wpos[-(f.wpos == f.wend)] = 0;
 	return r;
 }
-
-#endif
-#endif

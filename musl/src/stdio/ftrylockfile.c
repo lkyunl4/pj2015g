@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include "pthread_impl.h"
 #include <limits.h>
@@ -42,6 +38,3 @@ int ftrylockfile(FILE *f)
 	self->stdio_locks = f;
 	return 0;
 }
-
-#endif
-#endif

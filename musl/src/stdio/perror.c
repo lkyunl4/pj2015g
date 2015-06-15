@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
@@ -22,4 +20,3 @@ void perror(const char *msg)
 
 	FUNLOCK(f);
 }
-#endif

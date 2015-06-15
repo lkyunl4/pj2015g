@@ -1,13 +1,6 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdio.h>
 
-void setbuf(FILE *restrict f, char *restrict buf)
+void setbuf(FILE * f, char * buf)
 {
 	setvbuf(f, buf, buf ? _IOFBF : _IONBF, BUFSIZ);
 }
-
-#endif
-#endif

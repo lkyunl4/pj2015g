@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include "libc.h"
 #include <wchar.h>
@@ -29,7 +25,7 @@ static size_t wstring_read(FILE *f, unsigned char *buf, size_t len)
 	return 1;
 }
 
-int vswscanf(const wchar_t *restrict s, const wchar_t *restrict fmt, va_list ap)
+int vswscanf(const wchar_t * s, const wchar_t * fmt, va_list ap)
 {
 	unsigned char buf[256];
 	FILE f = {
@@ -40,7 +36,4 @@ int vswscanf(const wchar_t *restrict s, const wchar_t *restrict fmt, va_list ap)
 	return vfwscanf(&f, fmt, ap);
 }
 
-weak_alias(vswscanf,__isoc99_vswscanf);
-
-#endif
-#endif
+//weak_alias(vswscanf,__isoc99_vswscanf);

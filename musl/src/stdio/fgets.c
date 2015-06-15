@@ -1,13 +1,9 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <string.h>
 
 #define MIN(a,b) ((a)<(b) ? (a) : (b))
 
-char *fgets(char *restrict s, int n, FILE *restrict f)
+char *fgets(char * s, int n, FILE * f)
 {
 	char *p = s;
 	unsigned char *z;
@@ -47,7 +43,4 @@ char *fgets(char *restrict s, int n, FILE *restrict f)
 	return s;
 }
 
-weak_alias(fgets, fgets_unlocked);
-
-#endif
-#endif
+//weak_alias(fgets, fgets_unlocked);

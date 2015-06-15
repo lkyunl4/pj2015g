@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 int getc(FILE *f)
@@ -12,5 +10,4 @@ int getc(FILE *f)
 	return c;
 }
 
-weak_alias(getc, _IO_getc);
-#endif
+//weak_alias(getc, _IO_getc);

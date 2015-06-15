@@ -1,7 +1,3 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <errno.h>
 #include <ctype.h>
@@ -344,7 +340,7 @@ static int wprintf_core(FILE *f, const wchar_t *fmt, va_list *ap, union arg *nl_
 	return 1;
 }
 
-int vfwprintf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
+int vfwprintf(FILE * f, const wchar_t * fmt, va_list ap)
 {
 	va_list ap2;
 	int nl_type[NL_ARGMAX] = {0};
@@ -370,6 +366,3 @@ int vfwprintf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
 	va_end(ap2);
 	return ret;
 }
-
-#endif
-#endif

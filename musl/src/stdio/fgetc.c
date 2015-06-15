@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 int fgetc(FILE *f)
@@ -11,4 +9,3 @@ int fgetc(FILE *f)
 	__unlockfile(f);
 	return c;
 }
-#endif

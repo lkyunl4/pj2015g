@@ -1,12 +1,8 @@
-#ifndef SCC_TEST
-
-#ifndef SCC_TEST
-
 #include <stdio.h>
 #include <stdarg.h>
 #include <wchar.h>
 
-int wprintf(const wchar_t *restrict fmt, ...)
+int wprintf(const wchar_t * fmt, ...)
 {
 	int ret;
 	va_list ap;
@@ -15,6 +11,3 @@ int wprintf(const wchar_t *restrict fmt, ...)
 	va_end(ap);
 	return ret;
 }
-
-#endif
-#endif
