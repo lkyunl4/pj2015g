@@ -1,3 +1,5 @@
+#ifndef SCC_TEST
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -46,3 +48,5 @@ char *tempnam(const char *dir, const char *pfx)
 	}
 	return 0;
 }
+
+#endif

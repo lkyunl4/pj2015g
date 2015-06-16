@@ -33,7 +33,8 @@ int fflush(FILE *f)
 		return r;
 	}
 
-	r = __stdout_used ? fflush(__stdout_used) : 0;
+	//r = __stdout_used ? fflush(__stdout_used) : 0;
+	r = 0;
 
 	OFLLOCK();
 	for (f=libc.ofl_head; f; f=f->next) {

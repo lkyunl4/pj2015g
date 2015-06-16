@@ -21,10 +21,10 @@ FILE *freopen(const char * filename, const char * mode, FILE * f)
 	fflush(f);
 
 	if (!filename) {
-		if (fl&O_CLOEXEC)
-			__syscall(SYS_fcntl, f->fd, F_SETFD, FD_CLOEXEC);
+		//if (fl&O_CLOEXEC)
+		//	__syscall(SYS_fcntl, f->fd, F_SETFD, FD_CLOEXEC);
 		fl &= ~(O_CREAT|O_EXCL|O_CLOEXEC);
-		if (syscall(SYS_fcntl, f->fd, F_SETFL, fl) < 0)
+		//if (syscall(SYS_fcntl, f->fd, F_SETFL, fl) < 0)
 			goto fail;
 	} else {
 		f2 = fopen(filename, mode);

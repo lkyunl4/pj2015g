@@ -1,4 +1,3 @@
-#ifndef SCC_TEST
 
 #ifndef LIBC_H
 #define LIBC_H
@@ -84,5 +83,4 @@ extern char **__environ;
 #undef LFS64
 #define LFS64(x) LFS64_2(x, x##64)
 
-#endif
 #endif

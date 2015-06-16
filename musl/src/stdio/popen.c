@@ -26,11 +26,11 @@ FILE *popen(const char *cmd, const char *mode)
 	
 	if (pipe2(p, O_CLOEXEC)) return NULL;
 	f = fdopen(p[op], mode);
-	if (!f) {
-		__syscall(SYS_close, p[0]);
-		__syscall(SYS_close, p[1]);
-		return NULL;
-	}
+	//if (!f) {
+	//	__syscall(SYS_close, p[0]);
+	//	__syscall(SYS_close, p[1]);
+	//	return NULL;
+	//}
 	FLOCK(f);
 
 	/* If the child's end of the pipe happens to already be on the final
@@ -44,7 +44,7 @@ FILE *popen(const char *cmd, const char *mode)
 			e = errno;
 			goto fail;
 		}
-		__syscall(SYS_close, p[1-op]);
+		//__syscall(SYS_close, p[1-op]);
 		p[1-op] = tmp;
 	}
 
@@ -57,7 +57,7 @@ FILE *popen(const char *cmd, const char *mode)
 				f->pipe_pid = pid;
 				if (!strchr(mode, 'e'))
 					fcntl(p[op], F_SETFD, 0);
-				__syscall(SYS_close, p[1-op]);
+				//__syscall(SYS_close, p[1-op]);
 				FUNLOCK(f);
 				return f;
 			}
@@ -66,7 +66,7 @@ FILE *popen(const char *cmd, const char *mode)
 	}
 fail:
 	fclose(f);
-	__syscall(SYS_close, p[1-op]);
+	//__syscall(SYS_close, p[1-op]);
 
 	errno = e;
 	return 0;

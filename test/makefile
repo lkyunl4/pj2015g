@@ -268,8 +268,6 @@ SYSTEM_LIBS:= \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/etc \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/hal \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/newlib \
-					-L $(SRPSDK_INSTALL)/include/arch/srp4m/system/sim/musl/lib \
-					-L $(SRPSDK_INSTALL)/include/arch/srp4m/system/sim/musl \
 					-L ../musl/lib \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/system \
