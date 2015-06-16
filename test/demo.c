@@ -1,15 +1,22 @@
 #include <stdio.h>
-#include <stdlib.h>
+//#include <stdlib.h>
 
+// Median filter
 int main() {
   int row, col, i, j;
-  scanf("%d\t%d", &row, &col);
-  int* rgb = (int*) malloc(row * col * 3 * sizeof(int));
+  char str[32];
+  FILE* fp = fopen("noise.txt", "r");
+  fgets(str, 32, fp);
+
+  sscanf(str, "%d\t%d", &row, &col);
+  //int* rgb = (int*) malloc(row * col * 3 * sizeof(int));
+  int rgb[1428300];
 
   for (i = 0; i < row; i++) {
     for(j = 0; j < col; j++) {
       int idx = (i * col + j) * 3;
-      scanf("%d\t%d\t%d", &rgb[idx], &rgb[idx + 1], &rgb[idx + 2]);
+      fgets(str, 32, fp);
+      sscanf(str, "%d\t%d\t%d", &rgb[idx], &rgb[idx + 1], &rgb[idx + 2]);
     }
   }
 
@@ -110,8 +117,7 @@ int main() {
       mean[0] /= (surrounding_size + 2);
       mean[1] /= (surrounding_size + 2);
       mean[2] /= (surrounding_size + 2);      
-
-      //printf("(%d, %d, %d)\n", rgb[idx], rgb[idx + 1], rgb[idx + 2]);
+      //printf("%d\t%d\t%d\n", rgb[idx], rgb[idx + 1], rgb[idx + 2]);
       
       printf("%d\t%d\t%d\n", mean[0], mean[1], mean[2]);
     }
