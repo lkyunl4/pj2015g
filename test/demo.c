@@ -10,22 +10,25 @@ int main() {
 
   sscanf(str, "%d\t%d", &row, &col);
   //int* rgb = (int*) malloc(row * col * 3 * sizeof(int));
-  int rgb[1428300];
+  short rgb[1428300];
 
   for (i = 0; i < row; i++) {
     for(j = 0; j < col; j++) {
       int idx = (i * col + j) * 3;
       fgets(str, 32, fp);
-      sscanf(str, "%d\t%d\t%d", &rgb[idx], &rgb[idx + 1], &rgb[idx + 2]);
+      //printf("%s\n", str);
+      sscanf(str, "%hd\t%hd\t%hd", &rgb[idx], &rgb[idx + 1], &rgb[idx + 2]);
+      //printf("%d\n", j);
     }
   }
+
 
   printf("%d\t%d\n", row, col);
 
   for (i = 0; i < row; i++) {
     for(j = 0; j < col; j++) {
       int  idx = (i * col + j) * 3;
-      int* surround_pixel[8];
+      short* surround_pixel[8];
       int  surrounding_size = 0;
       if (i == 0) {
         if (j == 0) {
@@ -101,7 +104,7 @@ int main() {
         }
       }
 
-      int mean[3];
+      short mean[3];
       mean[0] = 2*rgb[idx];
       mean[1] = 2*rgb[idx+1];
       mean[2] = 2*rgb[idx+2];
