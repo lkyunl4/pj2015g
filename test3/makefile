@@ -267,12 +267,11 @@ SYSTEM_LIBS:= \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/compiler-rt \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/etc \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/hal \
-					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/newlib \
 					-L ../musl/lib \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/smk \
 					-L $(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/system \
-					-lc -lcrypt  -ldl  -lm  -lresolv  -lrt  -lutil  -lsrp\
-					-start-group -lcommon -lcompiler-rt -letc -lhal -lc -lm -lsrp -lsmk -lsystem -end-group
+					-lc -lcrypt  -ldl  -lm  -lresolv  -lrt  -lutil  \
+					-start-group -lcommon -lcompiler-rt -letc -lhal -lc -lm -lsmk -lsystem -end-group
 
 STARTUP_OBJS:= \
 					$(SRPSDK_INSTALL)/lib/arch/$(TARGET)/system/$(TARGET_SYS)/startup/crt0.o \
