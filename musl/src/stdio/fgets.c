@@ -20,6 +20,7 @@ char *fgets(char * s, int n, FILE * f)
 		return s;
 	}
 
+	#pragma rpcc cgra
 	while (n) {
 		z = memchr(f->rpos, '\n', f->rend - f->rpos);
 		k = z ? z - f->rpos + 1 : f->rend - f->rpos;
