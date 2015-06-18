@@ -1,0 +1,74 @@
+# Batch exmaple of mrpsim commands
+#
+
+# Set the path of config_mem.xml for core & configmem
+# - If config_mem is not set, a simulator runs in vliw only mode.
+#
+# Syntax: set config_mem <component_name(core|configmem)> <path/to/config_mem.xml>
+#set config_mem RPCore0 ./workplace/bin/config_mem.xml
+#set config_mem ConfigMem0 ./workplace/bin/config_mem.xml
+
+# Read architecture file and generate components in system
+#
+# Syntax: load arch <path/to/sys_arch.xml>
+
+load arch $MRPSIM_PATH/share/arch/srp4_sim.arch/sys_arch.xml
+
+# Set the basic unit of running cycle (simulation steps)
+# - If a simulator runs at quantum 100, each component in system takes control for 100 cyles.
+#   Later it gives it to other components.
+#
+# Syntax: set quantum <unit_time>
+set quantum 1
+
+# Load elf image onto core
+#
+# Syntax: load image <core_name> <path/to/app.elf>
+#load image RPSubSys.RPCore0 ./workplace/bin/app.elf
+load image RPSubSys.RPCore0 ./a.out
+
+# Load SDRAM data such as input streams
+#
+# Syntax: load file <sdram_name> <input_file> <base_address> <type> <size_address>
+#load file sdram0 ./input/cvmp_mot_mbaff0_full_B.26l 0x20150000 binary 0x20140004
+#load file sdram0 ./input/foreman_80x64_IBBP.264 0x20150000 binary 0x20140004
+#load file sdram0 ./input/Foreman384k.264 0x20150000 binary 0x20140004
+#load file sdram0 ./input/InToTree20M_x264.264 0x80150000 binary 0x80140004
+#load file sdram0 ./input/City_96x80.264 0x80150000 binary 0x80140004
+#hevc_test load file sdram0 ./input_stream/HM80_Kimono_384x240_ds_off.bin 0x30150000 binary 0x30140004
+
+# Set workplace
+# - This must be set in CGA mode
+#
+# Syntax: set workplace <core_name> <path/to/workplace>
+set workplace RPSubSys.RPCore0 .
+
+#print mem RPSubSys.RP0_LD_ST1 0x8f4
+
+# Run mrpsim for the given cycles
+#
+# Syntax: run <running_cycles>
+#set dump RPSubSys.RPCore0 on rp0.dump
+#set dump RPSubSys.RPCore0 on stdout
+#set dump LBus0_ConfigMemMaster on confmem.dump
+#set dump ConfigMem0 on confmem0.dump
+#set dump RP0_configmemIF on conf_mem_if.dump
+#set dump ICache0_To_SDRAM on ic0if.dump
+#set dump sdram0 on sdram0.dump
+#set dump VMEM0 on vmem0.dump
+#set dump DMA0 on dma0.dump
+#set dump SBus0_to_mempu on mempu_s.dump
+#set dump DMC0_external_Master_IF on dmc0_ext.dump
+#set dump DMA0_ToExternal on dma0_ext.dump
+#set dump SBus0_to_Ser_Uart on uart0_mdp.dump
+#set dump RPSubSys.SPM0 on spm0.dump
+#set dump SPM1 on spm1.dump
+#set dump TIMER0 on timer0.dump
+#set dump ITC0 on itc0.dump
+#set dump ICache0 on icache0.dump
+
+#usage: set coreprofile [SRP ID/name] [on/off] <workplace name> <binary name>
+#set coreprofile RPSubSys.RPCore0 on workplace bin
+
+run
+quit
