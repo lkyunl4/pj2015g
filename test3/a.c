@@ -1,23 +1,56 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*
+#include <string.h>
 #include <srp_vector.h>
-*/
-int main() {
-	long long a[64];
-	long long b[64];
-	memset(a, 0, 64 * sizeof(long long));
-	memset(b, 0, 64 * sizeof(long long));
-	b[31] = 1;
 
-	printf("%d\n", musl_memcmp(a, b, 64 * sizeof(long long)));
+#define __vec_equal(a, b) 
+int demo_memcmp(const void *vl, const void *vr, size_t n)
+{
 /*
-	long long a = 0;
-	long long b = 1;
-
-	printf("%d\n", musl_memcmp(&a, &b, sizeof(long long)));
+	const unsigned char *l=vl, *r=vr;
+	for (; n && *l == *r; n--, l++, r++);
+	return n ? *l-*r : 0;
 */
 
-return 0;
+  if (n == 0) return 1;
+  long16* lvector = vl, *rvector = vr;
+  long16 zeros = (long16)(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+  size_t nqq;
+  size_t nq = nqq = n / sizeof(long16);
+  size_t nr = n % sizeof(long16);
+
+  if(nq != 0) {
+    nr += sizeof(long16);
+
+    #pragma rpcc cgra
+    for (; nq; nq--, lvector++, rvector++) {
+      long16 ne =  (*lvector != *rvector);
+      long* lptr = &ne;
+      int i;
+      for (i = 0; i < 16; i++, lptr++) {
+        if (*lptr != 0) {
+          goto done;
+        }
+      }
+    }
+  }
+done:
+
+  lvector--; rvector--;
+	unsigned char *l=lvector, *r=rvector;
+
+  #pragma rpcc cgra
+	for (; nr && *l == *r; nr--, l++, r++);
+	return nr ? *l-*r : 0;
+}
+int main() {
+	//printf("atoi(\"1235\") : %d\n", musl_atoi("1235"));
+	long long a[128];
+	long long b[128];
+	b[127] = 1;
+
+	printf("%d\n", demo_memcmp(&a, &b, 128*sizeof(long long)));
+
+	return 0;
 
 }

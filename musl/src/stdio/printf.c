@@ -2,7 +2,7 @@
 #include <stdarg.h>
 
 
-int printf(const char * fmt, ...)
+int musl_printf(const char * fmt, ...)
 {
 	int ret;
 	va_list ap;

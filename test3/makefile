@@ -9,8 +9,8 @@
 # -O3 : Do every optimization
 # -Oz : Only perform optimizations that reduce code size. Don't even try to run
 #       things that could potentially increase code size
-#OPTIMIZE:= -O0 -g
-OPTIMIZE:= -O3
+OPTIMIZE:= -O0 -g
+#OPTIMIZE:= -O3
 
 # Macro definitions
 # Example) -D HOST_MODE

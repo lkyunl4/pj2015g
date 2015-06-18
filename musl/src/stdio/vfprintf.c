@@ -683,6 +683,8 @@ cnt += l;
 	return 1;
 }
 
+#ifndef SCC_TEST
+
 int vfprintf(FILE * f, const char * fmt, va_list ap)
 {
 	va_list ap2;
@@ -725,3 +727,5 @@ int vfprintf(FILE * f, const char * fmt, va_list ap)
 	va_end(ap2);
 	return ret;
 }
+
+#endif

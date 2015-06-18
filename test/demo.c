@@ -1,27 +1,13 @@
 #include <stdio.h>
+#include "a.h"
 //#include <stdlib.h>
 
+extern short rgb[];
 // Median filter
 int main() {
-  int row, col, i, j;
-  char str[32];
-  FILE* fp = fopen("noise.txt", "r");
-  fgets(str, 32, fp);
+  int row = 690, col = 690, i, j;
 
-  sscanf(str, "%d\t%d", &row, &col);
   //int* rgb = (int*) malloc(row * col * 3 * sizeof(int));
-  short rgb[1428300];
-
-  for (i = 0; i < row; i++) {
-    for(j = 0; j < col; j++) {
-      int idx = (i * col + j) * 3;
-      fgets(str, 32, fp);
-      //printf("%s\n", str);
-      sscanf(str, "%hd\t%hd\t%hd", &rgb[idx], &rgb[idx + 1], &rgb[idx + 2]);
-      //printf("%d\n", j);
-    }
-  }
-
 
   printf("%d\t%d\n", row, col);
 
