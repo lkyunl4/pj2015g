@@ -1,9 +1,7 @@
-#ifndef SCC_TEST
-
 #include <stdlib.h>
 #include <ctype.h>
 
-int atoi(const char *s)
+int musl_atoi(const char *s)
 {
 	int n=0, neg=0;
 	while (isspace(*s)) s++;
@@ -12,8 +10,8 @@ int atoi(const char *s)
 	case '+': s++;
 	}
 	/* Compute n as a negative number to avoid overflow on INT_MIN */
+  #pragma rpcc cgra
 	while (isdigit(*s))
 		n = 10*n - (*s++ - '0');
 	return neg ? n : -n;
 }
-#endif

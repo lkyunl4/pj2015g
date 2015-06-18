@@ -36,6 +36,7 @@ int rand (void);
 void srand (unsigned);
 
 void *malloc (size_t);
+void *musl_malloc (size_t);
 void *calloc (size_t, size_t);
 void *realloc (void *, size_t);
 void free (void *);
@@ -55,6 +56,7 @@ int system (const char *);
 void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
 void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
 
+int abs (int);
 int musl_abs (int);
 long labs (long);
 long long llabs (long long);
