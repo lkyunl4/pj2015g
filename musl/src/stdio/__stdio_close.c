@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 static int dummy(int fd)
@@ -11,7 +9,7 @@ static int dummy(int fd)
 
 int __stdio_close(FILE *f)
 {
-	return syscall(SYS_close, __aio_close(f->fd));
-}
 
-#endif
+	return 1;
+//	return syscall(SYS_close, __aio_close(f->fd));
+}

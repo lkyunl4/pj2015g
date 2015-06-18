@@ -151,7 +151,7 @@ ALL_INCLUDES = $(sort $(wildcard include/*.h include/*/*.h) $(GENH))
 EMPTY_LIB_NAMES = m rt pthread crypt util xnet resolv dl
 EMPTY_LIBS = $(EMPTY_LIB_NAMES:%=lib/lib%.a)
 #CRT_LIBS = lib/crt1.o lib/Scrt1.o lib/crti.o lib/crtn.o
-STATIC_LIBS = lib/libc.a
+STATIC_LIBS = lib/libcmusl.a
 #SHARED_LIBS = lib/libc.so
 #TOOL_LIBS = lib/musl-gcc.specs
 #ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS) $(TOOL_LIBS)
@@ -167,6 +167,7 @@ ARCH=srp4m
 all: $(ALL_LIBS)
 #	mkdir $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include
 #	cp include/* $(SRPSDK_INSTALL)/include/arch/$(TARGET)/system/$(TARGET_SYS)/musl/include/
+	cp res/* lib/
 
 install: install-libs install-headers
 
@@ -214,7 +215,7 @@ $(foreach s,$(wildcard src/*/$(ARCH)*/*.s),$(eval $(call mkasmdep,$(s))))
 #	$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(SCC_LDFLAGS) -o $@ $(LOBJS) $(LIBCC)
 #$(SCC) $(SCC_CFLAGS) $(CFLAGS_ALL_STATIC) $(LDFLAGS) -nostdlib -shared -Wl,-e,_dlstart -Wl,-Bsymbolic-functions -o $@ $(LOBJS) $(LIBCC)
 
-lib/libc.a: $(OBJS)
+lib/libcmusl.a: $(OBJS)
 	rm -f $@
 	$(AR) rc $@ $(OBJS)
 	$(RANLIB) $@

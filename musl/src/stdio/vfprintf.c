@@ -441,7 +441,37 @@ static int getint(char **s) {
 		i = 10*i + (**s-'0');
 	return i;
 }
-
+/*
+struct _IO_FILE {
+	unsigned flags;
+	unsigned char *rpos, *rend;
+	int (*close)(FILE *);
+	unsigned char *wend, *wpos;
+	unsigned char *mustbezero_1;
+	unsigned char *wbase;
+	size_t (*read)(FILE *, unsigned char *, size_t);
+	size_t (*write)(FILE *, const unsigned char *, size_t);
+	off_t (*seek)(FILE *, off_t, int);
+	unsigned char *buf;
+	size_t buf_size;
+	FILE *prev, *next;
+	int fd;
+	int pipe_pid;
+	long lockcount;
+	short dummy3;
+	signed char mode;
+	signed char lbf;
+	volatile int lock;
+	volatile int waiters;
+	void *cookie;
+	off_t off;
+	char *getln_buf;
+	void *mustbezero_2;
+	unsigned char *shend;
+	off_t shlim, shcnt;
+	FILE *prev_locked, *next_locked;
+};
+*/
 static int printf_core(FILE *f, const char *fmt, va_list *ap, union arg *nl_arg, int *nl_type)
 {
 	char *a, *z, *s=(char *)fmt;
@@ -461,10 +491,13 @@ static int printf_core(FILE *f, const char *fmt, va_list *ap, union arg *nl_arg,
 	for (;;) {
 		/* Update output count, end loop when fmt is exhausted */
 		if (cnt >= 0) {
+/*
 			if (l > INT_MAX - cnt) {
-				errno = EOVERFLOW;
+				//errno = EOVERFLOW;
 				cnt = -1;
-			} else cnt += l;
+			} else 
+*/
+cnt += l;
 		}
 		if (!*s) break;
 
@@ -595,8 +628,8 @@ static int printf_core(FILE *f, const char *fmt, va_list *ap, union arg *nl_arg,
 			*(a=z-(p=1))=arg.i;
 			fl &= ~ZERO_PAD;
 			break;
-		case 'm':
-			if (1) a = strerror(errno); else
+		//case 'm':
+		//	if (1) a = strerror(errno); else
 		case 's':
 			a = arg.p ? arg.p : "(null)";
 			z = memchr(a, 0, p);
@@ -623,7 +656,7 @@ static int printf_core(FILE *f, const char *fmt, va_list *ap, union arg *nl_arg,
 			continue;
 		case 'e': case 'f': case 'g': case 'a':
 		case 'E': case 'F': case 'G': case 'A':
-			l = fmt_fp(f, arg.f, w, p, fl, t);
+			//l = fmt_fp(f, arg.f, w, p, fl, t);
 			continue;
 		}
 
@@ -675,7 +708,9 @@ int vfprintf(FILE * f, const char * fmt, va_list ap)
 		f->buf_size = sizeof internal_buf;
 		f->wend = internal_buf + sizeof internal_buf;
 	}
+
 	ret = printf_core(f, fmt, &ap2, nl_arg, nl_type);
+
 	if (saved_buf) {
 		f->write(f, 0, 0);
 		if (!f->wpos) ret = -1;
@@ -683,6 +718,7 @@ int vfprintf(FILE * f, const char * fmt, va_list ap)
 		f->buf_size = 0;
 		f->wpos = f->wbase = f->wend = 0;
 	}
+
 	if (f->flags & F_ERR) ret = -1;
 	f->flags |= olderr;
 	FUNLOCK(f);

@@ -1,8 +1,7 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 #include <sys/uio.h>
-#include <pthread.h>
+#include <bits/syscall.h>
+//#include <pthread.h>
 
 static void cleanup(void *p)
 {
@@ -21,9 +20,9 @@ size_t __stdio_write(FILE *f, const unsigned char *buf, size_t len)
 	int iovcnt = 2;
 	ssize_t cnt;
 	for (;;) {
-		pthread_cleanup_push(cleanup, f);
+		//pthread_cleanup_push(cleanup, f);
 		cnt = syscall_cp(SYS_writev, f->fd, iov, iovcnt);
-		pthread_cleanup_pop(0);
+		//pthread_cleanup_pop(0);
 		if (cnt == rem) {
 			f->wend = f->buf + f->buf_size;
 			f->wpos = f->wbase = f->buf;
@@ -45,5 +44,5 @@ size_t __stdio_write(FILE *f, const unsigned char *buf, size_t len)
 		iov[0].iov_base = (char *)iov[0].iov_base + cnt;
 		iov[0].iov_len -= cnt;
 	}
+	return 0;
 }
-#endif

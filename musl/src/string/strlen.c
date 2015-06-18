@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
@@ -18,4 +16,3 @@ size_t strlen(const char *s)
 	for (s = (const void *)w; *s; s++);
 	return s-a;
 }
-#endif

@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include "stdio_impl.h"
 
 int __towrite(FILE *f)
@@ -23,6 +21,5 @@ void __stdio_exit_needed(void);
 
 void __towrite_needs_stdio_exit()
 {
-	__stdio_exit_needed();
+//	__stdio_exit_needed();
 }
-#endif

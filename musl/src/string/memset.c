@@ -1,5 +1,3 @@
-#ifndef SCC_TEST
-
 #include <string.h>
 #include <stdint.h>
 
@@ -86,4 +84,3 @@ void *memset(void *dest, int c, size_t n)
 
 	return dest;
 }
-#endif

@@ -13,7 +13,7 @@ int __lockfile(FILE *f)
 
 void __unlockfile(FILE *f)
 {
-	a_store(&f->lock, 0);
+	//a_store(&f->lock, 0);
 
 	/* The following read is technically invalid under situations
 	 * of self-synchronized destruction. Another thread may have
@@ -24,5 +24,5 @@ void __unlockfile(FILE *f)
 	 * a spurious syscall will be made. If the implementation of
 	 * malloc changes, this assumption needs revisiting. */
 
-	if (f->waiters) __wake(&f->lock, 1, 1);
+	//if (f->waiters) __wake(&f->lock, 1, 1);
 }
