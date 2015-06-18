@@ -4,10 +4,12 @@
 #define __vec_equal(a, b) 
 int musl_memcmp(const void *vl, const void *vr, size_t n)
 {
-	//const unsigned char *l=vl, *r=vr;
-	//for (; n && *l == *r; n--, l++, r++);
-	//return n ? *l-*r : 0;
+	const unsigned char *l=vl, *r=vr;
+#pragma rpcc cgra
+	for (; n && *l == *r; n--, l++, r++);
+	return n ? *l-*r : 0;
 
+/*
   if (n == 0) return 1;
   long16* lvector = vl, *rvector = vr;
   long16 zeros = (long16)(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
@@ -21,10 +23,10 @@ int musl_memcmp(const void *vl, const void *vr, size_t n)
     #pragma rpcc cgra
     for (; nq; nq--, lvector++, rvector++) {
       long16 ne =  (*lvector != *rvector);
-      long* lptr = ne;
+      long* lptr = &ne;
       int i;
-      for (i = 0; i < 16; i++) {
-        if (lptr[i] != 0) {
+      for (i = 0; i < 16; i++, lptr++) {
+        if (*lptr != 0) {
           goto done;
         }
       }
@@ -39,4 +41,5 @@ done:
 	for (; nr && *l == *r; nr--, l++, r++);
 	return nr ? *l-*r : 0;
 
+*/
 }

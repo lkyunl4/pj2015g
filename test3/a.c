@@ -4,14 +4,19 @@
 #include <srp_vector.h>
 */
 int main() {
-/*
-  int4 a = (int4) (1, 2, 3, 4);
-  int4 one = (int4) (1, 1, 1, 1);
-  a = a + one;
-  printf("%d\n", ((int*)(&a))[1]);
-*/
+	long long a[64];
+	long long b[64];
+	memset(a, 0, 64 * sizeof(long long));
+	memset(b, 0, 64 * sizeof(long long));
+	b[31] = 1;
 
-printf("%d\n", musl_abs(1));
+	printf("%d\n", musl_memcmp(a, b, 64 * sizeof(long long)));
+/*
+	long long a = 0;
+	long long b = 1;
+
+	printf("%d\n", musl_memcmp(&a, &b, sizeof(long long)));
+*/
 
 return 0;
 
