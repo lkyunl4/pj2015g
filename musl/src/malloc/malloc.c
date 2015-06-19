@@ -1,4 +1,4 @@
-#ifndef SCC_TEST
+//#ifndef SCC_TEST
 
 #define _GNU_SOURCE
 #include <stdlib.h>
@@ -18,6 +18,112 @@
 #define inline inline __attribute__((always_inline))
 #endif
 
+#include <stddef.h>
+#include <stdio.h>
+#define HEAP_START (0x28500000); //128K : 0 ~ 0x20000
+#define HEAP_END (0x29000000);
+#define IS_USED(p) *(int *)p  
+#define BLOCK_SIZE(p) *(int *)(p + sizeof(int))
+#define NEXT_BLOCK(p) p + BLOCK_SIZE(p)
+
+int initialized = 0;
+/*typedef struct Header {
+	int used;
+	int size;
+}header;
+*/
+void set_used(void* ptr){
+//	printf("set used %x\n", ptr);
+	*(int *)ptr = 1;
+}
+void set_unused(void* ptr){
+//	printf("set unused %x\n", ptr);
+	*(int *)ptr = 0;
+}
+void set_block_size(void * ptr, size_t size){
+//	printf("set block  %x size  %d\n",(int*)(ptr + sizeof(int)), size);
+	*((int*)(ptr + sizeof(int))) = size;
+}
+void set_next_block(void *ptr, size_t ex_size, size_t size){
+//	printf("set next block from ptr %x, exsize :  %d, size  %d\n", ptr, ex_size, size);
+	void* next = NEXT_BLOCK(ptr);
+	set_unused(next);
+	set_block_size(next, ex_size - size);
+}
+void* allocate_block(void * ptr, size_t size){
+	size_t ex_size = BLOCK_SIZE(ptr);
+//	printf("allocate block , ex_size = %d, size = %d  ptr = %x\n", BLOCK_SIZE(ptr), size, ptr);
+	set_used(ptr);
+	set_block_size(ptr, size);
+	set_next_block(ptr, ex_size, size);
+	return ptr + (sizeof(int) * 2);
+}
+/*void* pre_block(void *ptr){
+	void* start = HEAP_START;
+	if(ptr == start)
+		return NULL;
+	printf("pre_block %x\n", ptr);
+	return ptr - BLOCK_SIZE(ptr);
+}*/
+
+void mem_initialize(){
+//	printf("mem init!\n");
+	void* ptr = HEAP_START;
+	void* end = HEAP_END;
+	set_unused(ptr);
+	set_block_size(ptr,(end - ptr) + 1);
+	initialized = 1;
+}
+void* musl_malloc(size_t size){
+//	printf("malloc call! %d size\n", size);
+	if(!initialized)
+		mem_initialize();
+	void* cur = HEAP_START;
+	void* end = HEAP_END;
+	size += (sizeof(int) * 2);
+	do {
+//		printf("is used? %d block size %d cur %x siez %d\n", IS_USED(cur), BLOCK_SIZE(cur), cur, size);
+//		printf("next block %x end %x\n", NEXT_BLOCK(cur), end);
+		if(IS_USED(cur) || BLOCK_SIZE(cur) < size)
+			continue;
+		return allocate_block(cur, size);
+	} while((cur = NEXT_BLOCK(cur)) <= end);
+	/* TODO:단편화 확인 및 재배열 코드 추가 */
+	/* 또는 가상메모리 */
+	return NULL;
+}
+void musl_free(void * ptr){
+	ptr -= (sizeof(int) * 2);
+	set_unused(ptr);
+	void * end = HEAP_END;
+	void *next_ptr = NEXT_BLOCK(ptr);	
+	while( next_ptr  <= end  && !IS_USED(next_ptr)){
+
+  //              printf("merge! ptr %x blck size %d blc size 2 %d\n", ptr, BLOCK_SIZE(ptr), BLOCK_SIZE(next_ptr));	 	
+		set_block_size(ptr, BLOCK_SIZE(ptr) + BLOCK_SIZE(next_ptr));
+
+		next_ptr = NEXT_BLOCK(ptr);		
+	}
+	
+/*
+	void* pre_ptr = pre_block(ptr);
+	if(pre_ptr != NULL && !IS_USED(pre_ptr)){
+		set_block_size(pre_ptr, BLOCK_SIZE(ptr) + BLOCK_SIZE(pre_ptr));
+	}*/
+}
+
+void *musl_realloc(void *ptr, size_t size){
+ 	ptr -= (sizeof(int) * 2);
+	size_t current_block_size = BLOCK_SIZE(ptr);
+	size_t next_block_size = BLOCK_SIZE(NEXT_BLOCK(ptr));
+     	
+         if(current_block_size + next_block_size < size){
+		musl_free(ptr + (sizeof(int) * 2));
+		return musl_malloc(size); 
+	} else {
+		allocate_block(ptr, size);
+	}
+}
 uintptr_t __brk(uintptr_t);
 void *__mmap(void *, size_t, int, int, int, off_t);
 int __munmap(void *, size_t);
@@ -143,9 +249,9 @@ void __dump_heap(int x)
 	int i;
 	for (c = (void *)mal.heap; CHUNK_SIZE(c); c = NEXT_CHUNK(c))
 		fprintf(stderr, "base %p size %zu (%d) flags %d/%d\n",
-			c, CHUNK_SIZE(c), bin_index(CHUNK_SIZE(c)),
-			c->csize & 15,
-			NEXT_CHUNK(c)->psize & 15);
+				c, CHUNK_SIZE(c), bin_index(CHUNK_SIZE(c)),
+				c->csize & 15,
+				NEXT_CHUNK(c)->psize & 15);
 	for (i=0; i<64; i++) {
 		if (mal.bins[i].head != BIN_TO_CHUNK(i) && mal.bins[i].head) {
 			fprintf(stderr, "bin %d: %p\n", i, mal.bins[i].head);
@@ -184,7 +290,7 @@ static struct chunk *expand_heap(size_t n)
 		n += -n & PAGE_SIZE-1;
 		if (n < min) n = min;
 		void *area = __mmap(0, n, PROT_READ|PROT_WRITE,
-			MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
+				MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
 		if (area == MAP_FAILED) goto fail;
 
 		mal.mmap_step++;
@@ -212,7 +318,7 @@ static struct chunk *expand_heap(size_t n)
 	w = MEM_TO_CHUNK(mal.brk);
 	w->csize = n | C_INUSE;
 	mal.brk = new;
-	
+
 	unlock(mal.brk_lock);
 
 	return w;
@@ -334,54 +440,55 @@ static void trim(struct chunk *self, size_t n)
 	free(CHUNK_TO_MEM(split));
 }
 
-void *malloc(size_t n)
-{
-	struct chunk *c;
-	int i, j;
 
-	if (adjust_size(&n) < 0) return 0;
+/*
+   void *malloc(size_t n)
+   {
+   struct chunk *c;
+   int i, j;
 
-	if (n > MMAP_THRESHOLD) {
-		size_t len = n + OVERHEAD + PAGE_SIZE - 1 & -PAGE_SIZE;
-		char *base = __mmap(0, len, PROT_READ|PROT_WRITE,
-			MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
-		if (base == (void *)-1) return 0;
-		c = (void *)(base + SIZE_ALIGN - OVERHEAD);
-		c->csize = len - (SIZE_ALIGN - OVERHEAD);
-		c->psize = SIZE_ALIGN - OVERHEAD;
-		return CHUNK_TO_MEM(c);
-	}
+   if (adjust_size(&n) < 0) return 0;
 
-	i = bin_index_up(n);
-	for (;;) {
-		uint64_t mask = mal.binmap & -(1ULL<<i);
-		if (!mask) {
-			c = expand_heap(n);
-			if (!c) return 0;
-			if (alloc_rev(c)) {
-				struct chunk *x = c;
-				c = PREV_CHUNK(c);
-				NEXT_CHUNK(x)->psize = c->csize =
-					x->csize + CHUNK_SIZE(c);
-			}
-			break;
-		}
-		j = first_set(mask);
-		lock_bin(j);
-		c = mal.bins[j].head;
-		if (c != BIN_TO_CHUNK(j)) {
-			if (!pretrim(c, n, i, j)) unbin(c, j);
-			unlock_bin(j);
-			break;
-		}
-		unlock_bin(j);
-	}
+   if (n > MMAP_THRESHOLD) {
+   size_t len = n + OVERHEAD + PAGE_SIZE - 1 & -PAGE_SIZE;
+   char *base = __mmap(0, len, PROT_READ|PROT_WRITE,
+   MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
+   if (base == (void *)-1) return 0;
+   c = (void *)(base + SIZE_ALIGN - OVERHEAD);
+   c->csize = len - (SIZE_ALIGN - OVERHEAD);
+   c->psize = SIZE_ALIGN - OVERHEAD;
+   return CHUNK_TO_MEM(c);
+   }
 
-	/* Now patch up in case we over-allocated */
-	trim(c, n);
+   i = bin_index_up(n);
+   for (;;) {
+   uint64_t mask = mal.binmap & -(1ULL<<i);
+   if (!mask) {
+   c = expand_heap(n);
+   if (!c) return 0;
+   if (alloc_rev(c)) {
+   struct chunk *x = c;
+   c = PREV_CHUNK(c);
+   NEXT_CHUNK(x)->psize = c->csize =
+   x->csize + CHUNK_SIZE(c);
+   }
+   break;
+   }
+   j = first_set(mask);
+   lock_bin(j);
+   c = mal.bins[j].head;
+   if (c != BIN_TO_CHUNK(j)) {
+   if (!pretrim(c, n, i, j)) unbin(c, j);
+   unlock_bin(j);
+   break;
+   }
+   unlock_bin(j);
+   }
 
-	return CHUNK_TO_MEM(c);
-}
+   trim(c, n);
+
+   return CHUNK_TO_MEM(c);
+   }
 
 void *realloc(void *p, size_t n)
 {
@@ -401,7 +508,6 @@ void *realloc(void *p, size_t n)
 		char *base = (char *)self - extra;
 		size_t oldlen = n0 + extra;
 		size_t newlen = n + extra;
-		/* Crash on realloc of freed chunk */
 		if (extra & 1) a_crash();
 		if (newlen < PAGE_SIZE && (new = malloc(n))) {
 			memcpy(new, p, n-OVERHEAD);
@@ -420,17 +526,12 @@ void *realloc(void *p, size_t n)
 
 	next = NEXT_CHUNK(self);
 
-	/* Crash on corrupted footer (likely from buffer overflow) */
 	if (next->psize != self->csize) a_crash();
 
-	/* Merge adjacent chunks if we need more space. This is not
-	 * a waste of time even if we fail to get enough space, because our
-	 * subsequent call to free would otherwise have to do the merge. */
 	if (n > n1 && alloc_fwd(next)) {
 		n1 += CHUNK_SIZE(next);
 		next = NEXT_CHUNK(next);
 	}
-	/* FIXME: find what's wrong here and reenable it..? */
 	if (0 && n > n1 && alloc_rev(self)) {
 		self = PREV_CHUNK(self);
 		n1 += CHUNK_SIZE(self);
@@ -438,14 +539,12 @@ void *realloc(void *p, size_t n)
 	self->csize = n1 | C_INUSE;
 	next->psize = n1 | C_INUSE;
 
-	/* If we got enough space, split off the excess and return */
 	if (n <= n1) {
 		//memmove(CHUNK_TO_MEM(self), p, n0-OVERHEAD);
 		trim(self, n);
 		return CHUNK_TO_MEM(self);
 	}
 
-	/* As a last resort, allocate a new chunk and copy to it. */
 	new = malloc(n-OVERHEAD);
 	if (!new) return 0;
 	memcpy(new, p, n0-OVERHEAD);
@@ -453,86 +552,84 @@ void *realloc(void *p, size_t n)
 	return new;
 }
 
-void free(void *p)
-{
-	struct chunk *self = MEM_TO_CHUNK(p);
-	struct chunk *next;
-	size_t final_size, new_size, size;
-	int reclaim=0;
-	int i;
+   void free(void *p)
+   {
+   struct chunk *self = MEM_TO_CHUNK(p);
+   struct chunk *next;
+   size_t final_size, new_size, size;
+   int reclaim=0;
+   int i;
 
-	if (!p) return;
+   if (!p) return;
 
-	if (IS_MMAPPED(self)) {
-		size_t extra = self->psize;
-		char *base = (char *)self - extra;
-		size_t len = CHUNK_SIZE(self) + extra;
-		/* Crash on double free */
-		if (extra & 1) a_crash();
-		__munmap(base, len);
-		return;
-	}
+   if (IS_MMAPPED(self)) {
+   size_t extra = self->psize;
+   char *base = (char *)self - extra;
+   size_t len = CHUNK_SIZE(self) + extra;
+   if (extra & 1) a_crash();
+   __munmap(base, len);
+   return;
+   }
 
-	final_size = new_size = CHUNK_SIZE(self);
-	next = NEXT_CHUNK(self);
+   final_size = new_size = CHUNK_SIZE(self);
+   next = NEXT_CHUNK(self);
 
-	/* Crash on corrupted footer (likely from buffer overflow) */
-	if (next->psize != self->csize) a_crash();
+   if (next->psize != self->csize) a_crash();
 
-	for (;;) {
-		/* Replace middle of large chunks with fresh zero pages */
-		if (reclaim && (self->psize & next->csize & C_INUSE)) {
-			uintptr_t a = (uintptr_t)self + SIZE_ALIGN+PAGE_SIZE-1 & -PAGE_SIZE;
-			uintptr_t b = (uintptr_t)next - SIZE_ALIGN & -PAGE_SIZE;
+   for (;;) {
+   if (reclaim && (self->psize & next->csize & C_INUSE)) {
+   uintptr_t a = (uintptr_t)self + SIZE_ALIGN+PAGE_SIZE-1 & -PAGE_SIZE;
+   uintptr_t b = (uintptr_t)next - SIZE_ALIGN & -PAGE_SIZE;
 #if 1
-			__madvise((void *)a, b-a, MADV_DONTNEED);
+__madvise((void *)a, b-a, MADV_DONTNEED);
 #else
-			__mmap((void *)a, b-a, PROT_READ|PROT_WRITE,
-				MAP_PRIVATE|MAP_ANONYMOUS|MAP_FIXED, -1, 0);
+__mmap((void *)a, b-a, PROT_READ|PROT_WRITE,
+MAP_PRIVATE|MAP_ANONYMOUS|MAP_FIXED, -1, 0);
 #endif
-		}
+}
 
-		if (self->psize & next->csize & C_INUSE) {
-			self->csize = final_size | C_INUSE;
-			next->psize = final_size | C_INUSE;
-			i = bin_index(final_size);
-			lock_bin(i);
-			lock(mal.free_lock);
-			if (self->psize & next->csize & C_INUSE)
-				break;
-			unlock(mal.free_lock);
-			unlock_bin(i);
-		}
+if (self->psize & next->csize & C_INUSE) {
+self->csize = final_size | C_INUSE;
+next->psize = final_size | C_INUSE;
+i = bin_index(final_size);
+lock_bin(i);
+lock(mal.free_lock);
+if (self->psize & next->csize & C_INUSE)
+break;
+unlock(mal.free_lock);
+unlock_bin(i);
+}
 
-		if (alloc_rev(self)) {
-			self = PREV_CHUNK(self);
-			size = CHUNK_SIZE(self);
-			final_size += size;
-			if (new_size+size > RECLAIM && (new_size+size^size) > size)
-				reclaim = 1;
-		}
+if (alloc_rev(self)) {
+self = PREV_CHUNK(self);
+size = CHUNK_SIZE(self);
+final_size += size;
+if (new_size+size > RECLAIM && (new_size+size^size) > size)
+reclaim = 1;
+}
 
-		if (alloc_fwd(next)) {
-			size = CHUNK_SIZE(next);
-			final_size += size;
-			if (new_size+size > RECLAIM && (new_size+size^size) > size)
-				reclaim = 1;
-			next = NEXT_CHUNK(next);
-		}
-	}
+if (alloc_fwd(next)) {
+size = CHUNK_SIZE(next);
+final_size += size;
+if (new_size+size > RECLAIM && (new_size+size^size) > size)
+reclaim = 1;
+next = NEXT_CHUNK(next);
+}
+}
 
-	self->csize = final_size;
-	next->psize = final_size;
-	unlock(mal.free_lock);
+self->csize = final_size;
+next->psize = final_size;
+unlock(mal.free_lock);
 
-	self->next = BIN_TO_CHUNK(i);
-	self->prev = mal.bins[i].tail;
-	self->next->prev = self;
-	self->prev->next = self;
+self->next = BIN_TO_CHUNK(i);
+self->prev = mal.bins[i].tail;
+self->next->prev = self;
+self->prev->next = self;
 
-	if (!(mal.binmap & 1ULL<<i))
-		a_or_64(&mal.binmap, 1ULL<<i);
+if (!(mal.binmap & 1ULL<<i))
+	a_or_64(&mal.binmap, 1ULL<<i);
 
 	unlock_bin(i);
-}
-#endif
+	}
+*/
+//#endif
